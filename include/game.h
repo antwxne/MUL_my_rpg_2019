@@ -14,6 +14,7 @@
 #include <SFML/Window.h>
 
 typedef struct game{
+    sfEvent event;
     sfRenderWindow *window;
 }game_t;
 

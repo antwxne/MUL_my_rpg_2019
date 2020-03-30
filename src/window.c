@@ -20,6 +20,9 @@ int show_window(game_t *game)
 {
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
+        while (sfRenderWindow_pollEvent(game->window, &game->event))
+            if (game->event.type == sfEvtClosed)
+                sfRenderWindow_close(game->window);
         display_window(game->window);
     }
     sfRenderWindow_destroy(game->window);
