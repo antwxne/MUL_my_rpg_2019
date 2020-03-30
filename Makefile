@@ -12,10 +12,11 @@ CPPFLAGS = -iquote $(IDIR)
 
 DBGFLAGS = -g3 -ggdb
 
-LDFLAGS = -L lib -lmy -lncurses
+LDFLAGS = -L lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 ######### SOURCES #########
 SRC =	src/main.c			\
+		src/init_struct.c	\
 		src/window.c
 
 OBJ = $(SRC:.c=.o)
