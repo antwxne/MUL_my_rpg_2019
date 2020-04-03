@@ -13,6 +13,13 @@
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
 
+typedef struct object {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f position;
+    sfIntRect rect;
+} object_t;
+
 typedef struct game{
     sfEvent event;
     sfRenderWindow *window;
