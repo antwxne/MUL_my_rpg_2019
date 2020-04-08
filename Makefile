@@ -20,6 +20,7 @@ SRC =	src/main.c				\
 		src/window.c			\
 		src/loading.c 			\
 		src/create_object.c 	\
+		src/menu/create_button.c
 
 OBJ = $(SRC:.c=.o)
 
