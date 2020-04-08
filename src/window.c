@@ -10,6 +10,13 @@
 #include <SFML/Window.h>
 #include "game.h"
 
+static void handle_window_event(sfEvent event, sfRenderWindow *window)
+{
+    while (sfRenderWindow_pollEvent(window, &event))
+        if (event.type == sfEvtClosed)
+            sfRenderWindow_close(window);
+}
+
 static void display_window(sfRenderWindow *window)
 {
     sfRenderWindow_display(window);
@@ -20,9 +27,7 @@ int show_window(game_t *game)
 {
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
-        while (sfRenderWindow_pollEvent(game->window, &game->event))
-            if (game->event.type == sfEvtClosed)
-                sfRenderWindow_close(game->window);
+        handle_window_event(game->event, game->window);
         display_window(game->window);
     }
     sfRenderWindow_destroy(game->window);
