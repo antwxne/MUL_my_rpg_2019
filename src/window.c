@@ -9,13 +9,7 @@
 #include <SFML/System.h>
 #include <SFML/Window.h>
 #include "game.h"
-
-static void handle_window_event(sfEvent event, sfRenderWindow *window)
-{
-    while (sfRenderWindow_pollEvent(window, &event))
-        if (event.type == sfEvtClosed)
-            sfRenderWindow_close(window);
-}
+#include "textures.h"
 
 static void display_window(sfRenderWindow *window)
 {
@@ -23,12 +17,21 @@ static void display_window(sfRenderWindow *window)
     sfRenderWindow_clear(window, sfBlack);
 }
 
+static void manage_event(sfRenderWindow *window, sfEvent *event)
+{
+    while (sfRenderWindow_pollEvent(window, event))
+            if (event->type == sfEvtClosed)
+                sfRenderWindow_close(window);
+}
+
 int show_window(game_t *game)
 {
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
-        handle_window_event(game->event, game->window);
+        manage_event(game->window, &game->event);
         display_window(game->window);
+        sfRenderWindow_drawSprite(game->window,
+        game->objects[PLAYER][MARIO].sprite, NULL);
     }
     sfRenderWindow_destroy(game->window);
     return (0);

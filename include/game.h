@@ -34,6 +34,8 @@ typedef struct object {
 typedef struct game{
     sfEvent event;
     sfRenderWindow *window;
-}game_t;
+    sfTexture ***textures;
+    object_t **objects;
+} game_t;
 
 #endif /* !GAME_H_ */
