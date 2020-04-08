@@ -14,8 +14,11 @@ int main(int ac, char **av)
 {
     (void) ac;
     (void) av;
-    game_t game = init_struct();
+    int error = 0;
+    game_t game = init_struct(&error);
 
+    if (!error)
+        return (84);
     show_window(&game);
     return (0);
 }

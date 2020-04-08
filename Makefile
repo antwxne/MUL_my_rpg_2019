@@ -15,9 +15,11 @@ DBGFLAGS = -g3 -ggdb
 LDFLAGS = -L lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 ######### SOURCES #########
-SRC =	src/main.c			\
-		src/init_struct.c	\
-		src/window.c
+SRC =	src/main.c				\
+		src/init_struct.c		\
+		src/window.c			\
+		src/loading.c 			\
+		src/create_object.c 	\
 
 OBJ = $(SRC:.c=.o)
 
@@ -35,7 +37,7 @@ $(NAME):	$(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS) $(LDFLAGS)
 
 debug: CFLAGS += $(DBGFLAGS)
-debug: $(NAME)
+debug: re
 
 clean:
 	rm -f $(OBJ)
