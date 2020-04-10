@@ -16,7 +16,7 @@ int main(int ac, char **av)
     (void) av;
     int error = 0;
     game_t game = init_struct(&error);
-
+    
     if (error == -1)
         return (84);
     show_window(&game);
