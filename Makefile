@@ -6,7 +6,7 @@
 ##
 
 ######### FLAGS #########
-CFLAGS	=	-Wall -Wextra -Werror -Wshadow -finline-functions
+CFLAGS	=	-Wall -Wextra  -Wshadow -finline-functions
 
 CPPFLAGS = -iquote $(IDIR)
 
@@ -20,6 +20,8 @@ SRC =	src/main.c				\
 		src/window.c			\
 		src/loading.c 			\
 		src/create_object.c 	\
+		src/fight/position.c	\
+		src/fight/init_fight.c	\
 
 OBJ = $(SRC:.c=.o)
 

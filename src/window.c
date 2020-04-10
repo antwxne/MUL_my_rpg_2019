@@ -10,6 +10,7 @@
 #include <SFML/Window.h>
 #include "game.h"
 #include "textures.h"
+#include "fight.h"
 
 static void display_window(sfRenderWindow *window)
 {
