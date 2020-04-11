@@ -10,6 +10,7 @@
 #include <SFML/Window.h>
 #include "game.h"
 #include "textures.h"
+#include "window.h"
 
 static void display_window(sfRenderWindow *window)
 {
@@ -30,8 +31,7 @@ int show_window(game_t *game)
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game->window, &game->event);
         display_window(game->window);
-        sfRenderWindow_drawSprite(game->window,
-        game->objects[PLAYER][MARIO].sprite, NULL);
+        create_menu(game->window, 4, start_menu_buttons, "assets/start_menu.jpg");
     }
     sfRenderWindow_destroy(game->window);
     return (0);

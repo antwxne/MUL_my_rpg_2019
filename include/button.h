@@ -12,12 +12,13 @@
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
-#include <stdbool.h>
 
 typedef struct button{
     sfVector2f position;
     sfVector2f size;
     sfColor color;
+    unsigned int character_size;
+    char *font_pathfile;
     char *text;
 }button_t;
 

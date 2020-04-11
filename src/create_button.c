@@ -6,8 +6,12 @@
 */
 
 #include "button.h"
+#include <SFML/Graphics.h>
+#include <SFML/System.h>
+#include <SFML/Audio.h>
+#include <SFML/Window.h>
 
-static bool is_the_mouse_in(sfRectangleShape *button, sfVector2f pos,
+static void is_the_mouse_in(sfRectangleShape *button, sfVector2f pos,
                             sfRenderWindow *window, sfColor color)
 {
     sfVector2i mouse_pos = sfMouse_getPositionRenderWindow(window);
@@ -19,18 +23,20 @@ static bool is_the_mouse_in(sfRectangleShape *button, sfVector2f pos,
         sfRectangleShape_setFillColor(button, sfTransparent);
 }
 
-void *create_button(button_t button_to_create, sfRenderWindow *window)
+void create_button(button_t button_to_create, sfRenderWindow *window)
 {
     sfRectangleShape *button = sfRectangleShape_create();
     sfText *button_text = sfText_create();
 
-    sfText_setFont(button_text, sfFont_createFromFile("assets/font.ttf"));
+    sfText_setFont(button_text,
+                    sfFont_createFromFile(button_to_create.font_pathfile));
     sfText_setString(button_text, button_to_create.text);
     sfText_setPosition(button_text, button_to_create.position);
+    sfText_setCharacterSize(button_text, button_to_create.character_size);
     sfRectangleShape_setPosition(button, button_to_create.position);
     sfRectangleShape_setSize(button, button_to_create.size);
     sfRectangleShape_setOutlineThickness(button, 1.0);
-    sfRectangleShape_setOutlinecolor(button, button_to_create.color);
+    sfRectangleShape_setOutlineColor(button, button_to_create.color);
     is_the_mouse_in(button, button_to_create.position, window,
                     button_to_create.color);
     sfRenderWindow_drawText(window, button_text, NULL);
