@@ -17,6 +17,7 @@ typedef struct button{
     sfVector2f position;
     sfVector2f size;
     sfColor color;
+    sfIntRect rect;
     unsigned int character_size;
     char *font_pathfile;
     char *text;
