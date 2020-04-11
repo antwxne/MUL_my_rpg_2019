@@ -15,5 +15,7 @@ game_t init_struct(int *ptr_err);
 int show_window(game_t *game);
 sfTexture ***create_texture(void);
 object_t **load_all_object(sfTexture ***textures);
+object_t copy_object(object_t const object);
+object_t *copy_n_object(object_t const object, unsigned int nb);
 
 #endif /* !MAIN_H_ */
