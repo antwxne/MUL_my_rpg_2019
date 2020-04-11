@@ -37,9 +37,7 @@ int show_window(game_t *game)
 {
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
-        manage_event(game->window, &game->event);
-        create_menu(game->window, 4, start_menu_buttons,
-            "assets/start_menu.jpg");
+        manage_event(&game->window, &game->event);
         manage_event(&game->window, &game->event);
         display_window(game->window);
     }
