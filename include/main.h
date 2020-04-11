@@ -17,5 +17,6 @@ sfTexture ***create_texture(void);
 object_t **load_all_object(sfTexture ***textures);
 object_t copy_object(object_t const object);
 object_t *copy_n_object(object_t const object, unsigned int nb);
+void change_window_size(sfRenderWindow **window, unsigned int const i);
 
 #endif /* !MAIN_H_ */

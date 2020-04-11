@@ -20,6 +20,7 @@ SRC =	src/main.c				\
 		src/window.c			\
 		src/loading.c 			\
 		src/create_object.c 	\
+		src/mod_window.c 		\
 
 OBJ = $(SRC:.c=.o)
 
