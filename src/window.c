@@ -12,7 +12,7 @@
 #include "main.h"
 #include "textures.h"
 #include "window.h"
-#include "option_menu.h"
+#include "pause_menu.h"
 
 static void display_window(sfRenderWindow *window)
 {
@@ -40,6 +40,7 @@ int show_window(game_t *game)
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(&game->window, &game->event);
         manage_event(&game->window, &game->event);
+        create_menu(game->window, 6, pause_menu_buttons, "assets/pause_menu.png");
         display_window(game->window);
     }
     sfRenderWindow_destroy(game->window);
