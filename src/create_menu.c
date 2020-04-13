@@ -6,7 +6,7 @@
 */
 
 #include "my.h"
-#include "menu.h"
+#include "button.h"
 
 static void create_menu_background(char *path, sfRenderWindow *window)
 {

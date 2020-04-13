@@ -12,6 +12,7 @@
 #include "main.h"
 #include "textures.h"
 #include "window.h"
+#include "option_menu.h"
 
 static void display_window(sfRenderWindow *window)
 {

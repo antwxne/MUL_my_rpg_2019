@@ -23,5 +23,6 @@ typedef struct button{
     char *text;
 }button_t;
 
+void create_button(button_t button_to_create, sfRenderWindow *window);
 
 #endif /* !BUTTON_H_ */
