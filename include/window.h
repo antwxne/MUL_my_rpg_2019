@@ -8,7 +8,7 @@
 #ifndef WINDOW_H_
 #define WINDOW_H_
 
-#include "menu.h"
+#include "button.h"
 
 void create_menu(sfRenderWindow *window, int nb_buttons, button_t const *button,
                 char *path);
