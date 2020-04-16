@@ -17,6 +17,9 @@ sfTexture ***create_texture(void);
 object_t **load_all_object(sfTexture ***textures);
 object_t copy_object(object_t const object);
 object_t *copy_n_object(object_t const object, unsigned int nb);
-void change_window_size(sfRenderWindow **window, unsigned int const i);
+sfRectangleShape *create_rect_shape(sfVector2f const info[],
+    float const thickness, sfColor const colors[]);
+sfVector2i get_pos_int_rect(sfIntRect const **rect_arr, sfVector2i const m_pos);
+void move_rect_on_mouse(sfVector2i const pos, sfRectangleShape **shape);
 
 #endif /* !MAIN_H_ */

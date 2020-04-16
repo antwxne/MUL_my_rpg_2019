@@ -11,7 +11,7 @@
 game_t init_struct(int *ptr_err)
 {
     game_t game;
-    sfVideoMode mode = {1900, 1000, 32};
+    sfVideoMode mode = {window_size_x, window_size_y, 32};
 
     game.textures = create_texture();
     if (game.textures == NULL) {
@@ -24,6 +24,5 @@ game_t init_struct(int *ptr_err)
         return (game);
     }
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
-    sfRenderWindow_setSize(game.window, (sfVector2u) {1920, 1080});
     return (game);
 }

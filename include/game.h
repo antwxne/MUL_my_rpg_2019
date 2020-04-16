@@ -38,4 +38,8 @@ typedef struct game{
     object_t **objects;
 } game_t;
 
+static const unsigned int window_size_x = 1920;
+static const unsigned int window_size_y = 1080;
+static const unsigned int rect_size = 50;
+
 #endif /* !GAME_H_ */
