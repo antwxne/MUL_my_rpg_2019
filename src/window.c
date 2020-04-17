@@ -41,9 +41,8 @@ int show_window(game_t *game)
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(&game->window, &game->event);
-        manage_event(&game->window, &game->event);
-        create_menu(game->window, 6, pause_menu_buttons,
-            "assets/pause_menu.png");
+        // create_menu(game->window, 6, pause_menu_buttons,
+        //     "assets/pause_menu.png");
         mouse_pos = sfMouse_getPositionRenderWindow(game->window);
         rect_pos = get_pos_int_rect(rect_arr, mouse_pos);
         move_rect_on_mouse(rect_pos, &shape);
@@ -51,6 +50,7 @@ int show_window(game_t *game)
         sfRenderWindow_drawRectangleShape(game->window, shape, NULL);
 
     }
+    free_rect_arr((sfIntRect **)rect_arr);
     sfRenderWindow_destroy(game->window);
     return (0);
 }
