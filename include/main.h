@@ -8,6 +8,7 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#include <stdbool.h>
 #include "game.h"
 
 object_t create_object(sfIntRect rect, sfVector2f position, sfTexture *texture);
@@ -21,5 +22,10 @@ sfRectangleShape *create_rect_shape(sfVector2f const info[],
     float const thickness, sfColor const colors[]);
 sfVector2i get_pos_int_rect(sfIntRect const **rect_arr, sfVector2i const m_pos);
 void move_rect_on_mouse(sfVector2i const pos, sfRectangleShape **shape);
+int **load_map(int **map, unsigned int map_nb);
+int **map_create(void);
+bool open_and_read_map(char const *filepath, read_t **list);
+void free_map(int **map);
+void free_rect_arr(sfIntRect **arr);
 
 #endif /* !MAIN_H_ */
