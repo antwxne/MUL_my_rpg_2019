@@ -27,5 +27,8 @@ int **map_create(void);
 bool open_and_read_map(char const *filepath, read_t **list);
 void free_map(int **map);
 void free_rect_arr(sfIntRect **arr);
+sfIntRect **create_rect_arr(void);
+void manage_rect(sfRenderWindow *window, sfIntRect const **rect_arr,
+    sfRectangleShape *shape);
 
 #endif /* !MAIN_H_ */

@@ -25,6 +25,7 @@ SRC =	src/main.c						\
 		src/rect/rect_arr.c				\
 		src/rect/rect_shape.c 			\
 		src/rect/free_rect_arr.c 		\
+		src/rect/manage_rect.c 			\
 		src/map/create_map.c 			\
 		src/map/free_map.c 				\
 		src/map/read_mapfile.c 			\

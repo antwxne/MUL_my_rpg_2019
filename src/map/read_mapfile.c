@@ -21,6 +21,16 @@ static unsigned int my_strlen_c(char const *str, char const c)
     return (len);
 }
 
+static float check_coord(int coord, unsigned int const max)
+{
+    if (coord < max)
+        return ((float) coord);
+    else {
+        my_putstr("invalid position\n");
+        return (-1000);
+    }
+}
+
 read_t *get_info_buffer(char *buff)
 {
     read_t *element = malloc(sizeof(read_t));
@@ -30,9 +40,9 @@ read_t *get_info_buffer(char *buff)
         return (NULL);
     element->type = my_getnbr(temp);
     temp = &temp[my_strlen_c(temp, ' ')];
-    element->pos.x = my_getnbr(temp);
+    element->pos.x = check_coord(my_getnbr(temp), window_size_x/rect_size+1);
     temp = &temp[my_strlen_c(temp, ' ')];
-    element->pos.y = my_getnbr(temp);
+    element->pos.y = check_coord(my_getnbr(temp), window_size_y/rect_size+1);
     return (element);
 }
 

@@ -36,6 +36,8 @@ typedef struct game{
     sfRenderWindow *window;
     sfTexture ***textures;
     object_t **objects;
+    sfIntRect const **rect_arr;
+    int **map;
 } game_t;
 
 typedef struct read {
@@ -46,6 +48,6 @@ typedef struct read {
 
 static const unsigned int window_size_x = 1920;
 static const unsigned int window_size_y = 1080;
-static const unsigned int rect_size = 50;
+static const unsigned int rect_size = 200;
 
 #endif /* !GAME_H_ */

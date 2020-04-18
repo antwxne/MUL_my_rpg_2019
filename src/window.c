@@ -30,27 +30,19 @@ static void manage_event(sfRenderWindow **window, sfEvent *event)
 
 int show_window(game_t *game)
 {
-    sfIntRect **create_rect_arr(void);
     sfRectangleShape *shape = create_rect_shape(
     (sfVector2f[2]) {{0, 0}, {rect_size, rect_size}},
         5, (sfColor[2]) {sfRed, sfWhite});
-    sfIntRect const **rect_arr = (sfIntRect const **) create_rect_arr();
-    sfVector2i mouse_pos = {0, 0};
-    sfVector2i rect_pos = {0, 0};
 
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(&game->window, &game->event);
         // create_menu(game->window, 6, pause_menu_buttons,
         //     "assets/pause_menu.png");
-        mouse_pos = sfMouse_getPositionRenderWindow(game->window);
-        rect_pos = get_pos_int_rect(rect_arr, mouse_pos);
-        move_rect_on_mouse(rect_pos, &shape);
         display_window(game->window);
-        sfRenderWindow_drawRectangleShape(game->window, shape, NULL);
-
+        manage_rect(game->window, game->rect_arr, shape);
     }
-    free_rect_arr((sfIntRect **)rect_arr);
+    free_rect_arr((sfIntRect **)game->rect_arr);
     sfRenderWindow_destroy(game->window);
     return (0);
 }
