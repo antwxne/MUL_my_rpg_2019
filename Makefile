@@ -22,6 +22,8 @@ SRC =	src/main.c				\
 		src/create_object.c 	\
 		src/fight/position.c	\
 		src/fight/init_fight.c	\
+		src/fight/key_press.c	\
+		src/fight/battle.c	\
 
 OBJ = $(SRC:.c=.o)
 
