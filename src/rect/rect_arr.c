@@ -10,7 +10,7 @@
 
 static sfIntRect **malloc_rect_arr(void)
 {
-    sfIntRect **arr = malloc(sizeof(sfIntRect *)*((window_size_y/rect_size)+1));
+    sfIntRect **arr = malloc(sizeof(sfIntRect *)*((window_size_y/rect_size)+2));
 
     if (!arr)
         return (NULL);
@@ -26,13 +26,15 @@ static sfIntRect **malloc_rect_arr(void)
 sfIntRect **create_rect_arr(void)
 {
     sfIntRect **arr = malloc_rect_arr();
+    unsigned int y = 0;
 
     if (!arr)
         return (NULL);
-    for (unsigned int y = 0; y < ((window_size_y / rect_size) + 1); y++)
+    for (; y < ((window_size_y / rect_size) + 1); y++)
         for ( unsigned int x = 0; x < ((window_size_x / rect_size) + 1); x++)
             arr[y][x] = (sfIntRect) {x*rect_size, y*rect_size,
                 rect_size, rect_size};
+    arr[y] = NULL;
     return (arr);
 }
 

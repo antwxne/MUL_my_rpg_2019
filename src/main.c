@@ -22,5 +22,6 @@ int main(int ac, char **av, char **env)
     if (error == -1)
         return (84);
     show_window(&game);
+    free_map(game.map);
     return (0);
 }
