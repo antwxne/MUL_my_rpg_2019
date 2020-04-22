@@ -11,19 +11,9 @@
 #include "game.h"
 #include "my.h"
 
-static unsigned int my_strlen_c(char const *str, char const c)
+static float check_coord(int coord, int const max)
 {
-    unsigned int len = 0;
-
-    if (str == NULL)
-        return (0);
-    for (; str[len] != '\0' && str[len] != c; len++);
-    return (len);
-}
-
-static float check_coord(int coord, unsigned int const max)
-{
-    if (coord < max)
+    if (coord < max && coord >= 0)
         return ((float) coord);
     else {
         my_putstr("invalid position\n");
@@ -34,15 +24,14 @@ static float check_coord(int coord, unsigned int const max)
 read_t *get_info_buffer(char *buff)
 {
     read_t *element = malloc(sizeof(read_t));
-    char *temp = &buff[0];
+    char **info = my_split(buff, ' ');
 
     if (!element || !buff)
         return (NULL);
-    element->type = my_getnbr(temp);
-    temp = &temp[my_strlen_c(temp, ' ')];
-    element->pos.x = check_coord(my_getnbr(temp), window_size_x/rect_size+1);
-    temp = &temp[my_strlen_c(temp, ' ')];
-    element->pos.y = check_coord(my_getnbr(temp), window_size_y/rect_size+1);
+    element->type = my_getnbr(info[0]);
+    element->pos.x = check_coord(my_getnbr(info[1]), window_size_x/rect_size+1);
+    element->pos.y = check_coord(my_getnbr(info[2]), window_size_y/rect_size+1);
+    free_char_arr(info, 0);
     return (element);
 }
 

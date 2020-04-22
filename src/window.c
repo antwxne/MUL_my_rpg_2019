@@ -33,7 +33,8 @@ int show_window(game_t *game)
     sfRectangleShape *shape = create_rect_shape(
     (sfVector2f[2]) {{0, 0}, {rect_size, rect_size}},
         5, (sfColor[2]) {sfRed, sfWhite});
-
+    game->objects = set_position_object(game->objects, (int const **) game->map,
+    game->rect_arr);
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(&game->window, &game->event);
@@ -41,6 +42,7 @@ int show_window(game_t *game)
         //     "assets/pause_menu.png");
         display_window(game->window);
         manage_rect(game->window, game->rect_arr, shape);
+        display(game->window, game->objects);
     }
     free_rect_arr((sfIntRect **)game->rect_arr);
     sfRenderWindow_destroy(game->window);

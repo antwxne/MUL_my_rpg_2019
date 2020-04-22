@@ -19,14 +19,7 @@ int main(int ac, char **av)
 
     if (error == -1)
         return (84);
-    int **map = map_create();
-    map = load_map(map, 0);
-    for (unsigned int y = 0; map[y]; y++) {
-        for(unsigned int x = 0; map[y][x] != -1; x++)
-            printf("%d", map[y][x]);
-        printf("\n");
-    }
-    free_map(map);
     show_window(&game);
+    free_map(game.map);
     return (0);
 }

@@ -15,21 +15,23 @@ DBGFLAGS = -g3 -ggdb
 LDFLAGS = -L lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 ######### SOURCES #########
-SRC =	src/main.c						\
-		src/init_struct.c				\
-		src/window.c					\
-		src/loading.c 					\
-		src/object/create_object.c 		\
-		src/create_button.c				\
-		src/create_menu.c				\
-		src/rect/rect_arr.c				\
-		src/rect/rect_shape.c 			\
-		src/rect/free_rect_arr.c 		\
-		src/rect/manage_rect.c 			\
-		src/map/create_map.c 			\
-		src/map/free_map.c 				\
-		src/map/read_mapfile.c 			\
-		src/map/set_map.c 				\
+SRC =	src/main.c							\
+		src/init_struct.c					\
+		src/window.c						\
+		src/loading.c 						\
+		src/display.c 						\
+		src/object/create_object.c 			\
+		src/object/set_position_object.c 	\
+		src/create_button.c					\
+		src/create_menu.c					\
+		src/rect/rect_arr.c					\
+		src/rect/rect_shape.c 				\
+		src/rect/free_rect_arr.c 			\
+		src/rect/manage_rect.c 				\
+		src/map/create_map.c 				\
+		src/map/free_map.c 					\
+		src/map/read_mapfile.c 				\
+		src/map/set_map.c 					\
 
 OBJ = $(SRC:.c=.o)
 

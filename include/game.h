@@ -34,7 +34,7 @@ typedef struct object {
 typedef struct game{
     sfEvent event;
     sfRenderWindow *window;
-    sfTexture ***textures;
+    sfTexture **textures;
     object_t **objects;
     sfIntRect const **rect_arr;
     int **map;
@@ -48,6 +48,7 @@ typedef struct read {
 
 static const unsigned int window_size_x = 1920;
 static const unsigned int window_size_y = 1080;
-static const unsigned int rect_size = 200;
+static const unsigned int rect_size = 50;
+static const unsigned int number_objects = 10;
 
 #endif /* !GAME_H_ */
