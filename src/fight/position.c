@@ -11,10 +11,35 @@
 #include "textures.h"
 #include "fight.h"
 
-static const sfIntRect rect[] = {{500, 400, 250, 250},
-                                 {850, 400, 250, 250},
-                                 {1200, 400, 250, 250},
+static const sfVector2f place[] = {{500, 400},
+                                    {850, 400},
+                                    {1200, 400},
+                                    {1500, 100},
+                                    {850, 100},
 };
+
+static const sfVector2f sizes[] = {{250, 250},
+                                    {250, 250},
+                                    {250, 250},
+                                    {400, 100},
+                                    {150, 150},
+};
+
+static const sfColor color_out[] = {{255, 0, 0, 100},
+                                    {53, 76, 231, 100},
+                                    {53, 237, 130, 100},
+                                    {53, 237, 130, 100},
+                                    {53, 100, 189, 100},
+};
+
+static const sfColor color_fil[] = {{255, 0, 0, 80},
+                                    {53, 76, 231, 80},
+                                    {53, 237, 130, 80},
+                                    {53, 237, 130, 80},
+                                    {53, 100, 189, 100},
+};
+
+static const int nb_rect = 5;
 
 void get_mainposition(sfSprite *sprite, int x, int y)
 {
@@ -40,48 +65,35 @@ sfColor color_outline, sfColor color_fill)
     return (shape);
 }
 
-static void touch(rectangle_t *rec, sfRenderWindow *window)
+void change_color(rectangle_t *rects)
 {
-    sfVector2i posi = sfMouse_getPositionRenderWindow(fenetre->window);
-
-    if (sfIntRect_contains(&rect[0], posi.x, posi.y) == sfTrue)
-        sfRectangleShape_setScale(rec->fight_rects[0], (sfVector2f) {1.1, 1.1});
-    else
-        sfRectangleShape_setScale(rec->fight_rects[0], (sfVector2f) {1, 1});
-    if (sfIntRect_contains(&rect[1], posi.x, posi.y) == sfTrue)
-        sfRectangleShape_setScale(rec->fight_rects[1], (sfVector2f) {1.1, 1.1});
-    else
-        sfRectangleShape_setScale(rec->fight_rects[1], (sfVector2f) {1, 1});
-    if (sfIntRect_contains(&rect[2], posi.x, posi.y) == sfTrue)
-        sfRectangleShape_setScale(rec->fight_rects[2], (sfVector2f) {1.1, 1.1});
-    else
-        sfRectangleShape_setScale(rec->fight_rects[2], (sfVector2f) {1, 1});
+    for (int i = 0; i < 3; i++) {
+        sfRectangleShape_setOutlineColor(rects->fight_rects[i], color_out[i]);
+        sfRectangleShape_setFillColor(rects->fight_rects[i], color_fil[i]);
+    }
 }
 
 int init_rectangle(rectangle_t *rects)
 {
-    rects->fight_rects = malloc(sizeof(sfRectangleShape *) * 4);
+    rects->fight_rects = malloc(sizeof(sfRectangleShape *) * nb_rect);
     if (rects->fight_rects == NULL)
         return 84;
-    rects->fight_rects[0] = create_fight_rect_shape((sfVector2f) {500, 400},
-    (sfVector2f) {250, 250}, (sfColor) {255, 0, 0, 100},
-    (sfColor) {255, 0, 0, 80} );
-    rects->fight_rects[1] = create_fight_rect_shape((sfVector2f) {850, 400},
-    (sfVector2f) {250, 250}, (sfColor) {53, 76, 231, 100},
-    (sfColor) {53, 76, 231, 80});
-    rects->fight_rects[2] = create_fight_rect_shape((sfVector2f) {1200, 400},
-    (sfVector2f) {250, 250}, (sfColor) {53, 237, 130, 100},
-    (sfColor) {53, 237, 130, 80});
-    rects->fight_rects[3] = create_fight_rect_shape((sfVector2f) {1500, 100},
-    (sfVector2f) {400,100}, (sfColor) {53, 237, 130, 100},
-    (sfColor) {53, 237, 130, 80});
+    for (int i = 0; i != nb_rect; i++)
+        rects->fight_rects[i] = create_fight_rect_shape(place[i], sizes[i],
+                                color_out[i], color_fil[i]);
     return 0;
 }
 
 int try(game_t *png, rectangle_t *rects)
 {
+    int status = get_status(rects, png->event, png->window);
+
     get_mainposition(png->objects[PLAYER][MARIO].sprite, 800, 800);
-    touch(rects, png->);
+    touch(rects, png);
+    if (rects->etat == false)
+        life_time(rects, status, png->window);
+    if (rects->etat == true)
+        change_color(rects);
     sfRenderWindow_drawRectangleShape(png->window, rects->fight_rects[0], NULL);
     sfRenderWindow_drawRectangleShape(png->window, rects->fight_rects[1], NULL);
     sfRenderWindow_drawRectangleShape(png->window, rects->fight_rects[2], NULL);
