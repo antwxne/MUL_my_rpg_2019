@@ -48,7 +48,7 @@ typedef struct read {
 
 static const unsigned int window_size_x = 1920;
 static const unsigned int window_size_y = 1080;
-static const unsigned int rect_size = 50;
+static const unsigned int rect_size = 80;
 static const unsigned int number_objects = 10;
 
 #endif /* !GAME_H_ */

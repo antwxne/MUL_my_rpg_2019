@@ -8,6 +8,14 @@
 #include <stdlib.h>
 #include "game.h"
 
+static sfVector2f central_position(sfVector2f obj_pos, sfIntRect obj_rect,
+    sfIntRect rect)
+{
+    obj_pos.x += (rect.width - obj_rect.width) / 2;
+    obj_pos.y += (rect.height - obj_rect.height) / 2;
+    return (obj_pos);
+}
+
 static int get_object(object_t const *objects)
 {
     int nb_object = 0;
@@ -26,6 +34,8 @@ static object_t *set_on_rect(object_t *objects, sfIntRect rect)
         return (objects);
     objects[nb_obj].position.x = rect.left;
     objects[nb_obj].position.y = rect.top;
+    objects[nb_obj].position = central_position(objects[nb_obj].position,
+        objects[nb_obj].rect, rect);
     sfSprite_setPosition(objects[nb_obj].sprite, objects[nb_obj].position);
     return (objects);
 }
