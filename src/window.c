@@ -11,7 +11,6 @@
 #include "game.h"
 #include "main.h"
 #include "textures.h"
-#include "fight.h"
 #include "window.h"
 #include "pause_menu.h"
 

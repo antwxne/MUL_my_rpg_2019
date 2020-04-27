@@ -32,8 +32,6 @@ SRC =	src/main.c							\
 		src/map/free_map.c 					\
 		src/map/read_mapfile.c 				\
 		src/map/set_map.c 					\
-		src/fight/position.c	\
-		src/fight/init_fight.c	\
 
 OBJ = $(SRC:.c=.o)
 
