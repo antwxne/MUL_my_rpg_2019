@@ -8,13 +8,22 @@
 #include "game.h"
 #include "main.h"
 
+static bool init_array(game_t *game)
+{
+    game->rect_arr = (sfIntRect const **) create_rect_arr();
+    game->map = load_map(map_create(), 0);
+    if (!game->map || !game->rect_arr)
+        return (false);
+    return (true);
+}
+
 game_t init_struct(int *ptr_err)
 {
     game_t game;
-    sfVideoMode mode = {1920, 1080, 32};
+    sfVideoMode mode = {window_size_x, window_size_y, 32};
 
     game.textures = create_texture();
-    if (game.textures == NULL) {
+    if (game.textures == NULL || !init_array(&game)) {
         *ptr_err = -1;
         return (game);
     }

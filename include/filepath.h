@@ -7,9 +7,7 @@
 
 #ifndef FILEPATH_H_
 #define FILEPATH_H_
-
-static const char *fp_player[] = {"assets/mario.png",
-                                NULL};
+#include <SFML/Graphics.h>
 
 static const char *combat[] = {
     "assets/ciseau.png",
@@ -17,8 +15,15 @@ static const char *combat[] = {
     "papyrus.png",
     NULL};
 
-static const char **fp[] = {fp_player,
-                            combat,
+static const char *fp[] = {"assets/player.png",
+                            "assets/enemi.png",
+                            "assets/house.png",
                             NULL};
+
+static const sfIntRect textures_rects[] = {
+        {62, 545, 33, 33},
+        {0, 0, 44, 46},
+        {0, 0, 66, 76},
+};
 
 #endif /* !FILEPATH_H_ */

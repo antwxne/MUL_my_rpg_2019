@@ -44,7 +44,7 @@ static const sfColor color_out[] = {
     {53, 150, 9, 100},
     {90, 100, 150, 100},
     {90, 100, 150, 100},
-    {100, 100, 100, 100},
+    {100, 100, 100, 100 },
 };
 
 static const sfColor color_fil[] = {

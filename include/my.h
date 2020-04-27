@@ -38,6 +38,9 @@ int *decToBinary(int n);
 int my_intlen(int o);
 char *my_itoa(int o);
 int *dec_to_binary(int n);
+char **my_split(char *str, char c);
+unsigned int my_strlen_c(char const *str, char const c);
+void free_char_arr(char **arr, unsigned int start);
 
 /* linked list */
 

@@ -12,10 +12,8 @@
 
 enum object_type {
     PLAYER,
-};
-
-enum player {
-    MARIO,
+    ENEMI,
+    HOUSE,
 };
 
 #endif /* !ASSETS_H_ */
