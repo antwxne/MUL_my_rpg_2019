@@ -21,8 +21,11 @@ int initia_fight(rectangle_t *rect)
     if (init_rectangle(rect) == 84)
         return 84;
     rect->etat = true;
+    rect->god = true;
+    rect->consequence = true;
     rect->life_clock = sfClock_create();
     rect->message = 0;
+    rect->battle_status = 0;
     init_ennemies(rect);
     return 0;
 }

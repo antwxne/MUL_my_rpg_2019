@@ -24,9 +24,12 @@ enum ennemies_nbr{
 typedef struct rectangle {
     sfRectangleShape **fight_rects;
     bool etat;
+    bool god;
+    bool consequence;
     sfClock *life_clock;
     int message;
     int *life_ennemie;
+    int battle_status;
 } rectangle_t;
 
 void get_mainposition(sfSprite *sprite, int x, int y);
@@ -34,6 +37,7 @@ int initia_fight(rectangle_t *rect);
 int init_rectangle(rectangle_t *rects);
 void touch(rectangle_t *rec, game_t *game);
 int get_status(rectangle_t *rec, sfEvent event, sfRenderWindow *window);
-void life_time(rectangle_t *rects, int status, sfRenderWindow *window);
+void life_time(rectangle_t *rects);
+void get_echap(game_t *png, rectangle_t *rects);
 
 #endif /* !FIGHT_H_ */

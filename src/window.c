@@ -27,12 +27,16 @@ static void manage_event(sfRenderWindow *window, sfEvent *event)
 
 int show_window(game_t *game)
 {
+    rectangle_t rect;
+
+    initia_fight(&rect);
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game->window, &game->event);
         display_window(game->window);
         sfRenderWindow_drawSprite(game->window,
         game->objects[PLAYER][MARIO].sprite, NULL);
+        try(game, &rect);
     }
     sfRenderWindow_destroy(game->window);
     return (0);

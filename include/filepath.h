@@ -11,10 +11,11 @@
 static const char *fp_player[] = {"assets/mario.png",
                                 NULL};
 
-static const char *combat[] = {"assets/ciseau.png",
-                               "pierre.png",
-                               "papyrus.png",
-                               NULL};
+static const char *combat[] = {
+    "assets/ciseau.png",
+    "pierre.png",
+    "papyrus.png",
+    NULL};
 
 static const char **fp[] = {fp_player,
                             combat,
