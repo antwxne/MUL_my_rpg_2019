@@ -7,6 +7,7 @@
 
 #include "game.h"
 #include "main.h"
+#include "textures.h"
 
 static bool init_array(game_t *game)
 {
@@ -17,18 +18,27 @@ static bool init_array(game_t *game)
     return (true);
 }
 
+static bool init_obj_and_player(game_t *game)
+{
+    game->textures = create_texture();
+    if (!game->textures)
+        return (false);
+    game->objects = load_all_object(game->textures);
+    if (!game->objects)
+        return (false);
+    game->objects = set_position_object(game->objects, (int const **) game->map,
+    game->rect_arr);
+    if (!create_player(&game->player, game->objects[PLAYER][0], game->map))
+        return (false);
+    return (true);
+}
+
 game_t init_struct(int *ptr_err)
 {
     game_t game;
     sfVideoMode mode = {window_size_x, window_size_y, 32};
 
-    game.textures = create_texture();
-    if (game.textures == NULL || !init_array(&game)) {
-        *ptr_err = -1;
-        return (game);
-    }
-    game.objects = load_all_object(game.textures);
-    if (game.objects == NULL) {
+    if (!init_array(&game) || !init_obj_and_player(&game)) {
         *ptr_err = -1;
         return (game);
     }

@@ -40,8 +40,11 @@ typedef struct object {
 } object_t;
 
 typedef struct player {
-    object_t objet;
+    object_t ptr_obj;
     sfVector2u pos_arr;
+    int dir;
+    sfVector2f reach;
+    sfClock *clock;
 } player_t;
 
 typedef struct game{
@@ -50,6 +53,7 @@ typedef struct game{
     sfTexture **textures;
     object_t **objects;
     sfIntRect const **rect_arr;
+    player_t player;
     int **map;
 } game_t;
 
@@ -63,5 +67,7 @@ static const unsigned int window_size_x = 1920;
 static const unsigned int window_size_y = 1080;
 static const unsigned int rect_size = 80;
 static const unsigned int number_objects = 10;
+static const float time_clock_player = 0.1;
+static const unsigned int offset_move_player = 2;
 
 #endif /* !GAME_H_ */
