@@ -8,24 +8,22 @@
 #include "game.h"
 #include "main.h"
 
-bool check_move(int **map, sfVector2u pos, int dir);
-
 static void move(object_t *object, int dir)
 {
     if (dir == UP) {
-        object->position.y -= 1;
+        object->position.y -= offset_move_player;
         sfSprite_setPosition(object->sprite, object->position);
     }
     if (dir == DOWN) {
-        object->position.y += 1;
+        object->position.y += offset_move_player;
         sfSprite_setPosition(object->sprite, object->position);
     }
     if (dir == LEFT) {
-        object->position.x -= 1;
+        object->position.x -= offset_move_player;
         sfSprite_setPosition(object->sprite, object->position);
     }
     if (dir == RIGHT) {
-        object->position.x += 1;
+        object->position.x += offset_move_player;
         sfSprite_setPosition(object->sprite, object->position);
     }
 }
@@ -43,7 +41,7 @@ void move_player(player_t *player)
     time = sfClock_getElapsedTime(player->clock);
     seconds = time.microseconds / 100000.0;
     if (can_move(player->reach, player->ptr_obj.position) ||
-    seconds > 0.1) {
+    seconds > time_clock_player) {
         move(&player->ptr_obj, player->dir);
         sfClock_restart(player->clock);
     }
