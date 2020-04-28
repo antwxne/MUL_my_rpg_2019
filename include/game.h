@@ -40,8 +40,11 @@ typedef struct object {
 } object_t;
 
 typedef struct player {
-    object_t objet;
+    object_t ptr_obj;
     sfVector2u pos_arr;
+    int dir;
+    sfVector2f reach;
+    sfClock *clock;
 } player_t;
 
 typedef struct game{
@@ -50,6 +53,7 @@ typedef struct game{
     sfTexture **textures;
     object_t **objects;
     sfIntRect const **rect_arr;
+    player_t player;
     int **map;
 } game_t;
 

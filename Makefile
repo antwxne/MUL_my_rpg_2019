@@ -22,6 +22,9 @@ SRC =	src/main.c							\
 		src/display.c 						\
 		src/object/create_object.c 			\
 		src/object/set_position_object.c 	\
+		src/object/check_move.c 			\
+		src/object/move_player.c 			\
+		src/object/create_player.c 			\
 		src/create_button.c					\
 		src/create_menu.c					\
 		src/rect/rect_arr.c					\
@@ -32,6 +35,8 @@ SRC =	src/main.c							\
 		src/map/free_map.c 					\
 		src/map/read_mapfile.c 				\
 		src/map/set_map.c 					\
+		src/event/key_move.c 				\
+		src/event/management.c 				\
 
 OBJ = $(SRC:.c=.o)
 
