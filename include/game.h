@@ -13,9 +13,17 @@
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
 
-typedef enum dir_anim {
+typedef enum dir_move {
+    NONE = -1,
+    UP,
+    DOWN,
     LEFT,
-    TOP,
+    RIGHT,
+} dir_move_t;
+
+typedef enum dir_anim {
+    LEFT_ANIM,
+    TOP_ANIM,
 } dir_anim_t;
 
 typedef struct anim {
@@ -30,6 +38,11 @@ typedef struct object {
     sfVector2f position;
     sfIntRect rect;
 } object_t;
+
+typedef struct player {
+    object_t objet;
+    sfVector2u pos_arr;
+} player_t;
 
 typedef struct game{
     sfEvent event;
