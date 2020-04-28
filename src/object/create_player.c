@@ -21,10 +21,10 @@ static sfVector2u get_pos_player(int **map)
 
 bool create_player(player_t *player, object_t obj, int **map)
 {
-    player->ptr_obj = obj;
+    player->obj = obj;
     player->dir = NONE;
     player->clock = sfClock_create();
-    player->reach = player->ptr_obj.position;
+    player->reach = player->obj.position;
     player->pos_arr = get_pos_player(map);
     return (player->pos_arr.x == 10000 ? false : true);
 }

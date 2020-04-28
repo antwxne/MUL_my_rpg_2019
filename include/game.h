@@ -21,17 +21,6 @@ typedef enum dir_move {
     RIGHT,
 } dir_move_t;
 
-typedef enum dir_anim {
-    LEFT_ANIM,
-    TOP_ANIM,
-} dir_anim_t;
-
-typedef struct anim {
-    int offset;
-    int max;
-    float time_clock;
-} anim_t;
-
 typedef struct object {
     sfSprite *sprite;
     sfTexture *texture;
@@ -40,7 +29,7 @@ typedef struct object {
 } object_t;
 
 typedef struct player {
-    object_t ptr_obj;
+    object_t obj;
     sfVector2u pos_arr;
     int dir;
     sfVector2f reach;
