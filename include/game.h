@@ -42,7 +42,7 @@ typedef struct object {
 typedef struct player {
     object_t objet;
     sfVector2u pos_arr;
-}
+} player_t;
 
 typedef struct game{
     sfEvent event;
