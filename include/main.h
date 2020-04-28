@@ -36,7 +36,7 @@ void display(sfRenderWindow *window, object_t **objects);
 void move_player(player_t *player);
 bool check_move(int **map, sfVector2u pos, int dir);
 void manage_event(game_t *game);
-void manage_key_player(player_t *player, int **map);
+void manage_key_player(player_t *player, int ***map);
 bool create_player(player_t *player, object_t obj, int **map);
 
 #endif /* !MAIN_H_ */

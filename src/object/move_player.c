@@ -25,7 +25,7 @@ static void move(object_t *object, int dir)
         sfSprite_setPosition(object->sprite, object->position);
     }
     if (dir == RIGHT) {
-        object->position.y += 1;
+        object->position.x += 1;
         sfSprite_setPosition(object->sprite, object->position);
     }
 }

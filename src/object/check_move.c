@@ -36,7 +36,7 @@ static bool check_left(int **map, sfVector2u pos)
 static bool check_right(int **map, sfVector2u pos)
 {
     if (map[pos.y][pos.x + 1] != -1)
-        if (map[pos.y + 1][pos.x] == 0)
+        if (map[pos.y][pos.x + 1] == 0)
             return (true);
     return (false);
 }
