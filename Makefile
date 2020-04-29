@@ -38,6 +38,7 @@ SRC =	src/main.c							\
 		src/fight/battle.c	\
 		src/fight/god_mode.c	\
 		src/fight/status_battle.c	\
+		src/fight/set_sprite.c	\
 
 OBJ = $(SRC:.c=.o)
 

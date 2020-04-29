@@ -8,9 +8,9 @@
 #include "game.h"
 #include "fight.h"
 
-static const sfIntRect rect[] = {{500, 400, 250, 250},
-                                {850, 400, 250, 250},
-                                {1200, 400, 250, 250},
+static const sfIntRect rect[] = {{500, 710, 250, 250},
+                                {850, 710, 250, 250},
+                                {1200, 710, 250, 250},
 };
 
 void touch(rectangle_t *rec, game_t *game)

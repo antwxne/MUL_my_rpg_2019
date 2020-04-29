@@ -14,6 +14,14 @@ enum object_type {
     PLAYER,
     ENEMI,
     HOUSE,
+    ROCK,
+    PAPYRUS,
+    CUTER,
+    PEGY,
+    EN_1,
+    DEAFET,
+    VICTORY,
+    EQUALITY,
 };
 
 #endif /* !ASSETS_H_ */
