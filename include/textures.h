@@ -24,6 +24,7 @@ enum object_type {
     EQUALITY,
     SHEEP,
     MERMS,
+    FIRST_MAP,
 };
 
 #endif /* !ASSETS_H_ */
