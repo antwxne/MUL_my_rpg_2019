@@ -44,6 +44,7 @@ typedef struct game{
     sfIntRect const **rect_arr;
     player_t player;
     int **map;
+    int nb_map;
 } game_t;
 
 typedef struct read {

@@ -40,6 +40,8 @@ SRC =	src/main.c									\
 		src/map/set_map.c 							\
 		src/event/key_move.c 						\
 		src/event/management.c 						\
+		src/event/manage_key.c 						\
+		src/save/save_game.c 						\
 
 OBJ = $(SRC:.c=.o)
 

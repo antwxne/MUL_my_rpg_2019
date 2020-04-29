@@ -45,5 +45,7 @@ void move_left_rect_l(object_t *object, int offset, int reset);
 void move_top_rect_d(object_t *object, int offset, int max);
 void move_top_rect_u(object_t *object, int offset, int reset);
 void set_rect_player(player_t *player, int dir);
+void manage_key(game_t *game);
+void save_map(game_t *game);
 
 #endif /* !MAIN_H_ */

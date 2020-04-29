@@ -14,6 +14,6 @@ void manage_event(game_t *game)
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
         if (game->event.type == sfEvtKeyPressed)
-            manage_key_player(&game->player, &game->map);
+            manage_key(game);
     }
 }
