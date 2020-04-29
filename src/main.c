@@ -9,6 +9,11 @@
 #include <SFML/System.h>
 #include <SFML/Window.h>
 #include "main.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int main(int ac, char **av, char **env)
 {
@@ -16,7 +21,12 @@ int main(int ac, char **av, char **env)
     (void) av;
     int error = 0;
     game_t game = init_struct(&error);
+    int fd = open("/dev/random", O_RDONLY);
 
+    if (fd == -1)
+        return 84;
+    read(fd, &fd, 1);
+    srand(fd);
     if (env[0] == NULL)
         return (84);
     if (error == -1)

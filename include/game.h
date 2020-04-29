@@ -12,6 +12,7 @@
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
+#include <stdbool.h>
 
 typedef enum dir_move {
     NONE = -1,
@@ -36,6 +37,18 @@ typedef struct player {
     sfClock *clock[2];
 } player_t;
 
+typedef struct rectangle {
+    sfRectangleShape **fight_rects;
+    bool etat;
+    bool god;
+    bool consequence;
+    sfClock *life_clock;
+    int message;
+    int *life_ennemie;
+    int *def_ennemie;
+    int battle_status;
+} rectangle_t;
+
 typedef struct game{
     sfEvent event;
     sfRenderWindow *window;
@@ -45,6 +58,7 @@ typedef struct game{
     player_t player;
     int **map;
     int nb_map;
+    rectangle_t fight;
 } game_t;
 
 typedef struct read {

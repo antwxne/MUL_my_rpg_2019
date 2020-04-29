@@ -45,7 +45,15 @@ SRC =	src/main.c									\
 		src/particule/particule.c					\
 		src/particule/particule_update.c			\
 		src/particule/free_particule.c				\
-
+		src/fight/position.c	\
+		src/fight/init_fight.c	\
+		src/fight/key_press.c	\
+		src/fight/battle.c	\
+		src/fight/god_mode.c	\
+		src/fight/status_battle.c	\
+		src/fight/set_sprite.c	\
+		src/fight/main_fight.c	\
+		
 OBJ = $(SRC:.c=.o)
 
 NAME =	my_rpg

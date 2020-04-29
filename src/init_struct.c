@@ -5,6 +5,7 @@
 ** init_struct
 */
 
+#include "fight.h"
 #include "game.h"
 #include "main.h"
 #include "textures.h"
@@ -42,6 +43,7 @@ game_t init_struct(int *ptr_err)
         *ptr_err = -1;
         return (game);
     }
+    initia_fight(&game.fight);
     game.nb_map = 0;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(game.window, 60);
