@@ -4,22 +4,29 @@
 ** File description:
 ** init
 */
-
-#include "fight.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include "fight.h"
+#include "game.h"
 
-static const int nbr_enn = 1;
+static const int nbr_enn = 3;
 
-void init_ennemies(rectangle_t *rect)
+int init_ennemies(rectangle_t *rect)
 {
-    rect->life_ennemie = malloc(sizeof(int) * nbr_enn);
-    rect->life_ennemie[tarentula] = 400;
+    if ((rect->life_ennemie = malloc(sizeof(int) * nbr_enn)) == NULL)
+        return 1;
+    rect->def_ennemie = malloc(sizeof(int) * nbr_enn);
+    for (int i = 0; i <= 2; i++)
+        rect->life_ennemie[i] = 400;
+    rect->def_ennemie[MERMS_DEF] = 50;
+    rect->def_ennemie[SHEEP_DEF] = 40;
+    rect->def_ennemie[PIGS_DEF] = 60;
+    return 0;
 }
 
 int initia_fight(rectangle_t *rect)
 {
-    if (init_rectangle(rect) == 84)
-        return 84;
+    init_rectangle(rect);
     rect->etat = true;
     rect->god = true;
     rect->consequence = true;

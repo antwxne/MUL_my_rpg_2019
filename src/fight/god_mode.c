@@ -25,3 +25,14 @@ void get_echap(game_t *png, rectangle_t *rects)
         status = 1;
     }
 }
+
+void god_moding(rectangle_t *rects, int ennemies, sfRenderWindow *window,
+                object_t **objects)
+{
+    rects->life_ennemie[ennemies] -= rects->life_ennemie[ennemies];
+    sfRectangleShape_setSize(rects->fight_rects[3],
+                            (sfVector2f) {rects->life_ennemie[ennemies], 100});
+    sfRenderWindow_drawRectangleShape(window, rects->fight_rects[8], NULL);
+    sfRenderWindow_drawSprite(window, objects[VICTORY][0].sprite, NULL);
+
+}

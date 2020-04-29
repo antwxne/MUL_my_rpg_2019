@@ -110,33 +110,4 @@ void set_position(int x, int y, sfSprite *sprite)
     position.x = x;
     position.y = y;
     sfSprite_setPosition(sprite, position);
-
-}
-
-int try(game_t *png, rectangle_t *rects, int name_ennemies, int ennemies_damage)
-{
-    int status = get_status(rects, png->event, png->window);
-
-    position_sprite(png);
-    sfRenderWindow_drawSprite(png->window, png->objects[PEGY][0].sprite, NULL);
-    touch(rects, png);
-    sfRenderWindow_drawSprite(png->window, png->objects[EN_1][0].sprite, NULL);
-    if (rects->etat == false) {
-        life_time(rects);
-        battle_prin(rects, png->window, png->objects);
-    }
-    state_effect(rects, status, name_ennemies, ennemies_damage);
-    if (rects->etat == true)
-        change_color(rects);
-    for (int i = 0; i <= 3; i++)
-    sfRenderWindow_drawRectangleShape(png->window, rects->fight_rects[i], NULL);
-    sfRenderWindow_drawRectangleShape(png->window, rects->fight_rects[6], NULL);
-    sfRenderWindow_drawSprite(png->window, png->objects[ROCK][0].sprite, NULL);
-    sfRenderWindow_drawSprite(png->window, png->objects[PAPYRUS][0].sprite, NULL);
-    sfRenderWindow_drawSprite(png->window, png->objects[CUTER][0].sprite, NULL);
-    get_echap(png, rects);
-    if (rects->god == false)
-        sfRenderWindow_drawRectangleShape(png->window,
-        rects->fight_rects[5], NULL);
-    return 0;
 }

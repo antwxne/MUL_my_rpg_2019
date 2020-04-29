@@ -52,7 +52,7 @@ int battle(int status, rectangle_t *rects)
 
 void damage(rectangle_t *rects, int ennemies, int deg_ennemies)
 {
-    static int life_bibi = 100;
+    static int life_bibi = 400;
     int defense_bibi = 70;
     int degat_bibi = 50;
 
@@ -65,14 +65,15 @@ void damage(rectangle_t *rects, int ennemies, int deg_ennemies)
         (sfVector2f) {life_bibi, 100});
     }
     if (rects->message == 2) {
-        rects->life_ennemie[ennemies] -= degat_bibi;
+        rects->life_ennemie[ennemies] -= (degat_bibi -
+        (rects->def_ennemie[ennemies] / 5));
         sfRectangleShape_setSize(rects->fight_rects[3],
         (sfVector2f) {rects->life_ennemie[ennemies], 100});
         rects->battle_status = 3;
     }
 }
 
-void life_time(rectangle_t *rects)
+int life_time(rectangle_t *rects, int ennemies)
 {
     sfTime time;
     float seconds;
@@ -83,5 +84,8 @@ void life_time(rectangle_t *rects)
         rects->etat = true;
         rects->battle_status = 0;
         sfClock_restart(rects->life_clock);
+        if (rects->life_ennemie[ennemies] <= 0)
+            return 1;
     }
+    return 0;
 }

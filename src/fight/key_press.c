@@ -8,9 +8,10 @@
 #include "game.h"
 #include "fight.h"
 
-static const sfIntRect rect[] = {{500, 710, 250, 250},
-                                {850, 710, 250, 250},
-                                {1200, 710, 250, 250},
+static const sfIntRect rect[] = {
+    {500, 710, 250, 250},
+    {850, 710, 250, 250},
+    {1200, 710, 250, 250},
 };
 
 void touch(rectangle_t *rec, game_t *game)
@@ -18,10 +19,11 @@ void touch(rectangle_t *rec, game_t *game)
     sfVector2i posi = sfMouse_getPositionRenderWindow(game->window);
 
     for (int i = 0; i < 3; i++)
-    if (sfIntRect_contains(&rect[i], posi.x, posi.y) == sfTrue)
-        sfRectangleShape_setScale(rec->fight_rects[i], (sfVector2f) {1.1, 1.1});
-    else
-        sfRectangleShape_setScale(rec->fight_rects[i], (sfVector2f) {1, 1});
+        if (sfIntRect_contains(&rect[i], posi.x, posi.y) == sfTrue)
+            sfRectangleShape_setScale(rec->fight_rects[i],
+            (sfVector2f) {1.1, 1.1});
+        else
+            sfRectangleShape_setScale(rec->fight_rects[i], (sfVector2f) {1, 1});
 }
 
 int get_status(rectangle_t *rec, sfEvent event, sfRenderWindow *window)
