@@ -33,7 +33,7 @@ typedef struct player {
     sfVector2u pos_arr;
     int dir;
     sfVector2f reach;
-    sfClock *clock;
+    sfClock *clock[2];
 } player_t;
 
 typedef struct game{
@@ -57,6 +57,7 @@ static const unsigned int window_size_y = 1080;
 static const unsigned int rect_size = 80;
 static const unsigned int number_objects = 10;
 static const float time_clock_player = 0.1;
+static const float time_anim_player = 0.1;
 static const unsigned int offset_move_player = 2;
 
 #endif /* !GAME_H_ */

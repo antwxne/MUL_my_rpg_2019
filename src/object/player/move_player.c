@@ -38,12 +38,12 @@ void move_player(player_t *player)
     sfTime time;
     float seconds;
 
-    time = sfClock_getElapsedTime(player->clock);
+    time = sfClock_getElapsedTime(player->clock[0]);
     seconds = time.microseconds / 100000.0;
     if (can_move(player->reach, player->obj.position) ||
     seconds > time_clock_player) {
         move(&player->obj, player->dir);
-        sfClock_restart(player->clock);
+        sfClock_restart(player->clock[0]);
     }
     if (!can_move(player->reach, player->obj.position))
         player->dir = NONE;

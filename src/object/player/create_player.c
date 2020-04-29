@@ -23,7 +23,8 @@ bool create_player(player_t *player, object_t obj, int **map)
 {
     player->obj = obj;
     player->dir = NONE;
-    player->clock = sfClock_create();
+    player->clock[0] = sfClock_create();
+    player->clock[1] = sfClock_create();
     player->reach = player->obj.position;
     player->pos_arr = get_pos_player(map);
     return (player->pos_arr.x == 10000 ? false : true);
