@@ -11,5 +11,4 @@
 enum color {OUTLINE, FILL};
 enum info {POS, SIZE};
 
-
 #endif /* !RECT_SHAPE_H_ */
