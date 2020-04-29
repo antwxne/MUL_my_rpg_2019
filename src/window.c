@@ -37,13 +37,12 @@ int show_window(game_t *game)
 
     game->objects = set_position_object(game->objects, (int const **) game->map,
     game->rect_arr);
-    initia_fight(&game->fight);
     sfRenderWindow_setFramerateLimit(game->window, 60);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(&game->window, &game->event);
         // create_menu(game->window, 6, pause_menu_buttons,
         //     "assets/pause_menu.png");
-        fight(game, MERMS, MERMS_DEF, 50);
+//        fight(game, MERMS, MERMS_DEF, 50);
         display_window(game->window);
         //manage_rect(game->window, game->rect_arr, shape);
         //display(game->window, game->objects);

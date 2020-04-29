@@ -5,6 +5,7 @@
 ** init_struct
 */
 
+#include "fight.h"
 #include "game.h"
 #include "main.h"
 
@@ -27,6 +28,7 @@ game_t init_struct(int *ptr_err)
         *ptr_err = -1;
         return (game);
     }
+    initia_fight(&game.fight);
     game.objects = load_all_object(game.textures);
     if (game.objects == NULL) {
         *ptr_err = -1;
