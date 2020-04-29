@@ -22,6 +22,8 @@ enum object_type {
     DEAFET,
     VICTORY,
     EQUALITY,
+    SHEEP,
+    MERMS,
 };
 
 #endif /* !ASSETS_H_ */
