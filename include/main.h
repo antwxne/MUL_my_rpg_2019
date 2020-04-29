@@ -38,5 +38,12 @@ bool check_move(int **map, sfVector2u pos, int dir);
 void manage_event(game_t *game);
 void manage_key_player(player_t *player, int ***map);
 bool create_player(player_t *player, object_t obj, int **map);
+void manage_player(player_t *player);
+void anim_player(player_t *player);
+void move_left_rect_r(object_t *object, int offset, int max);
+void move_left_rect_l(object_t *object, int offset, int reset);
+void move_top_rect_d(object_t *object, int offset, int max);
+void move_top_rect_u(object_t *object, int offset, int reset);
+void set_rect_player(player_t *player, int dir);
 
 #endif /* !MAIN_H_ */

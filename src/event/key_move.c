@@ -46,16 +46,24 @@ static void key_right(player_t *player, int ***ptr_map)
 
 void manage_key_player(player_t *player, int ***ptr_map)
 {
-    if (sfKeyboard_isKeyPressed(sfKeyUp) && player->dir == NONE)
+    if (sfKeyboard_isKeyPressed(sfKeyUp) && player->dir == NONE) {
+        set_rect_player(player, UP);
         if (check_move(*ptr_map, player->pos_arr, UP))
             key_up(player, ptr_map);
-    if (sfKeyboard_isKeyPressed(sfKeyDown) && player->dir == NONE)
+    }
+    if (sfKeyboard_isKeyPressed(sfKeyDown) && player->dir == NONE) {
+        set_rect_player(player, DOWN);
         if (check_move(*ptr_map, player->pos_arr, DOWN))
             key_down(player, ptr_map);
-    if (sfKeyboard_isKeyPressed(sfKeyLeft) && player->dir == NONE)
+    }
+    if (sfKeyboard_isKeyPressed(sfKeyLeft) && player->dir == NONE) {
+        set_rect_player(player, LEFT);
         if (check_move(*ptr_map, player->pos_arr, LEFT))
             key_left(player, ptr_map);
-    if (sfKeyboard_isKeyPressed(sfKeyRight) && player->dir == NONE)
+    }
+    if (sfKeyboard_isKeyPressed(sfKeyRight) && player->dir == NONE) {
+        set_rect_player(player, RIGHT);
         if (check_move(*ptr_map, player->pos_arr, RIGHT))
             key_right(player, ptr_map);
+    }
 }

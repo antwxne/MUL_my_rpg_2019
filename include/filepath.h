@@ -10,13 +10,13 @@
 
 #include <SFML/Graphics.h>
 
-static const char *fp[] = {"assets/player.png",
+static const char *fp[] = {"assets/perso1.png",
                             "assets/enemi.png",
                             "assets/house.png",
                             NULL};
 
 static const sfIntRect textures_rects[] = {
-        {62, 545, 33, 33},
+        {32, 0, 32, 32},
         {0, 0, 44, 46},
         {0, 0, 66, 76},
 };

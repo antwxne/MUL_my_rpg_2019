@@ -21,17 +21,6 @@ typedef enum dir_move {
     RIGHT,
 } dir_move_t;
 
-typedef enum dir_anim {
-    LEFT_ANIM,
-    TOP_ANIM,
-} dir_anim_t;
-
-typedef struct anim {
-    int offset;
-    int max;
-    float time_clock;
-} anim_t;
-
 typedef struct object {
     sfSprite *sprite;
     sfTexture *texture;
@@ -40,11 +29,11 @@ typedef struct object {
 } object_t;
 
 typedef struct player {
-    object_t ptr_obj;
+    object_t obj;
     sfVector2u pos_arr;
     int dir;
     sfVector2f reach;
-    sfClock *clock;
+    sfClock *clock[2];
 } player_t;
 
 typedef struct game{
@@ -68,6 +57,7 @@ static const unsigned int window_size_y = 1080;
 static const unsigned int rect_size = 80;
 static const unsigned int number_objects = 10;
 static const float time_clock_player = 0.1;
+static const float time_anim_player = 0.1;
 static const unsigned int offset_move_player = 2;
 
 #endif /* !GAME_H_ */
