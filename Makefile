@@ -42,8 +42,9 @@ SRC =	src/main.c									\
 		src/event/management.c 						\
 		src/event/manage_key.c 						\
 		src/save/save_game.c 						\
-		src/particule/particule.clean				\
+		src/particule/particule.c					\
 		src/particule/particule_update.c			\
+		src/particule/free_particule.c				\
 
 OBJ = $(SRC:.c=.o)
 
