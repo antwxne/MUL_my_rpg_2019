@@ -42,6 +42,7 @@ game_t init_struct(int *ptr_err)
         *ptr_err = -1;
         return (game);
     }
+    game.nb_map = 0;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(game.window, 60);
     return (game);
