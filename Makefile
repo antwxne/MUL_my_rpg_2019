@@ -41,6 +41,10 @@ SRC =	src/main.c									\
 		src/map/free_map.c 							\
 		src/map/read_mapfile.c 						\
 		src/map/set_map.c 							\
+		src/map/manage_map.c 						\
+		src/map/change_map.c 						\
+		src/map/load_scene_up.c 					\
+		src/map/load_scene_down.c 					\
 		src/event/key_move.c 						\
 		src/event/management.c 						\
 		src/event/manage_key.c 						\

@@ -55,5 +55,9 @@ button_display_t *init_button(void);
 void manage_start_menu(game_t *game);
 void manage_view(game_t *game);
 void manage_pause_menu(game_t *game);
+void change_map(game_t *game);
+void manage_map(game_t *game);
+void load_scene_up(game_t *game);
+void load_scene_down(game_t *game);
 
 #endif /* !MAIN_H_ */
