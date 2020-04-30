@@ -33,6 +33,7 @@ int show_window(game_t *game)
         manage_event(game);
         display_window(game->window);
         manage_view(game);
+        display_maps(game);
         if (game->view == MAP)
             manage_rect(game->window, game->rect_arr, shape);
         display(game->window, game->objects, game->buttons, game->view);

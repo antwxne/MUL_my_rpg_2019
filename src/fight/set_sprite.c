@@ -32,5 +32,4 @@ void draw_sprite(sfRenderWindow *window, sfRectangleShape **fight_rects,
     sfRenderWindow_drawSprite(window, objects[ROCK][0].sprite, NULL);
     sfRenderWindow_drawSprite(window, objects[PAPYRUS][0].sprite, NULL);
     sfRenderWindow_drawSprite(window, objects[CUTER][0].sprite, NULL);
-
 }

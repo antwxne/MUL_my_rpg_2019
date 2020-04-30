@@ -21,4 +21,5 @@ void display_map(sfRenderWindow *window, object_t **objects)
     display_sprite(window, objects[PLAYER]);
     display_sprite(window, objects[ENEMI]);
     display_sprite(window, objects[HOUSE]);
+    display_sprite(window, objects[HOUSE_2]);
 }
