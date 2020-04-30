@@ -29,7 +29,7 @@ int get_status(rectangle_t *rec, sfEvent event, sfRenderWindow *window);
 void get_echap(game_t *png, rectangle_t *rects);
 void draw_sprite(sfRenderWindow *window,
 sfRectangleShape **fight_rects, object_t **objects);
-void damage(rectangle_t *rects, int ennemies, int deg_ennemies);
+void damage(game_t *game, int ennemies, int deg_ennemies);
 void set_position(int x, int y, sfSprite *sprite);
 void position_sprite(game_t *png);
 int life_time(rectangle_t *rects, int ennemies);
@@ -37,7 +37,7 @@ void battle_prin(rectangle_t *rects, sfRenderWindow *window,
 object_t **objects);
 void god_moding(rectangle_t *rects, int ennemies, sfRenderWindow *window,
 object_t **objects);
-void state_effect(rectangle_t *rects, int status, int ennemies,
+void state_effect(game_t *game, int status, int ennemies,
 int ennemies_damage);
 void change_color(rectangle_t *rects);
 int initia_fight(rectangle_t *rects);

@@ -50,26 +50,22 @@ int battle(int status, rectangle_t *rects)
     return 0;
 }
 
-void damage(rectangle_t *rects, int ennemies, int deg_ennemies)
+void damage(game_t *game, int ennemies, int deg_ennemies)
 {
-    static int life_bibi = 400;
-    int defense_bibi = 70;
-    int degat_bibi = 50;
-
-    if (rects->message == 0)
-        rects->battle_status = 1;
-    if (rects->message == 1) {
-        life_bibi -= (deg_ennemies - (defense_bibi / 5));
-        rects->battle_status = 2;
-        sfRectangleShape_setSize(rects->fight_rects[6],
-        (sfVector2f) {life_bibi, 100});
+    if (game->fight.message == 0)
+        game->fight.battle_status = 1;
+    if (game->fight.message == 1) {
+        game->player.stat[0] -= (deg_ennemies - (game->player.stat[1] / 5));
+        game->fight.battle_status = 2;
+        sfRectangleShape_setSize(game->fight.fight_rects[6],
+        (sfVector2f) {game->player.stat[0], 100});
     }
-    if (rects->message == 2) {
-        rects->life_ennemie[ennemies] -= (degat_bibi -
-        (rects->def_ennemie[ennemies] / 5));
-        sfRectangleShape_setSize(rects->fight_rects[3],
-        (sfVector2f) {rects->life_ennemie[ennemies], 100});
-        rects->battle_status = 3;
+    if (game->fight.message == 2) {
+        game->fight.life_ennemie[ennemies] -= (game->player.stat[2] -
+        (game->fight.def_ennemie[ennemies] / 5));
+        sfRectangleShape_setSize(game->fight.fight_rects[3],
+        (sfVector2f) {game->fight.life_ennemie[ennemies], 100});
+        game->fight.battle_status = 3;
     }
 }
 

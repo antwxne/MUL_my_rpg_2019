@@ -31,8 +31,9 @@ void load_stat(game_t *game)
     int fd = open(fp_save, O_RDONLY);
 
     game->nb_map = 0;
-    for (unsigned int i = 0; i < 3; i++)
-        game->player.stat[i] = 0;
+    game->player.stat[0] = 400;
+    game->player.stat[1] = 70;
+    game->player.stat[2] = 50;
     if (fd != -1) {
         read_stat(fd, game);
         close(fd);
