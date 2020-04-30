@@ -24,6 +24,8 @@ static const char *fp[] = {
     "assets/sheep.png",
     "assets/merms.png",
     "assets/first_map.png",
+    "assets/start_menu.jpg",
+    "assets/pause_menu.png",
     NULL};
 
 static const sfIntRect textures_rects[] = {
@@ -40,6 +42,8 @@ static const sfIntRect textures_rects[] = {
         {0, 0, 282, 97},
         {0, 0, 400, 378},
         {0, 0, 450, 488},
+        {0, 0, 1920, 1080},
+        {0, 0, 1920, 1080},
         {0, 0, 1920, 1080},
 };
 

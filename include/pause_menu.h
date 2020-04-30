@@ -8,14 +8,13 @@
 #ifndef PAUSE_MENU_H_
 #define PAUSE_MENU_H_
 
-#include "button.h"
+
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-
-void create_button(button_t button_to_create, sfRenderWindow *window);
+#include "button.h"
 
 static const button_t pause_menu_resume = {(sfVector2f) {870.0, 500.0},
                                 (sfVector2f) {205.0, 70.0},
@@ -57,9 +56,9 @@ static const button_t pause_menu_buttons[] = {
     pause_menu_resume,
     pause_menu_main_menu,
     pause_menu_save,
+    pause_menu_quit,
     pause_menu_load,
-    pause_menu_option,
-    pause_menu_quit
+    pause_menu_option
 };
 
 #endif /* !PAUSE_MENU_H_ */

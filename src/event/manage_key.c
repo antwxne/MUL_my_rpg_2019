@@ -10,7 +10,8 @@
 
 void manage_key(game_t *game)
 {
-    manage_key_player(&game->player, &game->map);
+    if (game->view == MAP)
+        manage_key_player(&game->player, &game->map);
     if (sfKeyboard_isKeyPressed(sfKeySpace))
         manage_save(game);
 }

@@ -25,6 +25,8 @@ enum object_type {
     SHEEP,
     MERMS,
     FIRST_MAP,
+    START_MENU,
+    PAUSE_MENU,
 };
 
 #endif /* !ASSETS_H_ */

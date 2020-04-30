@@ -13,6 +13,7 @@
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
 #include <stdbool.h>
+#include "button.h"
 
 typedef enum dir_move {
     NONE = -1,
@@ -21,6 +22,14 @@ typedef enum dir_move {
     LEFT,
     RIGHT,
 } dir_move_t;
+
+enum view_type {
+    MAP,
+    FIGHT,
+    MENU_P,
+    MENU_S,
+    INVENTORY,
+};
 
 typedef struct object {
     sfSprite *sprite;
@@ -56,10 +65,12 @@ typedef struct game{
     sfTexture **textures;
     object_t **objects;
     sfIntRect const **rect_arr;
+    button_display_t *buttons;
     player_t player;
     int **map;
     int nb_map;
     rectangle_t fight;
+    int view;
 } game_t;
 
 typedef struct read {
@@ -75,5 +86,6 @@ static const unsigned int number_objects = 10;
 static const float time_clock_player = 0.1;
 static const float time_anim_player = 0.1;
 static const unsigned int offset_move_player = 2;
+static const unsigned int nb_button = 7;
 
 #endif /* !GAME_H_ */

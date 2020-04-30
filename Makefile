@@ -19,17 +19,19 @@ SRC =	src/main.c									\
 		src/init_struct.c							\
 		src/window.c								\
 		src/loading.c 								\
-		src/display.c 								\
+		src/manage_view.c 							\
 		src/object/create_object.c 					\
 		src/object/set_position_object.c 			\
+		src/object/anim_object.c 					\
+		src/object/set_background_pos.c 			\
 		src/object/player/check_move.c 				\
 		src/object/player/move_player.c 			\
 		src/object/player/create_player.c 			\
 		src/object/player/anim_player.c 			\
 		src/object/player/manage_player.c 			\
-		src/object/anim_object.c 					\
-		src/create_button.c							\
-		src/create_menu.c							\
+		src/menu/create_button.c					\
+		src/menu/init_button.c 						\
+		src/menu/manage_start_menu.c 				\
 		src/rect/rect_arr.c							\
 		src/rect/rect_shape.c 						\
 		src/rect/free_rect_arr.c 					\
@@ -56,6 +58,9 @@ SRC =	src/main.c									\
 		src/save/load_save.c 						\
 		src/save/manage_save.c 						\
 		src/save/save_stat.c  						\
+		src/display/display.c 						\
+		src/display/display_map.c 					\
+		src/display/display_menu_start.c 			\
 
 OBJ = $(SRC:.c=.o)
 

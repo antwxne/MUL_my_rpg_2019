@@ -16,6 +16,9 @@ static bool init_array(game_t *game)
     game->map = load_map(map_create(), game->nb_map);
     if (!game->map || !game->rect_arr)
         return (false);
+    game->buttons = init_button();
+    if (!game->buttons)
+        return (false);
     return (true);
 }
 
@@ -45,6 +48,7 @@ game_t init_struct(int *ptr_err)
         return (game);
     }
     initia_fight(&game.fight);
+    game.view = MENU_S;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(game.window, 60);
     return (game);

@@ -8,14 +8,12 @@
 #ifndef MENU_H_
 #define MENU_H_
 
-#include "button.h"
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-
-void create_button(button_t button_to_create, sfRenderWindow *window);
+#include "button.h"
 
 static const button_t start_menu_start = {(sfVector2f) {890.0, 500.0},
                                 (sfVector2f) {135.0, 60.0},
@@ -44,8 +42,8 @@ static const button_t start_menu_quit = {(sfVector2f) {890.0, 780.0},
 static const button_t start_menu_buttons[] = {
     start_menu_start,
     start_menu_how_to_play,
-    start_menu_option,
-    start_menu_quit
+    start_menu_quit,
+    start_menu_option
 };
 
 #endif /* !MENU_H_ */

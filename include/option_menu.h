@@ -15,7 +15,7 @@
 #include <SFML/Window.h>
 #include <stdlib.h>
 
-void create_button(button_t button_to_create, sfRenderWindow *window);
+button_display_t create_button(button_t button_to_create);
 
 static const button_t option_menu_back = {(sfVector2f) {130.0, 390.0},
                                 (sfVector2f) {135.0, 70.0},

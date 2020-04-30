@@ -12,6 +12,17 @@
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
+#include <stdbool.h>
+
+enum button_type {
+    P_RESUME,
+    P_MAIN_MENU,
+    P_SAVE,
+    P_QUIT,
+    S_START,
+    S_HTP,
+    S_QUIT,
+};
 
 typedef struct button{
     sfVector2f position;
@@ -23,6 +34,13 @@ typedef struct button{
     char *text;
 }button_t;
 
-void create_button(button_t button_to_create, sfRenderWindow *window);
+typedef struct button_display{
+    sfRectangleShape *shape;
+    sfIntRect rect;
+    sfText *text;
+    sfFont *font;
+}button_display_t;
+
+button_display_t create_button(button_t button_to_create);
 
 #endif /* !BUTTON_H_ */

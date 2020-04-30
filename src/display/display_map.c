@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** MUL_my_rpg_2019
 ** File description:
-** display_sprite
+** display_map
 */
 
 #include "textures.h"
@@ -16,7 +16,7 @@ static void display_sprite(sfRenderWindow *window, object_t *obj)
             sfRenderWindow_drawSprite(window, obj[i].sprite, NULL);
 }
 
-void display(sfRenderWindow *window, object_t **objects)
+void display_map(sfRenderWindow *window, object_t **objects)
 {
     display_sprite(window, objects[PLAYER]);
     display_sprite(window, objects[ENEMI]);

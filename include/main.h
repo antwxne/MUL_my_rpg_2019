@@ -32,7 +32,8 @@ void manage_rect(sfRenderWindow *window, sfIntRect const **rect_arr,
     sfRectangleShape *shape);
 object_t **set_position_object(object_t **objects, int const **map,
     sfIntRect const **rect_arr);
-void display(sfRenderWindow *window, object_t **objects);
+void display(sfRenderWindow *window, object_t **objects,
+    button_display_t *buttons, int view);
 void move_player(player_t *player);
 bool check_move(int **map, sfVector2u pos, int dir);
 void manage_event(game_t *game);
@@ -50,5 +51,8 @@ void save_map(game_t *game);
 void load_stat(game_t *game);
 void save_stat(int nb_map, int *stat);
 void manage_save(game_t *game);
+button_display_t *init_button(void);
+void manage_start_menu(game_t *game);
+void manage_view(game_t *game);
 
 #endif /* !MAIN_H_ */

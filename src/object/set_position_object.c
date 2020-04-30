@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include "game.h"
 
+object_t **set_position_background(object_t **objects);
+
 static sfVector2f central_position(sfVector2f obj_pos, sfIntRect obj_rect,
     sfIntRect rect)
 {
@@ -49,5 +51,5 @@ object_t **set_position_object(object_t **objects, int const **map,
                 objects[map[y][x] - 1] = set_on_rect(objects[map[y][x] - 1],
                     rect_arr[y][x]);
         }
-    return (objects);
+    return (set_position_background(objects));
 }
