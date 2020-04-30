@@ -11,12 +11,12 @@
 
 static int *line_map_empty(void)
 {
-    int *dest = malloc(sizeof(int *) * window_size_x / rect_size + 1);
+    int *dest = malloc(sizeof(int *) * window_size_x / rect_size);
     unsigned int i = 0;
 
     if (!dest)
         return (NULL);
-    for (; i < window_size_x / rect_size + 1; i++)
+    for (; i < window_size_x / rect_size; i++)
         dest[i] = 0;
     dest[i] = -1;
     return (dest);
@@ -24,12 +24,12 @@ static int *line_map_empty(void)
 
 int **map_create(void)
 {
-    int **map = malloc(sizeof(int *) * (window_size_y / rect_size + 2));
+    int **map = malloc(sizeof(int *) * (window_size_y / rect_size + 1));
     unsigned int i = 0;
 
     if (!map)
         return (NULL);
-    for (; i < window_size_y / rect_size + 1; i++) {
+    for (; i < window_size_y / rect_size; i++) {
         map[i] = line_map_empty();
     }
     map[i] = NULL;
