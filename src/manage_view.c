@@ -13,7 +13,7 @@
 void manage_view(game_t *game)
 {
     if (game->view == MAP)
-        manage_player(&game->player);
+        manage_map(game);
     // if (game->view == FIGHT)
     //     fight(game, MERMS, MERMS_DEF, 50);
     if (game->view == MENU_P)

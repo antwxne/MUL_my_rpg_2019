@@ -42,7 +42,7 @@ object_t **load_all_object(sfTexture **textures)
             return (NULL);
         for (unsigned int x = 0; x < number_objects; x++)
             objects[y][x] = create_object(textures_rects[y],
-                (sfVector2f) {-500, -500}, textures[y]);
+                (sfVector2f) {-50000, -50000}, textures[y]);
     }
     objects[y] = NULL;
     return (objects);

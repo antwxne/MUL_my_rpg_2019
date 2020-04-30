@@ -7,8 +7,17 @@
 
 #include <stdlib.h>
 #include "game.h"
+#include "filepath.h"
 
 object_t **set_position_background(object_t **objects);
+
+static object_t **reset_object(object_t **obj)
+{
+    for (unsigned int y = 0; fp[y] != NULL; y++)
+        for (unsigned int x = 0; x < number_objects; x++)
+            obj[y][x].position.x = -50000;
+    return (obj);
+}
 
 static sfVector2f central_position(sfVector2f obj_pos, sfIntRect obj_rect,
     sfIntRect rect)
@@ -45,6 +54,7 @@ static object_t *set_on_rect(object_t *objects, sfIntRect rect)
 object_t **set_position_object(object_t **objects, int const **map,
     sfIntRect const **rect_arr)
 {
+    objects = reset_object(objects);
     for (unsigned int y = 0; map[y] != NULL; y++)
         for (unsigned int x = 0; map[y][x] != -1; x++) {
             if (map[y][x] != 0)
