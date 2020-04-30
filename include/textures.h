@@ -26,6 +26,7 @@ enum object_type
     SHEEP,
     MERMS,
     FIRST_MAP,
+    SECOND_MAP,
     START_MENU,
     PAUSE_MENU,
     COLLISION,
@@ -36,6 +37,7 @@ enum object_type
     ARMOR_1,
     ARMOR_2,
     POTION,
+    CURSOR,
 };
 
 #endif /* !ASSETS_H_ */

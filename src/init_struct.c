@@ -10,6 +10,8 @@
 #include "main.h"
 #include "textures.h"
 
+static const sfColor t_grey = {255, 255, 255, 125};
+
 static bool init_array(game_t *game)
 {
     game->rect_arr = (sfIntRect const **) create_rect_arr();
@@ -17,6 +19,9 @@ static bool init_array(game_t *game)
     if (!game->map || !game->rect_arr)
         return (false);
     game->buttons = init_button();
+    game->cursor_rect = create_rect_shape(
+    (sfVector2f[2]) {{0, 0}, {rect_size, rect_size}},
+        5, (sfColor[2]) {t_grey, t_grey});
     if (!game->buttons)
         return (false);
     return (true);
@@ -50,6 +55,7 @@ game_t init_struct(int *ptr_err)
     initia_fight(&game.fight);
     game.view = MENU_S;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
+    sfRenderWindow_setMouseCursorVisible(game.window, sfFalse);
     sfRenderWindow_setFramerateLimit(game.window, 60);
     return (game);
 }
