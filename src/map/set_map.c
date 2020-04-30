@@ -8,10 +8,7 @@
 #include <stdlib.h>
 #include "game.h"
 #include "main.h"
-
-static const char *map_filepath[] = {
-                ".config/maps/map_1"
-                };
+#include "save.h"
 
 static int **insert_coord_in_map(int **map, read_t *list)
 {
@@ -42,7 +39,7 @@ int **load_map(int **map, unsigned int map_nb)
     read_t *list = NULL;
 
     map = reset_map(map);
-    if (!map || !open_and_read_map(map_filepath[map_nb], &list))
+    if (!map || !open_and_read_map(fp_map[map_nb], &list))
         return (map);
     map = insert_coord_in_map(map, list);
     return (map);

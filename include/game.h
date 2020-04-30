@@ -34,6 +34,7 @@ typedef struct player {
     int dir;
     sfVector2f reach;
     sfClock *clock[2];
+    int stat[3];
 } player_t;
 
 typedef struct game{

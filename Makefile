@@ -42,6 +42,9 @@ SRC =	src/main.c									\
 		src/event/management.c 						\
 		src/event/manage_key.c 						\
 		src/save/save_game.c 						\
+		src/save/load_save.c 						\
+		src/save/manage_save.c 						\
+		src/save/save_stat.c  						\
 
 OBJ = $(SRC:.c=.o)
 

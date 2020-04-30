@@ -5,18 +5,10 @@
 ** save_game
 */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include "game.h"
 #include "main.h"
 #include "my.h"
-
-static const int rights = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
-
-static const char *fp_map[] = {
-    ".config/maps/map_1"
-};
+#include "save.h"
 
 static void write_map_in_file(int fd, int *type_x_y)
 {
