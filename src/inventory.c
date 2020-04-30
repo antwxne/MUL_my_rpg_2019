@@ -8,9 +8,17 @@
 #include "inventory.h"
 #include "textures.h"
 
-void inventory(object_t *object)
+void inventory(float x, float y, object_t *object)
 {
-    sfVector2f position = {500, 500};
-    object[0].position = position;
-    sfSprite_setPosition(object[0].sprite, position);
+    object[0].position.x = x;
+    object[0].position.y = y;
+    sfSprite_setPosition(object[0].sprite, object[0].position);
+}
+
+void set_inventory(sfRenderWindow *window, object_t **objects)
+{
+    inventory(5.0, 850.0, objects[INVENTORY_]);
+    inventory(37.0, 890.0, objects[SWORD]);
+    inventory(80.0, 890.0, objects[ARMOR_2]);
+    inventory(105.0, 875.0, objects[POTION]);
 }

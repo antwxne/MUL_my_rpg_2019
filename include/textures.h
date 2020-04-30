@@ -31,6 +31,11 @@ enum object_type
     COLLISION,
     HOUSE_2,
     INVENTORY_,
+    SPEAR,
+    SWORD,
+    ARMOR_1,
+    ARMOR_2,
+    POTION,
 };
 
 #endif /* !ASSETS_H_ */

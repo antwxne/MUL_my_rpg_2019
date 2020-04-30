@@ -29,6 +29,11 @@ static const char *fp[] = {
     "assets/coolision.png",
     "assets/house_2.png",
     "assets/inside_backpack.png",
+    "assets/Lance.png",
+    "assets/p_e_d_ombre.png",
+    "assets/Costume_en_bois.png",
+    "assets/Armure_d_ombre.png",
+    "assets/potion.png",
     NULL};
 
 static const sfIntRect textures_rects[] = {
@@ -51,6 +56,11 @@ static const sfIntRect textures_rects[] = {
     {0, 0, 1, 1},
     {0, 0, 99, 142},
     {0, 0, 180, 238},
+    {0, 0, 64, 64},
+    {0, 0, 64, 64},
+    {0, 0, 64, 64},
+    {0, 0, 64, 64},
+    {0, 0, 64, 64},
 };
 
 #endif /* !FILEPATH_H_ */

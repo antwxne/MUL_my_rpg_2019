@@ -23,4 +23,6 @@ typedef struct item{
     bool usable;
 }item_t;
 
+void set_inventory(sfRenderWindow *window, object_t **objects);
+
 #endif /* !INVENTORY_H_ */
