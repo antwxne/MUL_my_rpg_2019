@@ -8,7 +8,7 @@
 #include "main.h"
 #include "game.h"
 
-static const unsigned int var_range[] = {8, 12};
+static const unsigned int var_range[] = {9, 9};
 
 static bool change_scene_up(sfVector2u pos_player, unsigned int const *range)
 {

@@ -24,8 +24,11 @@ sfTexture **create_texture(void)
 
     if (textures == NULL)
         return (NULL);
-    for (unsigned int y = 0; fp[y] != NULL; y++)
+    for (unsigned int y = 0; fp[y] != NULL; y++) {
         textures[y] = sfTexture_createFromFile(fp[y], NULL);
+        if (!textures[y])
+            return (false);
+    }
     return (textures);
 }
 

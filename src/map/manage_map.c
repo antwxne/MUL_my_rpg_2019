@@ -12,4 +12,5 @@ void manage_map(game_t *game)
 {
     manage_player(&game->player);
     change_map(game);
+    manage_rect(game->window, game->rect_arr, game->cursor_rect);
 }

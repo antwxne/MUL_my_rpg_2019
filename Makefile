@@ -67,9 +67,9 @@ SRC =	src/main.c									\
 		src/display/display_map.c 					\
 		src/display/display_menu_start.c 			\
 		src/display/display_menu_pause.c 			\
-		src/dialogue/init_dialogue.c	\
-		src/dialogue/init_rectangle.c	\
-		src/display_map.c	\
+		src/dialogue/init_dialogue.c				\
+		src/dialogue/init_rectangle.c				\
+
 
 OBJ = $(SRC:.c=.o)
 

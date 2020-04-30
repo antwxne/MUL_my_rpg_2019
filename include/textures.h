@@ -26,10 +26,12 @@ enum object_type
     SHEEP,
     MERMS,
     FIRST_MAP,
+    SECOND_MAP,
     START_MENU,
     PAUSE_MENU,
     COLLISION,
     HOUSE_2,
+    CURSOR,
 };
 
 #endif /* !ASSETS_H_ */

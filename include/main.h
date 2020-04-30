@@ -33,7 +33,7 @@ void manage_rect(sfRenderWindow *window, sfIntRect const **rect_arr,
 object_t **set_position_object(object_t **objects, int const **map,
     sfIntRect const **rect_arr);
 void display(sfRenderWindow *window, object_t **objects,
-    button_display_t *buttons, int view);
+    button_display_t *buttons, game_t *game);
 void move_player(player_t *player);
 bool check_move(int **map, sfVector2u pos, int dir);
 void manage_event(game_t *game);

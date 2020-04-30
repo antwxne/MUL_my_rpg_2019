@@ -71,6 +71,7 @@ typedef struct game{
     int nb_map;
     rectangle_t fight;
     int view;
+    sfRectangleShape *cursor_rect;
 } game_t;
 
 typedef struct read {
