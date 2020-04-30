@@ -28,7 +28,6 @@ int show_window(game_t *game)
     (sfVector2f[2]) {{0, 0}, {rect_size, rect_size}},
         5, (sfColor[2]) {sfRed, sfWhite});
     //   dialogue_t dialogue;
-
     //rectangle(&dialogue);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game);
