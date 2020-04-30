@@ -24,7 +24,7 @@ button_display_t create_button(button_t button_to_create)
     sfRectangleShape_setPosition(new_button.shape, button_to_create.position);
     sfRectangleShape_setSize(new_button.shape, button_to_create.size);
     sfRectangleShape_setOutlineThickness(new_button.shape, 5);
-    sfRectangleShape_setFillColor(new_button.shape, sfRed);
+    sfRectangleShape_setFillColor(new_button.shape, sfTransparent);
     new_button.rect = button_to_create.rect;
     return (new_button);
 }

@@ -15,4 +15,6 @@ void display(sfRenderWindow *window, object_t **objects,
         display_map(window, objects);
     if (view == MENU_S)
         display_menu_start(window, buttons, objects[START_MENU][0]);
+    if (view == MENU_P)
+        display_menu_pause(window, buttons, objects[PAUSE_MENU][0]);
 }

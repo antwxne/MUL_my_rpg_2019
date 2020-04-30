@@ -13,5 +13,7 @@
 void display_map(sfRenderWindow *window, object_t **objects);
 void display_menu_start(sfRenderWindow *window, button_display_t *buttons,
     object_t back_ground);
+void display_menu_pause(sfRenderWindow *window, button_display_t *buttons,
+    object_t back_ground);
 
 #endif /* !DISPLAY_H_ */

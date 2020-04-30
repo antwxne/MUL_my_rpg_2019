@@ -12,6 +12,6 @@ void manage_key(game_t *game)
 {
     if (game->view == MAP)
         manage_key_player(&game->player, &game->map);
-    if (sfKeyboard_isKeyPressed(sfKeySpace))
-        manage_save(game);
+    if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->view == MAP)
+        game->view = MENU_P;
 }

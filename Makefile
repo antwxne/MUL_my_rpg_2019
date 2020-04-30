@@ -32,6 +32,7 @@ SRC =	src/main.c									\
 		src/menu/create_button.c					\
 		src/menu/init_button.c 						\
 		src/menu/manage_start_menu.c 				\
+		src/menu/manage_menu_pause.c 				\
 		src/rect/rect_arr.c							\
 		src/rect/rect_shape.c 						\
 		src/rect/free_rect_arr.c 					\
@@ -61,6 +62,7 @@ SRC =	src/main.c									\
 		src/display/display.c 						\
 		src/display/display_map.c 					\
 		src/display/display_menu_start.c 			\
+		src/display/display_menu_pause.c 			\
 
 OBJ = $(SRC:.c=.o)
 

@@ -54,5 +54,6 @@ void manage_save(game_t *game);
 button_display_t *init_button(void);
 void manage_start_menu(game_t *game);
 void manage_view(game_t *game);
+void manage_pause_menu(game_t *game);
 
 #endif /* !MAIN_H_ */

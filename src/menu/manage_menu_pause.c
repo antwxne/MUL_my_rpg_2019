@@ -2,23 +2,25 @@
 ** EPITECH PROJECT, 2020
 ** MUL_my_rpg_2019
 ** File description:
-** manage_start_menu
+** manage_menu_pause
 */
 
 #include "game.h"
 #include "main.h"
-#include "start_menu.h"
+#include "pause_menu.h"
 
 static const sfColor transparent_grey = {255, 255, 255, 60};
 
 static void change_action(game_t *game, int action)
 {
-    if (action == S_START)
+    if (action == P_RESUME)
         game->view = MAP;
-    if (action == S_QUIT)
+    if (action == P_QUIT)
         sfRenderWindow_close(game->window);
-    // if (action == S_HTP)
-    //     display how to play
+    if (action == P_MAIN_MENU)
+        game->view = MENU_S;
+    if (action == P_SAVE)
+        manage_save(game);
 }
 
 static void overlay_button(button_display_t *ptr_button, game_t *game,
@@ -41,11 +43,11 @@ static void reset_overlay(button_display_t *ptr_button)
     sfRectangleShape_setFillColor(ptr_button->shape, sfTransparent);
 }
 
-void manage_start_menu(game_t *game)
+void manage_pause_menu(game_t *game)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(game->window);
 
-    for (unsigned int i = S_START; i <= S_QUIT; i++) {
+    for (unsigned int i = P_RESUME; i <= P_QUIT; i++) {
         if (sfIntRect_contains(&game->buttons[i].rect,
             pos.x, pos.y))
             overlay_button(&game->buttons[i], game, i);
