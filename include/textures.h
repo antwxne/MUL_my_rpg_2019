@@ -10,7 +10,8 @@
 
 #include <stddef.h>
 
-enum object_type {
+enum object_type
+{
     PLAYER,
     ENEMI,
     HOUSE,
@@ -27,6 +28,8 @@ enum object_type {
     FIRST_MAP,
     START_MENU,
     PAUSE_MENU,
+    COLLISION,
+    HOUSE_2,
     INVENTORY_,
 };
 

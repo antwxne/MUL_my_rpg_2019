@@ -32,5 +32,6 @@ void update_part(part_t *part, game_t *game);
 part_t *create_part(int nb_part, sfVector2f pos, int speed, color_t color);
 void reset_part(part_t *part, sfVector2f pos, int speed, color_t color);
 void free_part(part_t *part);
-
+sfRectangleShape *create_particule_shape(sfVector2f pos, sfVector2f size,
+                                         color_t color);
 #endif
