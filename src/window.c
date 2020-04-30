@@ -26,7 +26,7 @@ int show_window(game_t *game)
     sfRectangleShape *shape = create_rect_shape(
     (sfVector2f[2]) {{0, 0}, {rect_size, rect_size}},
         5, (sfColor[2]) {sfRed, sfWhite});
-    
+
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game);
         // create_menu(game->window, 6, pause_menu_buttons,

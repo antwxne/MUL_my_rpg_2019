@@ -11,16 +11,21 @@
 
 static const int nbr_enn = 3;
 
+static const int var_def[] = {
+    50,
+    40,
+    60,
+};
+
 int init_ennemies(rectangle_t *rect)
 {
-    if ((rect->life_ennemie = malloc(sizeof(int) * nbr_enn)) == NULL)
+    if ((rect->life_ennemie = malloc(sizeof(int) * nbr_enn)) == NULL ||
+        (rect->def_ennemie = malloc(sizeof(int) * nbr_enn)) == NULL)
         return 1;
-    rect->def_ennemie = malloc(sizeof(int) * nbr_enn);
-    for (int i = 0; i <= 2; i++)
+    for (int i = 0; i <= 2; i++) {
         rect->life_ennemie[i] = 400;
-    rect->def_ennemie[MERMS_DEF] = 50;
-    rect->def_ennemie[SHEEP_DEF] = 40;
-    rect->def_ennemie[PIGS_DEF] = 60;
+        rect->def_ennemie[i] = var_def[i];
+    }
     return 0;
 }
 
