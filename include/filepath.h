@@ -26,6 +26,7 @@ static const char *fp[] = {
     "assets/first_map.png",
     "assets/start_menu.jpg",
     "assets/pause_menu.png",
+    "assets/inside_backpack.png",
     NULL};
 
 static const sfIntRect textures_rects[] = {
@@ -45,6 +46,7 @@ static const sfIntRect textures_rects[] = {
         {0, 0, 1920, 1080},
         {0, 0, 1920, 1080},
         {0, 0, 1920, 1080},
+        {0, 0, 180, 238},
 };
 
 #endif /* !FILEPATH_H_ */

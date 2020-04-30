@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2020
 ** MUL_my_rpg_2019
 ** File description:
-** item
+** inventory
 */
 
-#ifndef ITEM_H_
-#define ITEM_H_
+#ifndef INVENTORY_H_
+#define INVENTORY_H_
 
 #include "game.h"
 #include <SFML/Graphics.h>
@@ -16,7 +16,6 @@
 #include <stdbool.h>
 
 typedef struct item{
-    object_t object;
     char *name;
     unsigned int quantity;
     char *description;
@@ -24,4 +23,4 @@ typedef struct item{
     bool usable;
 }item_t;
 
-#endif /* !ITEM_H_ */
+#endif /* !INVENTORY_H_ */

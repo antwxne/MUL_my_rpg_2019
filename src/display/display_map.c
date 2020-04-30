@@ -8,6 +8,13 @@
 #include "textures.h"
 #include "game.h"
 
+void inventory(object_t *object)
+{
+    sfVector2f position = {10, 850};
+    object[0].position = position;
+    sfSprite_setPosition(object[0].sprite, position);
+}
+
 static void display_sprite(sfRenderWindow *window, object_t *obj)
 {
     for (unsigned int i = 0; i < number_objects; i++)
@@ -21,4 +28,6 @@ void display_map(sfRenderWindow *window, object_t **objects)
     display_sprite(window, objects[PLAYER]);
     display_sprite(window, objects[ENEMI]);
     display_sprite(window, objects[HOUSE]);
+    inventory(objects[INVENTORY_]);
+    display_sprite(window, objects[INVENTORY_]);
 }

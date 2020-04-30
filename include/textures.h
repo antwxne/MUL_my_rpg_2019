@@ -27,6 +27,7 @@ enum object_type {
     FIRST_MAP,
     START_MENU,
     PAUSE_MENU,
+    INVENTORY_,
 };
 
 #endif /* !ASSETS_H_ */
