@@ -53,7 +53,10 @@ SRC =	src/main.c									\
 		src/fight/status_battle.c	\
 		src/fight/set_sprite.c	\
 		src/fight/main_fight.c	\
-		
+		src/dialogue/init_dialogue.c	\
+		src/dialogue/init_rectangle.c	\
+		src/display_map.c	\
+
 OBJ = $(SRC:.c=.o)
 
 NAME =	my_rpg

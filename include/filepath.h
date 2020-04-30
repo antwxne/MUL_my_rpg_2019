@@ -11,8 +11,8 @@
 
 static const char *fp[] = {
     "assets/perso1.png",
-    "assets/enemi.png",
-    "assets/house.png",
+    "assets/png_1.png",
+    "assets/house_1.png",
     "assets/pierre.png",
     "assets/papyrus.png",
     "assets/ciseau.png",
@@ -24,12 +24,14 @@ static const char *fp[] = {
     "assets/sheep.png",
     "assets/merms.png",
     "assets/first_map.png",
+    "assets/coolision.png",
+    "assets/house_2.png",
     NULL};
 
 static const sfIntRect textures_rects[] = {
         {32, 0, 32, 32},
-        {0, 0, 44, 46},
-        {0, 0, 66, 76},
+        {0, 0, 32, 32},
+        {0, 0, 108, 84},
         {0, 0, 250, 250},
         {0, 0, 250, 250},
         {0, 0, 250, 250},
@@ -41,6 +43,8 @@ static const sfIntRect textures_rects[] = {
         {0, 0, 400, 378},
         {0, 0, 450, 488},
         {0, 0, 1920, 1080},
+        {0, 0, 1, 1},
+        {0, 0, 99, 142},
 };
 
 #endif /* !FILEPATH_H_ */

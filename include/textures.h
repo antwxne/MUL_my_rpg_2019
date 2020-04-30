@@ -25,6 +25,8 @@ enum object_type {
     SHEEP,
     MERMS,
     FIRST_MAP,
+    COLLISION,
+    HOUSE_2,
 };
 
 #endif /* !ASSETS_H_ */
