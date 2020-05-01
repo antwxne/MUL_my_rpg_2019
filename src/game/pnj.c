@@ -33,25 +33,6 @@ static int is_near_pnj(sfVector2u player_pos, int **map)
     return (0);
 }
 
-static bool click_on_pnj(sfEvent event, sfRenderWindow *window, object_t pnj)
-{
-    sfVector2i pos = sfMouse_getPositionRenderWindow(window);
-    sfIntRect cmp = pnj.rect;
-    static bool clic = false;
-
-    cmp.left = pnj.position.x;
-    cmp.top = pnj.position.y;
-    if (sfIntRect_contains(&cmp, pos.x, pos.y) &&
-        sfMouse_isButtonPressed(sfMouseLeft))
-        clic = true;
-    if (sfIntRect_contains(&cmp, pos.x, pos.y) &&
-        event.type == sfEvtMouseButtonReleased  && clic) {
-            clic = false;
-            return (true);
-        }
-    return (false);
-}
-
 static void pnj_1(game_t *game)
 {
     if (game->player.stat[3] == 0)
@@ -66,7 +47,7 @@ void use_pnj(game_t *game)
 {
     int ret = is_near_pnj(game->player.pos_arr, game->map);
 
-    if (ret != 0 && click_on_pnj(game->event, game->window,
+    if (ret != 0 && click_on_obj(game->event, game->window,
         game->objects[ret][0])) {
         if (ret == PNJ_1)
             pnj_1(game);

@@ -19,7 +19,7 @@ static const char fp_save[] = ".config/save";
 static void write_stat_in_file(int nb_map, int *stat, int fd)
 {
     write(fd, &nb_map, sizeof(int));
-    for (unsigned int i = 0; i < 3; i++)
+    for (unsigned int i = 0; i < 4; i++)
         write(fd, &stat[i], sizeof(int));
 }
 
