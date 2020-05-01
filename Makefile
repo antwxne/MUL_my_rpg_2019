@@ -73,6 +73,8 @@ SRC =	src/main.c									\
 		src/dialogue/init_dialogue.c				\
 		src/dialogue/init_rectangle.c				\
 		src/inventory.c								\
+		src/game/manage_game.c 						\
+		src/game/pnj.c 								\
 
 
 OBJ = $(SRC:.c=.o)

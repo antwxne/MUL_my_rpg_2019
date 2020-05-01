@@ -19,8 +19,12 @@ void display_sprite(sfRenderWindow *window, object_t *obj)
 
 void display_map(game_t *game, int map, sfRectangleShape *shape)
 {
-    sfRenderWindow_drawSprite(game->window,
-    game->objects[FIRST_MAP + map][0].sprite, NULL);
+    if (map == 0)
+        sfRenderWindow_drawSprite(game->window,
+        game->objects[FIRST_MAP][0].sprite, NULL);
+    if (map > 0)
+        sfRenderWindow_drawSprite(game->window,
+        game->objects[SECOND_MAP][0].sprite, NULL);
     sfRenderWindow_drawRectangleShape(game->window, shape, NULL);
     display_sprite(game->window, game->objects[PLAYER]);
     display_sprite(game->window, game->objects[PNJ_1]);
