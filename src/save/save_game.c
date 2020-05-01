@@ -30,7 +30,6 @@ static void get_obj_in_map(int **map, int fd)
         for (unsigned int x = 0; map[y][x] != -1; x++)
             if (map[y][x] != 0)
                 write_map_in_file(fd, (int [3]) {map[y][x], x, y});
-
 }
 
 void save_map(game_t *game)

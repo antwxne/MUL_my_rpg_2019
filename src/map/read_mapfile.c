@@ -11,6 +11,16 @@
 #include "game.h"
 #include "my.h"
 
+static int len_arr(char **arr)
+{
+    int len = 0;
+
+    if (!arr)
+        return (len);
+    for (; arr[len] != NULL; len++);
+    return (len);
+}
+
 static float check_coord(int coord, int const max)
 {
     if (coord < max && coord >= 0)
@@ -26,7 +36,7 @@ read_t *get_info_buffer(char *buff)
     read_t *element = malloc(sizeof(read_t));
     char **info = my_split(buff, ' ');
 
-    if (!element || !buff)
+    if (!element || !buff || len_arr(info) < 2)
         return (NULL);
     element->type = my_getnbr(info[0]);
     element->pos.x = check_coord(my_getnbr(info[1]), window_size_x/rect_size+1);

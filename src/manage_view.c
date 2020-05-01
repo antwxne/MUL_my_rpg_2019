@@ -14,11 +14,10 @@ void manage_view(game_t *game)
 {
     if (game->view == MAP)
         manage_map(game);
-    // if (game->view == FIGHT)
-    //     fight(game, MERMS, MERMS_DEF, 50);
+    if (game->view >= FIGHT_1 && game->view <= FIGHT_3)
+        manage_fight(game);
     if (game->view == MENU_P)
         manage_pause_menu(game);
     if (game->view == MENU_S)
         manage_start_menu(game);
-    // if (game->view == INVENTORY)
 }

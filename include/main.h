@@ -63,5 +63,7 @@ void manage_cursor(sfRenderWindow *window, sfClock **clock,
     object_t *cursor, sfEvent event);
 bool reset_file(void);
 bool manage_flag(char *arg);
+bool click_on_obj(sfEvent event, sfRenderWindow *window, object_t obj);
+void manage_fight(game_t *game);
 
 #endif /* !MAIN_H_ */

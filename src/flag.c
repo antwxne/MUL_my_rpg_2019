@@ -15,8 +15,8 @@ static const char *help[] = {
     "*                                                            *\n",
     "*              \033[0mTo launch the game run \033[1;92m./my_rpg\033[1;96m               *\n",
     "*                                                            *\n",
-    "*                 \033[0mYou can use the flag \033[1m--reset\033[1;96m               *\n",
-    "*                      \033[0mto reset the game\033[1;96m                     *\n",
+    "*                                                            *\n",
+    "*          \033[0mYou can use \033[1mmake reset \033[0mto reset the game\033[1;96m          *\n",
     "*                                                            *\n",
     "**************************************************************\n\033[0m",
     NULL
