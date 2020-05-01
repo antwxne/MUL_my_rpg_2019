@@ -34,6 +34,8 @@ void load_stat(game_t *game)
     game->player.stat[0] = 400;
     game->player.stat[1] = 70;
     game->player.stat[2] = 50;
+    game->player.armor = 1;
+    game->player.weapon = 1;
     if (fd != -1) {
         read_stat(fd, game);
         close(fd);
