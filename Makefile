@@ -16,6 +16,7 @@ LDFLAGS = -L lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-aud
 
 ######### SOURCES #########
 SRC =	src/main.c									\
+		src/flag.c									\
 		src/init_struct.c							\
 		src/window.c								\
 		src/loading.c 								\
@@ -62,6 +63,7 @@ SRC =	src/main.c									\
 		src/fight/set_sprite.c						\
 		src/fight/main_fight.c						\
 		src/save/load_save.c 						\
+		src/save/reset_file.c 						\
 		src/save/manage_save.c 						\
 		src/save/save_stat.c  						\
 		src/display/display.c 						\

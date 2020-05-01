@@ -61,4 +61,7 @@ void load_scene_up(game_t *game);
 void load_scene_down(game_t *game);
 void manage_cursor(sfRenderWindow *window, sfClock **clock,
     object_t *cursor, sfEvent event);
+bool reset_file(void);
+bool manage_flag(char *arg);
+
 #endif /* !MAIN_H_ */
