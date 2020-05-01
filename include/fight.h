@@ -14,6 +14,7 @@
 #include <SFML/Window.h>
 #include <stdbool.h>
 #include "game.h"
+#include "particule.h"
 
 enum ennemies_nbr{
     MERMS_DEF,

@@ -31,6 +31,20 @@ enum view_type {
     INVENTORY,
 };
 
+typedef struct particule {
+    sfRectangleShape *shape;
+    float speed;
+    sfVector2f direction;
+    sfVector2f size;
+    bool lifetime;
+    struct particule *next;
+} part_t;
+
+typedef struct color_shape {
+    sfColor coloring;
+    sfColor color_fill;
+} color_t;
+
 typedef struct object {
     sfSprite *sprite;
     sfTexture *texture;
@@ -57,6 +71,7 @@ typedef struct rectangle {
     int *life_ennemie;
     int *def_ennemie;
     int battle_status;
+    part_t *part;
 } rectangle_t;
 
 typedef struct cursor {
