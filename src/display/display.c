@@ -12,7 +12,7 @@ void display(sfRenderWindow *window, object_t **objects,
     button_display_t *buttons, game_t *game)
 {
     if (game->view == MAP)
-        display_map(window, objects, game->nb_map, game->cursor.cursor_rect);
+        display_map(game, game->nb_map, game->cursor.cursor_rect);
     if (game->view == MENU_S)
         display_menu_start(window, buttons, objects[START_MENU][0]);
     if (game->view == MENU_P)

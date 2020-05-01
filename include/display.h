@@ -10,8 +10,7 @@
 
 #include "game.h"
 
-void display_map(sfRenderWindow *window, object_t **objects, int map,
-    sfRectangleShape *shape);
+void display_map(game_t *game, int map, sfRectangleShape *shape);
 void display_menu_start(sfRenderWindow *window, button_display_t *buttons,
     object_t back_ground);
 void display_menu_pause(sfRenderWindow *window, button_display_t *buttons,

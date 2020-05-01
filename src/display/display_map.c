@@ -9,7 +9,7 @@
 #include "game.h"
 #include "inventory.h"
 
-static void display_sprite(sfRenderWindow *window, object_t *obj)
+void display_sprite(sfRenderWindow *window, object_t *obj)
 {
     for (unsigned int i = 0; i < number_objects; i++)
         if (obj[i].position.x > -100 && obj[i].position.x < window_size_x + 100
@@ -17,15 +17,14 @@ static void display_sprite(sfRenderWindow *window, object_t *obj)
             sfRenderWindow_drawSprite(window, obj[i].sprite, NULL);
 }
 
-void display_map(sfRenderWindow *window, object_t **objects, int map,
-    sfRectangleShape *shape)
+void display_map(game_t *game, int map, sfRectangleShape *shape)
 {
-    sfRenderWindow_drawSprite(window,
-    objects[FIRST_MAP + map][0].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, shape, NULL);
-    display_sprite(window, objects[PLAYER]);
-    display_sprite(window, objects[ENEMI]);
-    display_sprite(window, objects[HOUSE]);
-    display_sprite(window, objects[HOUSE_2]);
-    set_inventory(window, objects, event);
+    sfRenderWindow_drawSprite(game->window,
+    game->objects[FIRST_MAP + map][0].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(game->window, shape, NULL);
+    display_sprite(game->window, game->objects[PLAYER]);
+    display_sprite(game->window, game->objects[ENEMI]);
+    display_sprite(game->window, game->objects[HOUSE]);
+    display_sprite(game->window, game->objects[HOUSE_2]);
+    set_inventory(game);
 }
