@@ -13,7 +13,7 @@
 #include "rect_shape.h"
 
 sfVector2f random_vector(void);
-void update_part(part_t *part, game_t *game);
+void update_part(part_t *part, sfRenderWindow *window);
 part_t *create_part(int nb_part, sfVector2f pos, int speed, color_t color);
 void reset_part(part_t *part, sfVector2f pos, int speed, color_t color);
 void free_part(part_t *part);
