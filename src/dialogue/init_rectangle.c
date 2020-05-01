@@ -42,23 +42,23 @@ sfVector2f position_xy(int x, int y)
     return position;
 }
 
-static void init_text(dialogue_t *dialogue, char *texte)
+static void init_text(dialogue_t *dialogue)
 {
     dialogue->police = sfFont_createFromFile("assets/font_medieval.ttf");
     dialogue->texte = sfText_create();
     sfText_setFont(dialogue->texte,dialogue->police);
     sfText_setColor(dialogue->texte, sfWhite);    
-    sfText_setPosition(dialogue->texte, (position_xy(400,300)));
-    sfText_setString(dialogue->texte, texte);
 }
 
 static void fill(dialogue_t *dialogue)
 {
-    dialogue->dia[0][0] = "Click here\nLALALA";
-    dialogue->dia[0][1] = "ALED, je suis en danger !!!";
-    dialogue->dia[0][2] = "aider moi je vous en prie !!!";
-    dialogue->dia[0][3] = "une récompense vous severez !!";
-    dialogue->dia[0][4] = "ACCEPTEZ LA QUÊTE!";
+    dialogue->dia[HTP][0] = "Helllo DO YOU WANT PLAY BITCH!!";
+    dialogue->dia[HTP][1] = "PRESSSSSS EEEEEEE!!!";
+    dialogue->dia[PNJ_1][0] = "Click here\nLALALA";
+    dialogue->dia[PNJ_1][1] = "ALED, je suis en danger !!!";
+    dialogue->dia[PNJ_1][2] = "aider moi je vous en prie !!!";
+    dialogue->dia[PNJ_1][3] = "une récompense vous severez !!";
+    dialogue->dia[PNJ_1][4] = "ACCEPTEZ LA QUÊTE!";
 }
 
 int rectangle(dialogue_t *dialogue)
@@ -71,8 +71,8 @@ int rectangle(dialogue_t *dialogue)
         color_out[i], color_fil[i]);
     dialogue->dia = malloc(sizeof(char **) * nbr_text);
     for (int i = 0; i <= nbr_text; i++)
-        dialogue->dia[i] = malloc(sizeof(char *) * nbr_text + 1);
+        dialogue->dia[i] = malloc(sizeof(char *) * (nbr_text + 1));
     fill(dialogue);
-    init_text(dialogue, dialogue->dia[0][0]);
+    init_text(dialogue);
     return 0;
 }

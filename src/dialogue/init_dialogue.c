@@ -9,7 +9,7 @@
 #include "dialogue.h"
 
 static const sfIntRect rect[] = {
-    {400, 300, 100, 100}
+    {400, 300, 200, 50}
 };
 
 static int wait_click(game_t *game)
@@ -27,7 +27,7 @@ static int wait_click(game_t *game)
     return 0;
 }
 
-static int wait_press_e(game_t *game)
+int wait_press_e(game_t *game)
 {
     static int a = 0;
 
@@ -49,30 +49,33 @@ static sfVector2f posi_xy(int x, int y)
     return position;
 }
 
-static void pos_dia(int x , int y, dialogue_t *dialogue, char *texte)
+void pos_dia(int x , int y, dialogue_t *dialogue, char *texte)
 {
     sfText_setPosition(dialogue->texte, (posi_xy(x, y)));
     sfText_setString(dialogue->texte, texte);
 }
 
-void main_dialogue(dialogue_t *dialogue, game_t *game)
+int main_dialogue(dialogue_t *dialogue, game_t *game, int types)
 {
     static int i = 0;
     static int step = 1;
 
     i += wait_click(game);
- 
     if (i >= 1) {
         step += wait_press_e(game);
-        printf("stape = %d\n", step);
-        if (dialogue->dia[0][step] == NULL)
-            exit(1);
+        if (dialogue->dia[types][step] == NULL) {
+            i = 0;
+            step = 0;
+            return 1;
+        }
         sfRenderWindow_drawRectangleShape(game->window, dialogue->dia_rects[1], NULL);
-        pos_dia(700, 600, dialogue, dialogue->dia[0][step]);
+        pos_dia(700, 600, dialogue, dialogue->dia[types][step]);
         sfRenderWindow_drawText(game->window, dialogue->texte, NULL);   
     }
     else if (i == 0) {
         sfRenderWindow_drawRectangleShape(game->window, dialogue->dia_rects[0], NULL);
+        pos_dia(400, 300, dialogue, dialogue->dia[types][0]);
         sfRenderWindow_drawText(game->window, dialogue->texte, NULL);   
     }
+    return 0;
 }

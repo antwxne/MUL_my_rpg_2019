@@ -31,6 +31,13 @@ enum view_type {
     INVENTORY,
 };
 
+typedef struct dialogue {
+    sfRectangleShape **dia_rects;
+    sfFont *police;
+    sfText *texte;
+    char ***dia;
+} dialogue_t;
+
 typedef struct particule {
     sfRectangleShape *shape;
     float speed;
@@ -72,6 +79,7 @@ typedef struct rectangle {
     int *def_ennemie;
     int battle_status;
     part_t *part;
+    dialogue_t dialogue;
 } rectangle_t;
 
 typedef struct cursor {
@@ -92,6 +100,7 @@ typedef struct game{
     rectangle_t fight;
     int view;
     cursor_t cursor;
+    dialogue_t dialogue;
 } game_t;
 
 typedef struct read {

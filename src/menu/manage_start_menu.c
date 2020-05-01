@@ -8,6 +8,7 @@
 #include "game.h"
 #include "main.h"
 #include "start_menu.h"
+#include "dialogue.h"
 
 static const sfColor transparent_grey = {255, 255, 255, 60};
 
@@ -17,8 +18,8 @@ static void change_action(game_t *game, int action)
         game->view = MAP;
     if (action == S_QUIT)
         sfRenderWindow_close(game->window);
-    // if (action == S_HTP)
-    //     display how to play
+    if (action == S_HTP)
+        how_to_play(&game->dialogue, game);
 }
 
 static void overlay_button(button_display_t *ptr_button, game_t *game,
