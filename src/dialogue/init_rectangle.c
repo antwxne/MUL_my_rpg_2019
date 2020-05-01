@@ -28,7 +28,7 @@ static const sfColor color_fil [] = {
     {20, 20, 20, 90},
     {199, 207, 0, 90},
 };
-    
+
 static const int nbr_rect = 2;
 
 static const int nbr_text = 5;
@@ -36,7 +36,7 @@ static const int nbr_text = 5;
 sfVector2f position_xy(int x, int y)
 {
     sfVector2f position;
-    
+
     position.x = x;
     position.y = y;
     return position;
@@ -46,9 +46,9 @@ static void init_text(dialogue_t *dialogue, char *texte)
 {
     dialogue->police = sfFont_createFromFile("assets/font_medieval.ttf");
     dialogue->texte = sfText_create();
-    sfText_setFont(dialogue->texte,dialogue->police);
-    sfText_setColor(dialogue->texte, sfWhite);    
-    sfText_setPosition(dialogue->texte, (position_xy(400,300)));
+    sfText_setFont(dialogue->texte, dialogue->police);
+    sfText_setColor(dialogue->texte, sfWhite);
+    sfText_setPosition(dialogue->texte, (position_xy(400, 300)));
     sfText_setString(dialogue->texte, texte);
 }
 

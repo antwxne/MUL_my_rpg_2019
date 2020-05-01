@@ -23,8 +23,11 @@ void display_map(game_t *game, int map, sfRectangleShape *shape)
     game->objects[FIRST_MAP + map][0].sprite, NULL);
     sfRenderWindow_drawRectangleShape(game->window, shape, NULL);
     display_sprite(game->window, game->objects[PLAYER]);
-    display_sprite(game->window, game->objects[ENEMI]);
+    display_sprite(game->window, game->objects[PNJ_1]);
     display_sprite(game->window, game->objects[HOUSE]);
     display_sprite(game->window, game->objects[HOUSE_2]);
+    display_sprite(game->window, game->objects[ENNEMI_1]);
+    display_sprite(game->window, game->objects[ENNEMI_2]);
+    display_sprite(game->window, game->objects[ENNEMI_3]);
     set_inventory(game);
 }
