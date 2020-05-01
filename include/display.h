@@ -12,8 +12,8 @@
 
 void display_map(game_t *game, int map, sfRectangleShape *shape);
 void display_menu_start(sfRenderWindow *window, button_display_t *buttons,
-    object_t back_ground);
+    object_t back_ground, game_t *game);
 void display_menu_pause(sfRenderWindow *window, button_display_t *buttons,
-    object_t back_ground);
+    object_t back_ground, game_t *game);
 
 #endif /* !DISPLAY_H_ */

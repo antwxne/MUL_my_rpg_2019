@@ -9,7 +9,7 @@
 #include "game.h"
 
 void display_menu_start(sfRenderWindow *window, button_display_t *buttons,
-    object_t back_ground)
+    object_t back_ground, game_t *game)
 {
     sfRenderWindow_drawSprite(window, back_ground.sprite, NULL);
     for (unsigned int i = S_START; i <= S_QUIT; i++) {
@@ -17,4 +17,5 @@ void display_menu_start(sfRenderWindow *window, button_display_t *buttons,
         buttons[i].shape, NULL);
         sfRenderWindow_drawText(window, buttons[i].text, NULL);
     }
+    rain(game->fight.part, game, (color_t) {sfWhite, sfWhite});
 }
