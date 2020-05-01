@@ -28,6 +28,8 @@ int show_window(game_t *game)
         display_window(game->window);
         manage_view(game);
         display(game->window, game->objects, game->buttons, game);
+        manage_cursor(game->window, &game->cursor.clock,
+        &game->objects[CURSOR][0], game->event);
     }
     free_rect_arr((sfIntRect **)game->rect_arr);
     sfRenderWindow_destroy(game->window);

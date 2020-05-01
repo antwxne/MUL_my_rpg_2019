@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "game.h"
+#include "textures.h"
 
 void manage_event(game_t *game)
 {
