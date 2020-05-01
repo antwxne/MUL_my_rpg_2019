@@ -32,5 +32,6 @@ void battle_prin(rectangle_t *rects, sfRenderWindow *window, object_t **objects)
     if (rects->battle_status == 3) {
         sfRenderWindow_drawRectangleShape(window, rects->fight_rects[8], NULL);
         sfRenderWindow_drawSprite(window, objects[VICTORY][0].sprite, NULL);
+        update_part(rects->part, window);
     }
 }
