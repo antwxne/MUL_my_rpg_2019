@@ -39,5 +39,6 @@ int initia_fight(rectangle_t *rect)
     rect->message = 0;
     rect->battle_status = 0;
     init_ennemies(rect);
+    rect->part = create_part(50, (sfVector2f) {650, 300}, 0, (color_t) {sfRed, sfRed});
     return 0;
 }
