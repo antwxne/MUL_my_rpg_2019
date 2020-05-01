@@ -22,6 +22,11 @@ static const char *content_map[] = {
 
 static const char fp_save[] = ".config/save";
 
+static const char *error_msg[] = {
+    "\033[91;1;5;4mERROR\033[0m:Make sure that you have ./.config/maps folder\n",
+    "\033[91;1;5;4mERROR\033[0m:Make sure that you have ./.config folder\n",
+};
+
 static bool reset_map(int map)
 {
     int fd = open(fp_map[map], O_WRONLY);
@@ -33,7 +38,7 @@ static bool reset_map(int map)
         close(fd);
         return (true);
     } else {
-        my_putstr("Make sure that you have ./.config/maps folder\n");
+        my_putstr((char *) error_msg[0]);
         return (false);
     }
 }
@@ -51,7 +56,7 @@ static bool reset_stat(void)
         close(fd);
         return (true);
     } else {
-        my_putstr("Make sure that you have ./.config folder\n");
+        my_putstr((char *) error_msg[1]);
         return (false);
     }
 }
