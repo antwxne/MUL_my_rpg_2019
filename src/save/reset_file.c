@@ -16,8 +16,9 @@
 
 static const char *content_map[] = {
     "3 1 0\n3 3 0 \n2 2 1\n3 1 2\n3 3 2\n3 19 2\n1 13 9\n19 18 4\n19 19 6\n" \
-    "19 21 6\n18 19 7\n17 0 8\n17 1 9\n17 2 9\n17 3 10\n17 4 10\n17 5 11\n17 6 12\n17 7 12",
-    "",
+    "19 21 6\n18 19 7\n17 0 8\n17 1 9\n17 2 9\n17 3 10\n17 4 10\n" \
+    "17 5 11\n17 6 12\n17 7 12\n",
+    "\0",
     "27 1 2",
     "28 17 2",
     "29 21 9"
@@ -33,6 +34,7 @@ static const char *error_msg[] = {
 static bool reset_map(int map)
 {
     int fd = open(fp_map[map], O_WRONLY);
+
 
     if (fd == -1)
         fd = open(fp_map[map], O_WRONLY | O_CREAT, rights);

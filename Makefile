@@ -104,7 +104,11 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY: all debug clean fclean re tests_run
+reset: all
+	@$(RM) .config/maps/* .config/save
+	@./$(NAME) --reset
+
+.PHONY: all debug clean fclean re tests_run reset
 
 tests_run:	LDFLAGS	+= -lcriterion --coverage
 tests_run:
