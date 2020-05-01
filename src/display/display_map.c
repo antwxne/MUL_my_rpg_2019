@@ -19,13 +19,11 @@ static void display_sprite(sfRenderWindow *window, object_t *obj)
 
 void display_map(sfRenderWindow *window, object_t **objects)
 {
+    sfVector2i pos = sfMouse_getPositionRenderWindow(window);
+
     display_sprite(window, objects[PLAYER]);
     display_sprite(window, objects[ENEMI]);
     display_sprite(window, objects[HOUSE]);
     display_sprite(window, objects[HOUSE_2]);
-    set_inventory(window, objects);
-    display_sprite(window, objects[INVENTORY_]);
-    display_sprite(window, objects[SWORD]);
-    display_sprite(window, objects[ARMOR_2]);
-    display_sprite(window, objects[POTION]);
+    set_inventory(window, objects, event);
 }
