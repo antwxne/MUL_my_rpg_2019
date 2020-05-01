@@ -9,13 +9,13 @@
 #include "game.h"
 #include "fight.h"
 
-void state_effect(rectangle_t *rects, int status, int ennemies,
+void state_effect(game_t *game, int status, int ennemies,
                 int ennemies_damage)
 {
-    if (rects->consequence == false) {
-        battle(status, rects);
-        damage(rects, ennemies, ennemies_damage);
-        rects->consequence = true;
+    if (game->fight.consequence == false) {
+        battle(status, &game->fight);
+        damage(game, ennemies, ennemies_damage);
+        game->fight.consequence = true;
     }
 }
 

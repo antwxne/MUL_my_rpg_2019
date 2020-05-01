@@ -19,7 +19,7 @@ sfVector2f random_vector(void)
     return (vector);
 }
 
-void update_part(part_t *part, game_t *game)
+void update_part(part_t *part, sfRenderWindow *window)
 {
     sfVector2f pos;
 
@@ -31,7 +31,7 @@ void update_part(part_t *part, game_t *game)
         if (pos.x >= 1920 || pos.y >= 1080 || pos.x <= 0 || pos.y <= 0)
             part->lifetime = 0;
         else if (part->lifetime == 1)
-            sfRenderWindow_drawRectangleShape(game->window, part->shape, NULL);
+            sfRenderWindow_drawRectangleShape(window, part->shape, NULL);
         part = part->next;
     }
 }

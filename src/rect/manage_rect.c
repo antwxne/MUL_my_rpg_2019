@@ -16,5 +16,4 @@ void manage_rect(sfRenderWindow *window, sfIntRect const **rect_arr,
     mouse_pos = sfMouse_getPositionRenderWindow(window);
     rect_pos = get_pos_int_rect(rect_arr, mouse_pos);
     move_rect_on_mouse(rect_pos, &shape);
-    sfRenderWindow_drawRectangleShape(window, shape, NULL);
 }

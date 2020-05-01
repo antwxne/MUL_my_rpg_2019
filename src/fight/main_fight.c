@@ -28,6 +28,7 @@ static int battle_init(game_t *png, rectangle_t *rects, int name_ennemies,
     if (rects->etat == false) {
         if (life_time(rects, name_ennemies) == 1) {
             rects->life_ennemie[name_ennemies] = 400;
+            rects->god = true;
             return 1;
         }
         if (rects->god != false)
@@ -35,7 +36,7 @@ static int battle_init(game_t *png, rectangle_t *rects, int name_ennemies,
         else
             god_moding(rects, name_ennemies, png->window, png->objects);
     }
-    state_effect(rects, status, name_ennemies, ennemies_damage);
+    state_effect(png, status, name_ennemies, ennemies_damage);
     return 0;
 }
 

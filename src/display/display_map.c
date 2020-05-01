@@ -17,10 +17,12 @@ static void display_sprite(sfRenderWindow *window, object_t *obj)
             sfRenderWindow_drawSprite(window, obj[i].sprite, NULL);
 }
 
-void display_map(sfRenderWindow *window, object_t **objects)
+void display_map(sfRenderWindow *window, object_t **objects, int map,
+    sfRectangleShape *shape)
 {
-    sfVector2i pos = sfMouse_getPositionRenderWindow(window);
-
+    sfRenderWindow_drawSprite(window,
+    objects[FIRST_MAP + map][0].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(window, shape, NULL);
     display_sprite(window, objects[PLAYER]);
     display_sprite(window, objects[ENEMI]);
     display_sprite(window, objects[HOUSE]);

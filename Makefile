@@ -16,6 +16,7 @@ LDFLAGS = -L lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-aud
 
 ######### SOURCES #########
 SRC =	src/main.c									\
+		src/flag.c									\
 		src/init_struct.c							\
 		src/window.c								\
 		src/loading.c 								\
@@ -48,6 +49,7 @@ SRC =	src/main.c									\
 		src/event/key_move.c 						\
 		src/event/management.c 						\
 		src/event/manage_key.c 						\
+		src/event/color_cursor.c 					\
 		src/save/save_game.c 						\
 		src/particule/particule.c					\
 		src/particule/particule_update.c			\
@@ -61,16 +63,17 @@ SRC =	src/main.c									\
 		src/fight/set_sprite.c						\
 		src/fight/main_fight.c						\
 		src/save/load_save.c 						\
+		src/save/reset_file.c 						\
 		src/save/manage_save.c 						\
 		src/save/save_stat.c  						\
 		src/display/display.c 						\
 		src/display/display_map.c 					\
 		src/display/display_menu_start.c 			\
 		src/display/display_menu_pause.c 			\
-		src/dialogue/init_dialogue.c	\
-		src/dialogue/init_rectangle.c	\
-		src/display_map.c	\
-		src/inventory.c
+		src/dialogue/init_dialogue.c				\
+		src/dialogue/init_rectangle.c				\
+		src/inventory.c								\
+
 
 OBJ = $(SRC:.c=.o)
 

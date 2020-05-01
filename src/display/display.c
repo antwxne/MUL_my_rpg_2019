@@ -9,12 +9,12 @@
 #include "display.h"
 
 void display(sfRenderWindow *window, object_t **objects,
-    button_display_t *buttons, int view)
+    button_display_t *buttons, game_t *game)
 {
-    if (view == MAP)
-        display_map(window, objects);
-    if (view == MENU_S)
+    if (game->view == MAP)
+        display_map(window, objects, game->nb_map, game->cursor.cursor_rect);
+    if (game->view == MENU_S)
         display_menu_start(window, buttons, objects[START_MENU][0]);
-    if (view == MENU_P)
+    if (game->view == MENU_P)
         display_menu_pause(window, buttons, objects[PAUSE_MENU][0]);
 }

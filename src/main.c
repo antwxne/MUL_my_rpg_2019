@@ -15,23 +15,30 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main(int ac, char **av, char **env)
+static bool game_start(void)
 {
-    (void) ac;
-    (void) av;
     int error = 0;
     game_t game = init_struct(&error);
     int fd = open("/dev/random", O_RDONLY);
 
-    if (fd == -1)
-        return 84;
+    if (fd == -1 || error == -1)
+        return (false);
     read(fd, &fd, 1);
     srand(fd);
-    if (env[0] == NULL)
-        return (84);
-    if (error == -1)
-        return (84);
     show_window(&game);
     free_map(game.map);
-    return (0);
+    return (true);
+}
+
+int main(int ac, char **av, char **env)
+{
+    bool ret = false;
+
+    if (env[0] == NULL)
+        return (84);
+    if (ac == 2)
+        ret = manage_flag(av[1]);
+    if (ac == 1)
+        ret = game_start();
+    return (ret == true ? 0 : 84);
 }
