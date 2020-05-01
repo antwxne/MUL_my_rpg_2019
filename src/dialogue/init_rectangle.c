@@ -31,7 +31,7 @@ static const sfColor color_fil [] = {
     
 static const int nbr_rect = 2;
 
-static const int nbr_text = 5;
+static const int nbr_text = 6;
 
 sfVector2f position_xy(int x, int y)
 {
@@ -54,11 +54,11 @@ static void init_text(dialogue_t *dialogue, char *texte)
 
 static void fill(dialogue_t *dialogue)
 {
-    dialogue->dia[0] = "Click here\nLALALA";
-    dialogue->dia[1] = "ALED, je suis en danger !!!";
-    dialogue->dia[2] = "aider moi je vous en prie !!!";
-    dialogue->dia[3] = "une récompense vous severez !!";
-    dialogue->dia[4] = "ACCEPTEZ LA QUÊTE!";
+    dialogue->dia[0][0] = "Click here\nLALALA";
+    dialogue->dia[0][1] = "ALED, je suis en danger !!!";
+    dialogue->dia[0][2] = "aider moi je vous en prie !!!";
+    dialogue->dia[0][3] = "une récompense vous severez !!";
+    dialogue->dia[0][4] = "ACCEPTEZ LA QUÊTE!";
 }
 
 int rectangle(dialogue_t *dialogue)
@@ -69,8 +69,10 @@ int rectangle(dialogue_t *dialogue)
     for (int i = 0; i != nbr_rect; i++)
         dialogue->dia_rects[i] = create_fight_rect_shape(place[i], sizes[i],
         color_out[i], color_fil[i]);
-    dialogue->dia = malloc(sizeof(char *) * nbr_text);
+    dialogue->dia = malloc(sizeof(char **) * nbr_text);
+    for (int i = 0; i <= nbr_text; i++)
+        dialogue->dia[i] = malloc(sizeof(char *) * nbr_text + 1);
     fill(dialogue);
-    init_text(dialogue, dialogue->dia[0]);
+    init_text(dialogue, dialogue->dia[0][0]);
     return 0;
 }

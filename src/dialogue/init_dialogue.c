@@ -21,7 +21,7 @@ static int wait_click(game_t *game)
         status = 1;
     if (game->event.type == sfEvtMouseButtonReleased && status == 1) {
           if (sfIntRect_contains(&rect[0], posi.x, posi.y) == sfTrue) {
-            return 1;
+              return 1;
         }
     }
     return 0;
@@ -30,14 +30,12 @@ static int wait_click(game_t *game)
 static int wait_press_e(game_t *game)
 {
     static int a = 0;
-    static int status = 0;
-    
+
     if (sfKeyboard_isKeyPressed(sfKeyE) == sfTrue)
         a = 1;
-    if ((game->event.type == sfEvtKeyReleased) && (a == 1)) {
+    else if((game->event.type == sfEvtKeyReleased) && (a == 1)) {
         a = 0;
-        status += 1;
-        return status;
+        return 1;
     }
     return 0;
 }
@@ -60,16 +58,18 @@ static void pos_dia(int x , int y, dialogue_t *dialogue, char *texte)
 void main_dialogue(dialogue_t *dialogue, game_t *game)
 {
     static int i = 0;
-    static int stape = 1;
+    static int step = 1;
 
-    stape += wait_press_e(game);
     i += wait_click(game);
+ 
     if (i >= 1) {
+        step += wait_press_e(game);
+        printf("stape = %d\n", step);
+        if (dialogue->dia[0][step] == NULL)
+            exit(1);
         sfRenderWindow_drawRectangleShape(game->window, dialogue->dia_rects[1], NULL);
-        if (dialogue->dia[stape] != NULL) {
-        pos_dia(700, 600, dialogue, dialogue->dia[stape]);
+        pos_dia(700, 600, dialogue, dialogue->dia[0][step]);
         sfRenderWindow_drawText(game->window, dialogue->texte, NULL);   
-        }
     }
     else if (i == 0) {
         sfRenderWindow_drawRectangleShape(game->window, dialogue->dia_rects[0], NULL);

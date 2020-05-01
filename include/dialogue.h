@@ -11,7 +11,7 @@ typedef struct dialogue {
     sfRectangleShape **dia_rects;
     sfFont *police;
     sfText *texte;
-    char **dia;
+    char ***dia;
 } dialogue_t;
 
 void display_maps(game_t *game);
