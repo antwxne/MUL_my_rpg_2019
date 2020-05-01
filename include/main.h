@@ -59,5 +59,6 @@ void change_map(game_t *game);
 void manage_map(game_t *game);
 void load_scene_up(game_t *game);
 void load_scene_down(game_t *game);
-
+void manage_cursor(sfRenderWindow *window, sfClock **clock,
+    object_t *cursor, sfEvent event);
 #endif /* !MAIN_H_ */
