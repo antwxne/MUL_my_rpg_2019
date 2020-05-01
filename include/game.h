@@ -59,6 +59,8 @@ typedef struct player {
     sfVector2f reach;
     sfClock *clock[2];
     int stat[3];
+    int armor;
+    int weapon;
 } player_t;
 
 typedef struct rectangle {
