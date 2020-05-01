@@ -15,8 +15,8 @@
 #include "save.h"
 
 static const char *content_map[] = {
-    "3 1 0\n3 3 0 \n2 2 1\n3 1 2\n3 3 2\n3 19 2\n1 13 9\n18 18 4\n18 19 6\n" \
-    "18 21 6\n18 19 7\n17 0 8\n17 1 9\n17 2 9\n17 3 10\n17 4 10\n17 5 11\n" \
+    "3 1 0\n3 3 0 \n2 2 1\n3 1 2\n3 3 2\n3 19 2\n1 13 9\n19 18 4\n19 19 6\n" \
+    "19 21 6\n18 19 7\n17 0 8\n17 1 9\n17 2 9\n17 3 10\n17 4 10\n17 5 11\n" \
     "17 6 12\n17 7 12"
 };
 
@@ -65,6 +65,8 @@ bool reset_file(void)
 {
     if (!reset_map(0) || !reset_stat())
         return (false);
-    else
+    else {
+        my_putstr("Reset \033[92;1mOK\033[0m\n");
         return (true);
+    }
 }
