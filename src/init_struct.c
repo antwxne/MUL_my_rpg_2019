@@ -19,9 +19,10 @@ static bool init_array(game_t *game)
     if (!game->map || !game->rect_arr)
         return (false);
     game->buttons = init_button();
-    game->cursor_rect = create_rect_shape(
+    game->cursor.cursor_rect = create_rect_shape(
     (sfVector2f[2]) {{0, 0}, {rect_size, rect_size}},
         5, (sfColor[2]) {t_grey, t_grey});
+    game->cursor.clock = sfClock_create();
     if (!game->buttons)
         return (false);
     return (true);

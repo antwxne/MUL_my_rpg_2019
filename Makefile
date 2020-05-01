@@ -48,6 +48,7 @@ SRC =	src/main.c									\
 		src/event/key_move.c 						\
 		src/event/management.c 						\
 		src/event/manage_key.c 						\
+		src/event/color_cursor.c 					\
 		src/save/save_game.c 						\
 		src/particule/particule.c					\
 		src/particule/particule_update.c			\

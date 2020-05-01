@@ -59,6 +59,11 @@ typedef struct rectangle {
     int battle_status;
 } rectangle_t;
 
+typedef struct cursor {
+    sfRectangleShape *cursor_rect;
+    sfClock *clock;
+} cursor_t;
+
 typedef struct game{
     sfEvent event;
     sfRenderWindow *window;
@@ -71,7 +76,7 @@ typedef struct game{
     int nb_map;
     rectangle_t fight;
     int view;
-    sfRectangleShape *cursor_rect;
+    cursor_t cursor;
 } game_t;
 
 typedef struct read {
