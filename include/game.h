@@ -37,6 +37,7 @@ enum view_type {
     FIGHT_3,
     MENU_P,
     MENU_S,
+    DIALOGUE,
 };
 
 typedef struct dialogue {
