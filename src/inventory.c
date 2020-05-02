@@ -17,7 +17,8 @@ static void set_pos(float x, float y, object_t *object)
 
 static void equip_weapon(game_t *game, sfVector2i pos)
 {
-    if (pos.x < 69 && pos.x > 37 && pos.y < 922 && pos.y > 890
+    if (is_the_mouse_in_x(pos, 37, 69) == 1
+    && is_the_mouse_in_y(pos, 890, 922) == 1
     && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)) {
         if (game->player.weapon == 1) {
             game->player.weapon = 2;
@@ -36,15 +37,15 @@ static void equip_weapon(game_t *game, sfVector2i pos)
 
 static void equip_armor(game_t *game, sfVector2i pos)
 {
-    if (pos.x < 112 && pos.x > 80 && pos.y < 922 && pos.y > 890
+    if (is_the_mouse_in_x(pos, 80, 112) == 1
+    && is_the_mouse_in_y(pos, 890, 922) == 1
     && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)) {
         if (game->player.armor == 1) {
             game->player.armor = 2;
             game->player.stat[0] += 50;
             game->player.max_health += 50;
             game->player.stat[1] += 10;
-        }
-        else {
+        } else {
             game->player.armor = 1;
             game->player.stat[0] -= 50;
             game->player.max_health -= 50;

@@ -8,6 +8,7 @@
 #include "textures.h"
 #include "game.h"
 #include "inventory.h"
+#include "hud.h"
 
 void display_sprite(sfRenderWindow *window, object_t *obj)
 {
@@ -35,4 +36,5 @@ void display_map(game_t *game, int map, sfRectangleShape *shape)
     display_sprite(game->window, game->objects[ENNEMI_2]);
     display_sprite(game->window, game->objects[ENNEMI_3]);
     set_inventory(game);
+    apply_stats(game->player.stat_txt, game);
 }

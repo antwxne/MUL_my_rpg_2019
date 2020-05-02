@@ -78,6 +78,7 @@ SRC =	src/main.c									\
 		src/game/manage_game.c 						\
 		src/game/pnj.c 								\
 		src/game/enemi.c 							\
+		src/hud.c									\
 
 
 OBJ = $(SRC:.c=.o)
