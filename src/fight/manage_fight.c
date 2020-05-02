@@ -17,8 +17,7 @@ static void has_won(game_t *game, int name, int def, int atk)
     if (won) {
         game->player.stat[3] += 1;
         game->view = MAP;
-    } else
-        game->view = START_MENU;
+    }
 }
 
 void manage_fight(game_t *game)
