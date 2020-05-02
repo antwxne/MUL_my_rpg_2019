@@ -18,4 +18,14 @@
 void set_inventory(game_t *game);
 void display_sprite(sfRenderWindow *window, object_t *obj);
 
+static inline int is_the_mouse_in_x(sfVector2i pos, int x_min, int x_max)
+{
+    return ((pos.x < x_max && pos.x > x_min) ? 1 : 0);
+}
+
+static inline int is_the_mouse_in_y(sfVector2i pos, int y_min, int y_max)
+{
+    return ((pos.y < y_max && pos.y > y_min) ? 1 : 0);
+}
+
 #endif /* !INVENTORY_H_ */

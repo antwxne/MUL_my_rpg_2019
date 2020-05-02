@@ -87,6 +87,8 @@ SRC =	src/main.c									\
 		src/free/destroy_music.c 					\
 		src/free/destroy_object.c 					\
 		src/free/destroy_textures.c 				\
+		src/hud.c									\
+
 
 OBJ = $(SRC:.c=.o)
 

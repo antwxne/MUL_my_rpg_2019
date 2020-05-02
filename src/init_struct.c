@@ -10,6 +10,7 @@
 #include "main.h"
 #include "textures.h"
 #include "dialogue.h"
+#include "hud.h"
 
 static const sfColor t_grey = {255, 255, 255, 125};
 
@@ -58,6 +59,8 @@ game_t init_struct(int *ptr_err)
         *ptr_err = -1;
         return (game);
     }
+    initia_fight(&game.fight);
+    create_hud(&game);
     game.view = MENU_S;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setMouseCursorVisible(game.window, sfFalse);

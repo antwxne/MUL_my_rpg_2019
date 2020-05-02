@@ -85,6 +85,7 @@ typedef struct player {
     int weapon;
     int max_health;
     int stat[4];
+    sfText *stat_txt[3];
 } player_t;
 
 typedef struct rectangle {
