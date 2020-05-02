@@ -1,2 +1,5 @@
 my_rpg
 .vscode/settings.json
+.config/maps/map_1
+.config/maps/map_2
+.config/save
