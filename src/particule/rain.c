@@ -15,7 +15,7 @@ void make_rain(part_t *part)
         part->lifetime = true;
         part->speed = 1;
         part->size = (sfVector2f) {2, 5};
-        part->direction = (sfVector2f) {0, (rand() % 100)};
+        part->direction = (sfVector2f) {0, (rand() % 55)};
         sfRectangleShape_setPosition(part->shape, (sfVector2f) {pos_x, 0});
         sfRectangleShape_setOutlineThickness(part->shape, 1);
         sfRectangleShape_scale(part->shape, (sfVector2f) {0.25, 0.25});
