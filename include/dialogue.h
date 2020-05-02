@@ -11,6 +11,7 @@ enum pnj_type
 {
     HTP,
     PNJ_FIRST,
+    PNJ_SECOND,
 };
 
 void display_maps(game_t *game);

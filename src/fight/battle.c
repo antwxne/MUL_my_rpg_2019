@@ -66,7 +66,8 @@ void damage(game_t *game, int ennemies, int deg_ennemies)
         sfRectangleShape_setSize(game->fight.fight_rects[3],
         (sfVector2f) {game->fight.life_ennemie[ennemies], 100});
         game->fight.battle_status = 3;
-        reset_part(game->fight.part, (sfVector2f) {650, 300}, 0, (color_t) {sfRed, sfRed});
+        reset_part(game->fight.part, (sfVector2f) {650, 300}, 0,
+        (color_t) {sfRed, sfRed});
     }
 }
 

@@ -47,18 +47,24 @@ static void init_text(dialogue_t *dialogue)
     dialogue->police = sfFont_createFromFile("assets/font_medieval.ttf");
     dialogue->texte = sfText_create();
     sfText_setFont(dialogue->texte, dialogue->police);
-    sfText_setColor(dialogue->texte, sfWhite);
+    sfText_setColor(dialogue->texte, sfRed);
 }
 
 static void fill(dialogue_t *dialogue)
 {
-    dialogue->dia[HTP][0] = "Helllo DO YOU WANT PLAY BITCH!!";
-    dialogue->dia[HTP][1] = "PRESSSSSS EEEEEEE!!!";
-    dialogue->dia[PNJ_FIRST][0] = "Click here\nLALALA";
-    dialogue->dia[PNJ_FIRST][1] = "ALED, je suis en danger !!!";
+    dialogue->dia[HTP][0] = "hello bienvenu ici poto!!";
+    dialogue->dia[HTP][1] = "presss eeeeee!!!";
+    dialogue->dia[HTP][2] = "tadada voici comment faire les dialogues!!!";
+    dialogue->dia[HTP][3] = "c'est un shifumi , faites vous plez!!";
+    dialogue->dia[HTP][4] = "il y a des quetes etc!!";
+    dialogue->dia[PNJ_FIRST][0] = "j ai une quete pour toi !!!";
+    dialogue->dia[PNJ_FIRST][1] = "aled je suis en danger !!!";
     dialogue->dia[PNJ_FIRST][2] = "aider moi je vous en prie !!!";
     dialogue->dia[PNJ_FIRST][3] = "une récompense vous severez !!";
-    dialogue->dia[PNJ_FIRST][4] = "ACCEPTEZ LA QUÊTE!";
+    dialogue->dia[PNJ_FIRST][4] = "vous devez tuez l ennemie patate";
+    dialogue->dia[PNJ_FIRST][5] = "acceptez la quete!";
+    dialogue->dia[PNJ_SECOND][0] = "ZIZI";
+    dialogue->dia[PNJ_SECOND][1] = "LOL";
 }
 
 int rectangle(dialogue_t *dialogue)
@@ -70,8 +76,13 @@ int rectangle(dialogue_t *dialogue)
         dialogue->dia_rects[i] = create_fight_rect_shape(place[i], sizes[i],
         color_out[i], color_fil[i]);
     dialogue->dia = malloc(sizeof(char **) * nbr_text);
-    for (int i = 0; i <= nbr_text; i++)
+    if (dialogue->dia == NULL)
+        return 84;
+    for (int i = 0; i < nbr_text; i++) {
         dialogue->dia[i] = malloc(sizeof(char *) * (nbr_text + 1));
+        if (dialogue->dia == NULL)
+            return 84;
+    }
     fill(dialogue);
     init_text(dialogue);
     return 0;
