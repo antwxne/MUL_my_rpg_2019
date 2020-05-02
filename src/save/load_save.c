@@ -19,10 +19,13 @@ static void read_stat(int fd, game_t *game)
 {
     int size = read(fd, &game->nb_map, sizeof(int));
 
-    if (size == 4)
+    if (size == 4) {
+        size += read(fd, &game->player.armor, sizeof(int));
+        size += read(fd, &game->player.weapon, sizeof(int));
         for (unsigned int i = 0; i < 4; i++)
             size += read(fd, &game->player.stat[i], sizeof(int));
-    if (size != 20)
+    }
+    if (size != 28)
         my_putstr("Save file corrupted\n");
 }
 

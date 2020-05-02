@@ -10,7 +10,7 @@
 
 void use_pnj(game_t *game);
 
-void use_enemi(game_t *game);
+void use_enemy(game_t *game);
 
 bool click_on_obj(sfEvent event, sfRenderWindow *window, object_t obj)
 {
@@ -35,6 +35,6 @@ void manage_game(game_t *game)
 {
     if (game->player.stat[3] % 2 == 0)
         use_pnj(game);
-    else //(game->player.stat[3] % 2 == 1)
-        use_enemi(game);
+    else
+        use_enemy(game);
 }

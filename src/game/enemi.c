@@ -36,12 +36,17 @@ static int is_near_an_enemi(sfVector2u player_pos, int **map)
     return (0);
 }
 
-void use_enemi(game_t *game)
+void use_enemy(game_t *game)
 {
     int ret = is_near_an_enemi(game->player.pos_arr, game->map);
 
     if (ret != 0 && click_on_obj(game->event, game->window,
         game->objects[ret][0])) {
-        game->view = ret - 1;
+            if (ret == ENNEMI_1)
+                game->view = FIGHT_1;
+            if (ret == ENNEMI_2)
+                game->view = FIGHT_2;
+            if (ret == ENNEMI_3)
+                game->view = FIGHT_3;
     }
 }
