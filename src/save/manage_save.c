@@ -11,5 +11,6 @@
 void manage_save(game_t *game)
 {
     save_map(game);
-    save_stat(game->nb_map, game->player.stat);
+    save_stat(game->nb_map, (int [2]) {game->player.armor, game->player.weapon}
+        , game->player.stat);
 }

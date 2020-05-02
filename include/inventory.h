@@ -15,14 +15,6 @@
 #include <SFML/Window.h>
 #include <stdbool.h>
 
-typedef struct item{
-    char *name;
-    unsigned int quantity;
-    char *description;
-    bool equipable;
-    bool usable;
-}item_t;
-
 void set_inventory(game_t *game);
 void display_sprite(sfRenderWindow *window, object_t *obj);
 

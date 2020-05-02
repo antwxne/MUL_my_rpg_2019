@@ -16,6 +16,8 @@
 #include "fight.h"
 #include "dialogue.h"
 
+void manage_game(game_t *game);
+
 static void display_window(sfRenderWindow *window)
 {
     sfRenderWindow_display(window);
@@ -32,6 +34,7 @@ int show_window(game_t *game)
         display(game->window, game->objects, game->buttons, game);
         manage_cursor(game->window, &game->cursor.clock,
         &game->objects[CURSOR][0], game->event);
+        manage_game(game);
     }
     free_rect_arr((sfIntRect **)game->rect_arr);
     sfRenderWindow_destroy(game->window);

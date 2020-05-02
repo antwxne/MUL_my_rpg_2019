@@ -13,7 +13,7 @@
 enum object_type
 {
     PLAYER,
-    ENEMI,
+    PNJ_1,
     HOUSE,
     ROCK,
     PAPYRUS,
@@ -38,6 +38,9 @@ enum object_type
     ARMOR_2,
     POTION,
     CURSOR,
+    ENNEMI_1,
+    ENNEMI_2,
+    ENNEMI_3,
 };
 
 #endif /* !ASSETS_H_ */

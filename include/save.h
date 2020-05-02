@@ -17,7 +17,11 @@ static const int rights = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 
 static const char *fp_map[] = {
     ".config/maps/map_1",
-    ".config/maps/map_2"
+    ".config/maps/map_2",
+    ".config/maps/map_3",
+    ".config/maps/map_4",
+    ".config/maps/map_5",
+    NULL
 };
 
 #endif /* !SAVE_H_ */

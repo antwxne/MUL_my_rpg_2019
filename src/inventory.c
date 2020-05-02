@@ -15,6 +15,46 @@ static void set_pos(float x, float y, object_t *object)
     sfSprite_setPosition(object[0].sprite, object[0].position);
 }
 
+static void equip_weapon(game_t *game, sfVector2i pos)
+{
+    if (pos.x < 69 && pos.x > 37 && pos.y < 922 && pos.y > 890
+    && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)) {
+        if (game->player.weapon == 1) {
+            game->player.weapon = 2;
+            game->player.stat[2] += 20;
+        }
+        else {
+            game->player.weapon = 1;
+            game->player.stat[2] -= 20;
+        }
+    }
+    if (game->player.weapon == 2)
+        display_sprite(game->window, game->objects[SPEAR]);
+    else
+        display_sprite(game->window, game->objects[SWORD]);
+}
+
+static void equip_armor(game_t *game, sfVector2i pos)
+{
+    if (pos.x < 112 && pos.x > 80 && pos.y < 922 && pos.y > 890
+    && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)) {
+        if (game->player.armor == 1) {
+            game->player.armor = 2;
+            game->player.stat[0] += 50;
+            game->player.stat[1] += 10;
+        }
+        else {
+            game->player.armor = 1;
+            game->player.stat[0] -= 50;
+            game->player.stat[1] -= 10;
+        }
+    }
+    if (game->player.armor == 2)
+        display_sprite(game->window, game->objects[ARMOR_1]);
+    else
+        display_sprite(game->window, game->objects[ARMOR_2]);
+}
+
 void set_inventory(game_t *game)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(game->window);
@@ -26,13 +66,7 @@ void set_inventory(game_t *game)
     set_pos(80, 890, game->objects[ARMOR_1]);
     set_pos(80, 890, game->objects[ARMOR_2]);
     set_pos(105.0, 875.0, game->objects[POTION]);
-    if (pos.x < 69 && pos.x > 37 && pos.y < 922 && pos.y > 890)
-        display_sprite(game->window, game->objects[SPEAR]);
-    else
-        display_sprite(game->window, game->objects[SWORD]);
-    if (pos.x < 112 && pos.x > 80 && pos.y < 922 && pos.y > 890)
-        display_sprite(game->window, game->objects[ARMOR_1]);
-    else
-        display_sprite(game->window, game->objects[ARMOR_2]);
+    equip_weapon(game, pos);
+    equip_armor(game, pos);
     display_sprite(game->window, game->objects[POTION]);
 }

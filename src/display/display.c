@@ -14,7 +14,7 @@ void display(sfRenderWindow *window, object_t **objects,
     if (game->view == MAP)
         display_map(game, game->nb_map, game->cursor.cursor_rect);
     if (game->view == MENU_S)
-        display_menu_start(window, buttons, objects[START_MENU][0]);
+        display_menu_start(window, buttons, objects[START_MENU][0], game);
     if (game->view == MENU_P)
-        display_menu_pause(window, buttons, objects[PAUSE_MENU][0]);
+        display_menu_pause(window, buttons, objects[PAUSE_MENU][0], game);
 }

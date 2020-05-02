@@ -28,7 +28,7 @@ static const sfColor color_fil [] = {
     {20, 20, 20, 90},
     {199, 207, 0, 90},
 };
-    
+
 static const int nbr_rect = 2;
 
 static const int nbr_text = 6;
@@ -36,7 +36,7 @@ static const int nbr_text = 6;
 sfVector2f position_xy(int x, int y)
 {
     sfVector2f position;
-    
+
     position.x = x;
     position.y = y;
     return position;
@@ -46,19 +46,19 @@ static void init_text(dialogue_t *dialogue)
 {
     dialogue->police = sfFont_createFromFile("assets/font_medieval.ttf");
     dialogue->texte = sfText_create();
-    sfText_setFont(dialogue->texte,dialogue->police);
-    sfText_setColor(dialogue->texte, sfWhite);    
+    sfText_setFont(dialogue->texte, dialogue->police);
+    sfText_setColor(dialogue->texte, sfWhite);
 }
 
 static void fill(dialogue_t *dialogue)
 {
     dialogue->dia[HTP][0] = "Helllo DO YOU WANT PLAY BITCH!!";
     dialogue->dia[HTP][1] = "PRESSSSSS EEEEEEE!!!";
-    dialogue->dia[PNJ_1][0] = "Click here\nLALALA";
-    dialogue->dia[PNJ_1][1] = "ALED, je suis en danger !!!";
-    dialogue->dia[PNJ_1][2] = "aider moi je vous en prie !!!";
-    dialogue->dia[PNJ_1][3] = "une récompense vous severez !!";
-    dialogue->dia[PNJ_1][4] = "ACCEPTEZ LA QUÊTE!";
+    dialogue->dia[PNJ_FIRST][0] = "Click here\nLALALA";
+    dialogue->dia[PNJ_FIRST][1] = "ALED, je suis en danger !!!";
+    dialogue->dia[PNJ_FIRST][2] = "aider moi je vous en prie !!!";
+    dialogue->dia[PNJ_FIRST][3] = "une récompense vous severez !!";
+    dialogue->dia[PNJ_FIRST][4] = "ACCEPTEZ LA QUÊTE!";
 }
 
 int rectangle(dialogue_t *dialogue)
