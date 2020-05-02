@@ -14,6 +14,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "particule.h"
 
 static bool game_start(void)
 {
