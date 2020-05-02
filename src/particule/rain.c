@@ -12,6 +12,7 @@ void make_rain(part_t *part, color_t color)
     int pos_x = 0;
 
     while (part != NULL) {
+        part->lifetime = true;
         part->speed = 1;
         part->size = (sfVector2f) {2, 5};
         part->direction = (sfVector2f) {0, (rand() % 100)};
@@ -28,7 +29,7 @@ void rain(part_t *part, game_t *game, color_t color)
     sfVector2f pos;
     static int n;
 
-    if (n == 0)
+    if (n == 0 || part->lifetime == false)
         make_rain(part, color);
     while (part != NULL) {
         pos = sfRectangleShape_getPosition(part->shape);
