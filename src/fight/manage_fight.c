@@ -15,6 +15,8 @@ static void has_won(game_t *game, int name, int def, int atk)
     int won = fight(game, name, def, atk);
 
     if (won) {
+        sfMusic_stop(game->musics[FIGHT_MUSIC]);
+        sfMusic_play(game->musics[GAME_MUSIC]);
         game->player.stat[3] += 1;
         game->view = MAP;
     }

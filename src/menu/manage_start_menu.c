@@ -14,8 +14,11 @@ static const sfColor transparent_grey = {255, 255, 255, 60};
 
 static void change_action(game_t *game, int action)
 {
-    if (action == S_START)
+    if (action == S_START) {
+        sfMusic_stop(game->musics[MENU_MUSIC]);
+        sfMusic_play(game->musics[GAME_MUSIC]);
         game->view = MAP;
+    }
     if (action == S_QUIT)
         sfRenderWindow_close(game->window);
 }

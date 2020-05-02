@@ -32,7 +32,7 @@ static bool init_array(game_t *game)
 static bool init_obj_and_player(game_t *game)
 {
     game->textures = create_texture();
-    if (!game->textures)
+    if (!game->textures || !create_music(game))
         return (false);
     game->objects = load_all_object(game->textures);
     if (!game->objects)

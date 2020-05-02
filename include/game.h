@@ -15,6 +15,13 @@
 #include <stdbool.h>
 #include "button.h"
 
+enum music {
+    MENU_MUSIC,
+    FIGHT_MUSIC,
+    DEAD_MUSIC,
+    GAME_MUSIC,
+};
+
 typedef enum dir_move {
     NONE = -1,
     UP,
@@ -103,6 +110,7 @@ typedef struct cursor {
 typedef struct game{
     sfEvent event;
     sfRenderWindow *window;
+    sfMusic **musics;
     sfTexture **textures;
     object_t **objects;
     sfIntRect const **rect_arr;

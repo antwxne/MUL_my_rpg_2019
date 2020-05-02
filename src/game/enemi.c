@@ -42,6 +42,8 @@ void use_enemy(game_t *game)
 
     if (ret != 0 && click_on_obj(game->event, game->window,
         game->objects[ret][0])) {
+            sfMusic_stop(game->musics[GAME_MUSIC]);
+            sfMusic_play(game->musics[FIGHT_MUSIC]);
             if (ret == ENNEMI_1)
                 game->view = FIGHT_1;
             if (ret == ENNEMI_2)
