@@ -19,9 +19,12 @@ static const int var_def[] = {
 
 int init_ennemies(rectangle_t *rect)
 {
-    if ((rect->life_ennemie = malloc(sizeof(int) * nbr_enn)) == NULL ||
-        (rect->def_ennemie = malloc(sizeof(int) * nbr_enn)) == NULL)
-        return 1;
+    rect->life_ennemie = malloc(sizeof(int) * nbr_enn);
+    if (rect->life_ennemie == NULL)
+        return 84;
+    rect->def_ennemie = malloc(sizeof(int) * nbr_enn);
+    if (rect->def_ennemie == NULL)
+        return 84;
     for (int i = 0; i <= 2; i++) {
         rect->life_ennemie[i] = 400;
         rect->def_ennemie[i] = var_def[i];
@@ -31,7 +34,8 @@ int init_ennemies(rectangle_t *rect)
 
 int initia_fight(rectangle_t *rect)
 {
-    init_rectangle(rect);
+    if (init_rectangle(rect) == -1)
+        return 84;
     rect->etat = true;
     rect->god = true;
     rect->consequence = true;
@@ -39,7 +43,8 @@ int initia_fight(rectangle_t *rect)
     rect->message = 0;
     rect->battle_status = 0;
     rect->my_life = 0;
-    init_ennemies(rect);
+    if (init_ennemies(rect) == 84)
+        return 84;
     rect->part = create_part(100, (sfVector2f) {650, 300}, 0,
     (color_t) {sfRed, sfRed});
     return 0;
