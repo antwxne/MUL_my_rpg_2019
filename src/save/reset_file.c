@@ -50,7 +50,7 @@ static bool reset_map(int map)
 static bool reset_stat(void)
 {
     int fd = open(fp_save, O_WRONLY);
-    int stat[7] = {0, 1, 1, 400, 70, 50, 0};
+    int stat[7] = {0, 1, 1, 400, 70, 98, 0};
 
     if (fd == -1)
         fd = open(fp_save, O_WRONLY | O_CREAT, rights);
