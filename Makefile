@@ -80,7 +80,6 @@ SRC =	src/main.c									\
 		src/game/manage_game.c 						\
 		src/game/pnj.c 								\
 		src/game/enemi.c 							\
-<<<<<<< HEAD
 		src/sounds/create_sounds.c					\
 		src/free/destroy_all.c 						\
 		src/free/destroy_button.c 					\
@@ -88,10 +87,8 @@ SRC =	src/main.c									\
 		src/free/destroy_music.c 					\
 		src/free/destroy_object.c 					\
 		src/free/destroy_textures.c 				\
-=======
 		src/hud.c									\
 
->>>>>>> hud
 
 OBJ = $(SRC:.c=.o)
 

@@ -49,9 +49,6 @@ void display_map(game_t *game, int map, sfRectangleShape *shape)
     display_sprite(game->window, game->objects[ENNEMI_2]);
     display_sprite(game->window, game->objects[ENNEMI_3]);
     set_inventory(game);
-<<<<<<< HEAD
     display_dialogue(game, &game->dialogue);
-=======
     apply_stats(game->player.stat_txt, game);
->>>>>>> hud
 }
