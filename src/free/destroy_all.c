@@ -14,6 +14,7 @@ void destroy_all(game_t *game)
     destroy_music(game);
     destroy_objects(game);
     destroy_button(game);
+    sfView_destroy(game->views);
     free_rect_arr((sfIntRect **)game->rect_arr);
     free_map(game->map);
     free_part(game->fight.part);

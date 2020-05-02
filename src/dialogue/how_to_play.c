@@ -29,21 +29,24 @@ static int wait_htp(game_t *game)
 
 int how_to_play(dialogue_t *dialogue, game_t *game)
 {
-    static int step = 0;
-    static int i = 0;
+    static int step = 0, i = 0, n = 0;
 
     i += wait_htp(game);
     if ( i > 0) {
         step += wait_press_e(game);
         if (dialogue->dia[0][step] == NULL) {
-            i = 0;
-            step = 0;
+            i = 0, n = 0, step = 0;
             return 1;
-        }
-        sfRenderWindow_drawRectangleShape(game->window,
+        } sfRenderWindow_drawRectangleShape(game->window,
         dialogue->dia_rects[0], NULL);
         pos_dia(400, 200, dialogue, dialogue->dia[0][step]);
         sfRenderWindow_drawText(game->window, dialogue->texte, NULL);
+        sfRenderWindow_setView(game->window, game->views);
+        if (n < 50) {
+            sfView_rotate(game->views, 90);
+            n++;
+        } else
+            sfView_reset(game->views, (sfFloatRect) {0, 0, 1920, 1080});
     }
     return 0;
 }

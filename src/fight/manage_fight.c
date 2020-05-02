@@ -30,9 +30,9 @@ static void has_won(game_t *game, int name, int def, int atk)
 void manage_fight(game_t *game)
 {
     if (game->view == FIGHT_1)
-        has_won(game, EN_1, PIGS_DEF, 50);
+        has_won(game, EN_1, PIGS_DEF, 90);
     if (game->view == FIGHT_2)
-        has_won(game, SHEEP, SHEEP_DEF, 50);
+        has_won(game, SHEEP, SHEEP_DEF, 90);
     if (game->view == FIGHT_3)
-        has_won(game, MERMS, MERMS_DEF, 50);
+        has_won(game, MERMS, MERMS_DEF, 90);
 }

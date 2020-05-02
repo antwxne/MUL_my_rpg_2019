@@ -57,12 +57,14 @@ void damage(game_t *game, int ennemies, int deg_ennemies)
     if (game->fight.message == 1) {
         game->player.stat[0] -= (deg_ennemies - (game->player.stat[1] / 5));
         game->fight.battle_status = 2;
+        damage_fight_player(game);
         sfRectangleShape_setSize(game->fight.fight_rects[6],
         (sfVector2f) {game->player.stat[0], 100});
     }
     if (game->fight.message == 2) {
         game->fight.life_ennemie[ennemies] -= (game->player.stat[2] -
         (game->fight.def_ennemie[ennemies] / 5));
+        damage_fight_ennemies(game, ennemies);
         sfRectangleShape_setSize(game->fight.fight_rects[3],
         (sfVector2f) {game->fight.life_ennemie[ennemies], 100});
         game->fight.battle_status = 3;

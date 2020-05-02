@@ -43,5 +43,8 @@ int ennemies_damage);
 void change_color(rectangle_t *rects);
 int initia_fight(rectangle_t *rects);
 int fight(game_t *png, int ennemie, int name_ennemies, int ennemies_damage);
+void damage_fight_player(game_t *game);
+void damage_fight_ennemies(game_t *game, int ennemies);
+void resize_life_pl(game_t *game);
 
 #endif /* !FIGHT_H_ */

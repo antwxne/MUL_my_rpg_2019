@@ -53,7 +53,7 @@ static void init_text(dialogue_t *dialogue)
 static void fill(dialogue_t *dialogue)
 {
     dialogue->dia[HTP][0] = "Press E pour allez a la slide suivante";
-    dialogue->dia[HTP][1] = "Bienvenue dans le monde fantasique de MOLETTE";
+    dialogue->dia[HTP][1] = "Bienvenue dans le monde fantasique de MAULETTE";
     dialogue->dia[HTP][2] = "les commandes sont a savoir : ";
     dialogue->dia[0][3] = "G pour le God mode (combat), et Echap pour le menu";
     dialogue->dia[0][4] = "Il faut cliquer sur les pnjs pour lancer des quetes";
