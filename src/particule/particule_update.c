@@ -43,6 +43,7 @@ void reset_part(part_t *part, sfVector2f pos, int speed, color_t color)
             part->speed = speed;
         part->lifetime = true;
         part->shape = create_particule_shape(pos, sizes[0], color);
+        part->direction = random_vector();
         part = part->next;
     }
 }
