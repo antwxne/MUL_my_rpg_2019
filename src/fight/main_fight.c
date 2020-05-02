@@ -60,7 +60,7 @@ int fight(game_t *png, int ennemie, int name_ennemies, int ennemies_damage)
                                 (sfVector2f) {400, 100});
         return 1;
     }
-    if (png->player.stat[0] <= 0)
+    if (png->fight.my_life == 2)
         return 2;
     battle_second(png, &png->fight);
     return 0;
