@@ -8,6 +8,7 @@
 #include "game.h"
 #include "textures.h"
 #include "main.h"
+#include "dialogue.h"
 
 static const int pnj_type[] = {
     PNJ_1,

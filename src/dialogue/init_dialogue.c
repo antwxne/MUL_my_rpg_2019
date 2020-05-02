@@ -8,10 +8,6 @@
 #include "game.h"
 #include "dialogue.h"
 
-static const sfIntRect rect[] = {
-    {400, 300, 200, 50}
-};
-
 int wait_press_e(game_t *game)
 {
     static int a = 0;
@@ -42,12 +38,10 @@ void pos_dia(int x , int y, dialogue_t *dialogue, char *texte)
 
 int main_dialogue(dialogue_t *dialogue, game_t *game, int types)
 {
-    static int i = 0;
     static int step = 0;
 
     step += wait_press_e(game);
     if (dialogue->dia[types][step] == NULL) {
-        i = 0;
         step = 0;
         return 1;
     }

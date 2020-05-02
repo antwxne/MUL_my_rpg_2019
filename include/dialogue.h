@@ -22,3 +22,4 @@ int rectangle(dialogue_t *dialogue);
 void pos_dia(int x , int y, dialogue_t *dialogue, char *texte);
 int wait_press_e(game_t *game);
 int main_dialogue(dialogue_t *dialogue, game_t *game, int types);
+int main_dialogue(dialogue_t *dialogue, game_t *game, int types);
