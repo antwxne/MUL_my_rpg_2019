@@ -28,6 +28,7 @@ part_t *list_part_create(sfVector2f pos, int speed, color_t color)
 {
     part_t *part = malloc(sizeof(part_t));
 
+    (void) speed;
     if (part != NULL) {
         part->next = NULL;
         part->shape = create_particule_shape(pos, sizes[0], color);

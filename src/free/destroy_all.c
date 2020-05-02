@@ -7,6 +7,7 @@
 
 #include "destroy.h"
 #include "main.h"
+#include "particule.h"
 
 void destroy_all(game_t *game)
 {
