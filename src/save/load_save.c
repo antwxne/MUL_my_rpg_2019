@@ -36,6 +36,7 @@ void load_stat(game_t *game)
     game->nb_map = 0;
     game->player.armor = 1;
     game->player.weapon = 1;
+    game->player.max_health = 400;
     game->player.stat[HEALTH] = 400;
     game->player.stat[DEF_PLAYER] = 70;
     game->player.stat[ATK_PLAYER] = 50;
