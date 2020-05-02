@@ -71,7 +71,7 @@ void damage(game_t *game, int ennemies, int deg_ennemies)
     }
 }
 
-int life_time(rectangle_t *rects, int ennemies)
+int life_time(rectangle_t *rects, int ennemies, game_t *game)
 {
     sfTime time;
     float seconds;
@@ -82,6 +82,8 @@ int life_time(rectangle_t *rects, int ennemies)
         rects->etat = true;
         rects->battle_status = 0;
         sfClock_restart(rects->life_clock);
+        if (game->player.stat[0] <= 0)
+            rects->my_life = 2;
         if (rects->life_ennemie[ennemies] <= 0)
             return 1;
     }

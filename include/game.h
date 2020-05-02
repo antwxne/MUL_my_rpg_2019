@@ -88,6 +88,7 @@ typedef struct rectangle {
     int *life_ennemie;
     int *def_ennemie;
     int battle_status;
+    int my_life;
     part_t *part;
     dialogue_t dialogue;
 } rectangle_t;

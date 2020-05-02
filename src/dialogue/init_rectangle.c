@@ -52,11 +52,12 @@ static void init_text(dialogue_t *dialogue)
 
 static void fill(dialogue_t *dialogue)
 {
-    dialogue->dia[HTP][0] = "hello bienvenu ici poto!!";
-    dialogue->dia[HTP][1] = "presss eeeeee!!!";
-    dialogue->dia[HTP][2] = "tadada voici comment faire les dialogues!!!";
-    dialogue->dia[HTP][3] = "c'est un shifumi , faites vous plez!!";
-    dialogue->dia[HTP][4] = "il y a des quetes etc!!";
+    dialogue->dia[HTP][0] = "Press E pour allez a la slide suivante";
+    dialogue->dia[HTP][1] = "Bienvenue dans le monde fantasique de MOLETTE";
+    dialogue->dia[HTP][2] = "les commandes sont a savoir : ";
+    dialogue->dia[HTP][3] = "G pour le God mode (combat), et Echap pour le menu";
+    dialogue->dia[HTP][4] = "Il faut cliquer sur les pnjs pour lancer des quetes";
+    dialogue->dia[HTP][5] = "et aussi faire des combats , ducous Bon jeux";
     dialogue->dia[PNJ_FIRST][0] = "j ai une quete pour toi !!!";
     dialogue->dia[PNJ_FIRST][1] = "aled je suis en danger !!!";
     dialogue->dia[PNJ_FIRST][2] = "aider moi je vous en prie !!!";

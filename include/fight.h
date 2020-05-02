@@ -33,7 +33,7 @@ sfRectangleShape **fight_rects, object_t **objects);
 void damage(game_t *game, int ennemies, int deg_ennemies);
 void set_position(int x, int y, sfSprite *sprite);
 void position_sprite(game_t *png);
-int life_time(rectangle_t *rects, int ennemies);
+int life_time(rectangle_t *rects, int ennemies, game_t *game);
 void battle_prin(rectangle_t *rects, sfRenderWindow *window,
 object_t **objects);
 void god_moding(rectangle_t *rects, int ennemies, sfRenderWindow *window,

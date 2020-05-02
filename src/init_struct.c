@@ -54,6 +54,7 @@ game_t init_struct(int *ptr_err)
         return (game);
     }
     initia_fight(&game.fight);
+    rectangle(game.dialogue);
     game.view = MENU_S;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setMouseCursorVisible(game.window, sfFalse);
