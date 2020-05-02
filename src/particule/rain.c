@@ -7,7 +7,7 @@
 
 #include "particule.h"
 
-void make_rain(part_t *part, color_t color)
+void make_rain(part_t *part)
 {
     int pos_x = 0;
 
@@ -30,7 +30,7 @@ void rain(part_t *part, game_t *game, color_t color)
     static int n;
 
     if (n == 0 || part->lifetime == false)
-        make_rain(part, color);
+        make_rain(part);
     while (part != NULL) {
         pos = sfRectangleShape_getPosition(part->shape);
         pos.x = pos.x + (part->speed * part->direction.x);

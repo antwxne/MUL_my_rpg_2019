@@ -7,6 +7,7 @@
 
 #include "textures.h"
 #include "game.h"
+#include "particule.h"
 
 void display_menu_pause(sfRenderWindow *window, button_display_t *buttons,
     object_t back_ground, game_t *game)
