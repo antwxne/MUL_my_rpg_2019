@@ -12,9 +12,12 @@
 void manage_dialogue(game_t *game)
 {
     if (game->player.stat[LVL_PLAYER] == 1)
-        main_dialogue(&game->dialogue, game, 2);
+        if (main_dialogue(&game->dialogue, game, 1) == 1)
+            game->view = MAP;
     if (game->player.stat[LVL_PLAYER] == 3)
-        main_dialogue(&game->dialogue, game, 2);
+        if (main_dialogue(&game->dialogue, game, 2) == 1)
+            game->view = MAP;
     if (game->player.stat[LVL_PLAYER] == 5)
-        main_dialogue(&game->dialogue, game, 2);
+        if (main_dialogue(&game->dialogue, game, 2) == 1)
+            game->view = MAP;
 }

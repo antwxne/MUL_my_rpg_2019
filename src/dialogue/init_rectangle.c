@@ -11,11 +11,11 @@
 #include "fight.h"
 
 static const sfVector2f place [] = {
-    {400, 300},
+    {400, 200},
     {700, 500},
 };
 static const sfVector2f sizes [] = {
-    {200, 50},
+    {850, 50},
     {500, 300},
 };
 
@@ -31,7 +31,7 @@ static const sfColor color_fil [] = {
 
 static const int nbr_rect = 2;
 
-static const int nbr_text = 6;
+static const int nbr_text = 5;
 
 sfVector2f position_xy(int x, int y)
 {
@@ -55,17 +55,33 @@ static void fill(dialogue_t *dialogue)
     dialogue->dia[HTP][0] = "Press E pour allez a la slide suivante";
     dialogue->dia[HTP][1] = "Bienvenue dans le monde fantasique de MOLETTE";
     dialogue->dia[HTP][2] = "les commandes sont a savoir : ";
-    dialogue->dia[HTP][3] = "G pour le God mode (combat), et Echap pour le menu";
-    dialogue->dia[HTP][4] = "Il faut cliquer sur les pnjs pour lancer des quetes";
+    dialogue->dia[0][3] = "G pour le God mode (combat), et Echap pour le menu";
+    dialogue->dia[0][4] = "Il faut cliquer sur les pnjs pour lancer des quetes";
     dialogue->dia[HTP][5] = "et aussi faire des combats , ducous Bon jeux";
-    dialogue->dia[PNJ_FIRST][0] = "j ai une quete pour toi !!!";
-    dialogue->dia[PNJ_FIRST][1] = "aled je suis en danger !!!";
-    dialogue->dia[PNJ_FIRST][2] = "aider moi je vous en prie !!!";
-    dialogue->dia[PNJ_FIRST][3] = "une récompense vous severez !!";
-    dialogue->dia[PNJ_FIRST][4] = "vous devez tuez l ennemie patate";
+    dialogue->dia[HTP][6] = NULL;
+    dialogue->dia[PNJ_FIRST][0] = "j ai une quete pour toi";
+    dialogue->dia[PNJ_FIRST][1] = "aider moi je vous en prie !!!";
+    dialogue->dia[PNJ_FIRST][2] = "une récompense vous severez !";
+    dialogue->dia[PNJ_FIRST][3] = "vous devez tuez l ennemie patate";
+    dialogue->dia[PNJ_FIRST][4] = "il se trouve en haut du chemin!";
     dialogue->dia[PNJ_FIRST][5] = "acceptez la quete!";
-    dialogue->dia[PNJ_SECOND][0] = "ZIZI";
-    dialogue->dia[PNJ_SECOND][1] = "LOL";
+    dialogue->dia[PNJ_FIRST][6] = NULL;
+}
+static void fill2(dialogue_t *dialogue)
+{
+    dialogue->dia[PNJ_SECOND][0] = "encore une quete...";
+    dialogue->dia[PNJ_SECOND][1] = "une autre personne veut ma mort";
+    dialogue->dia[2][2] = "un sorcier puissant qui peut ce transformer";
+    dialogue->dia[2][3] = "comme le précédent, ils sont maléfiques";
+    dialogue->dia[PNJ_SECOND][4] = "ducous accepte encore la quete";
+    dialogue->dia[PNJ_SECOND][5] = NULL;
+    dialogue->dia[3][0] = "derniere fois et apres c est fini";
+    dialogue->dia[3][1] = "la derniere personne a tuer c est : ";
+    dialogue->dia[3][2] = "une personne horrible et mechante";
+    dialogue->dia[3][3] = "le plus féroce des sorciers transformeurs";
+    dialogue->dia[3][4] = "tuez le !!!!";
+    dialogue->dia[3][5] = "le monde vous dira merci!";
+    dialogue->dia[3][6] = NULL;
 }
 
 int rectangle(dialogue_t *dialogue)
@@ -80,11 +96,12 @@ int rectangle(dialogue_t *dialogue)
     if (dialogue->dia == NULL)
         return 84;
     for (int i = 0; i < nbr_text; i++) {
-        dialogue->dia[i] = malloc(sizeof(char *) * (nbr_text + 1));
+        dialogue->dia[i] = malloc(sizeof(char *) * (6 + 1));
         if (dialogue->dia == NULL)
             return 84;
     }
     fill(dialogue);
+    fill2(dialogue);
     init_text(dialogue);
     return 0;
 }

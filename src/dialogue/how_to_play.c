@@ -40,6 +40,8 @@ int how_to_play(dialogue_t *dialogue, game_t *game)
             step = 0;
             return 1;
         }
+        sfRenderWindow_drawRectangleShape(game->window,
+        dialogue->dia_rects[0], NULL);
         pos_dia(400, 200, dialogue, dialogue->dia[0][step]);
         sfRenderWindow_drawText(game->window, dialogue->texte, NULL);
     }

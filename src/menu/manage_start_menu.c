@@ -50,5 +50,5 @@ void manage_start_menu(game_t *game)
             overlay_button(&game->buttons[i], game, i);
         else
             reset_overlay(&game->buttons[i]);
-         }
+        }
 }

@@ -51,9 +51,6 @@ int main_dialogue(dialogue_t *dialogue, game_t *game, int types)
         step = 0;
         return 1;
     }
-    // sfRenderWindow_drawRectangleShape(game->window,
-    // dialogue->dia_rects[1], NULL);
     pos_dia(700, 600, dialogue, dialogue->dia[types][step]);
-    // sfRenderWindow_drawText(game->window, dialogue->texte, NULL);
     return 0;
 }
