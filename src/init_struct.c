@@ -65,5 +65,7 @@ game_t init_struct(int *ptr_err)
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setMouseCursorVisible(game.window, sfFalse);
     sfRenderWindow_setFramerateLimit(game.window, 60);
+    game.views = sfView_create();
+    sfView_setSize(game.views, (sfVector2f){1920, 1080});
     return (game);
 }

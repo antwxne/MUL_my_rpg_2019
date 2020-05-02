@@ -123,6 +123,7 @@ typedef struct game{
     int view;
     cursor_t cursor;
     dialogue_t dialogue;
+    sfView *views;
 } game_t;
 
 typedef struct read {
