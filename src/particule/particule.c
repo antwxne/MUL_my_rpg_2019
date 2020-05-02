@@ -31,12 +31,7 @@ part_t *list_part_create(sfVector2f pos, int speed, color_t color)
     if (part != NULL) {
         part->next = NULL;
         part->shape = create_particule_shape(pos, sizes[0], color);
-        if (speed == 0) {
-            part->speed = (rand() % 3);
-            if (part->speed == 0)
-                part->speed = 1;
-        } else
-            part->speed = speed;
+        part->speed = 1;
         part->direction = random_vector();
         part->lifetime = true;
     }
@@ -51,12 +46,7 @@ void push_to_part(part_t **part, sfVector2f pos, color_t color)
         head = head->next;
     head->next = malloc(sizeof(part_t));
     head->next->shape = create_particule_shape(pos, sizes[0], color);
-    if (head->speed == 0) {
-        head->next->speed = (rand() % 3);
-        if (head->next->speed == 0)
-            head->next->speed = 1;
-    } else
-        head->next->speed = head->speed;
+    head->next->speed = 1;
     head->next->direction = random_vector();
     head->next->lifetime = true;
     head->next->next = NULL;
