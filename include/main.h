@@ -66,5 +66,6 @@ bool manage_flag(char *arg);
 bool click_on_obj(sfEvent event, sfRenderWindow *window, object_t obj);
 void manage_fight(game_t *game);
 bool create_music(game_t *game);
+void destroy_all(game_t *game);
 
 #endif /* !MAIN_H_ */

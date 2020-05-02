@@ -27,8 +27,7 @@ static bool game_start(void)
     srand(error);
     close(fd);
     show_window(&game);
-    free_map(game.map);
-    free_part(game.fight.part);
+    destroy_all(&game);
     return (true);
 }
 

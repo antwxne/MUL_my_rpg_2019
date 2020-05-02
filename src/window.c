@@ -35,7 +35,6 @@ int show_window(game_t *game)
         &game->objects[CURSOR][0], game->event);
         manage_game(game);
     }
-    free_rect_arr((sfIntRect **)game->rect_arr);
     sfRenderWindow_destroy(game->window);
     return (0);
 }
