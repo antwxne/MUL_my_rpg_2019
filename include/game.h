@@ -37,7 +37,15 @@ enum view_type {
     FIGHT_3,
     MENU_P,
     MENU_S,
+    DIALOGUE,
 };
+
+typedef struct dialogue {
+    sfRectangleShape **dia_rects;
+    sfFont *police;
+    sfText *texte;
+    char ***dia;
+} dialogue_t;
 
 typedef struct particule {
     sfRectangleShape *shape;
@@ -82,7 +90,9 @@ typedef struct rectangle {
     int *life_ennemie;
     int *def_ennemie;
     int battle_status;
+    int my_life;
     part_t *part;
+    dialogue_t dialogue;
 } rectangle_t;
 
 typedef struct cursor {
@@ -103,6 +113,7 @@ typedef struct game{
     rectangle_t fight;
     int view;
     cursor_t cursor;
+    dialogue_t dialogue;
 } game_t;
 
 typedef struct read {

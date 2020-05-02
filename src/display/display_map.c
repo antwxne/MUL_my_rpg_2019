@@ -8,6 +8,7 @@
 #include "textures.h"
 #include "game.h"
 #include "inventory.h"
+#include "dialogue.h"
 
 void display_sprite(sfRenderWindow *window, object_t *obj)
 {
@@ -16,6 +17,15 @@ void display_sprite(sfRenderWindow *window, object_t *obj)
         && obj[i].position.y > -100
         && obj[i].position.y < window_size_y + 100)
             sfRenderWindow_drawSprite(window, obj[i].sprite, NULL);
+}
+
+static void display_dialogue(game_t *game, dialogue_t *dialogue)
+{
+    if (game->view == DIALOGUE) {
+        sfRenderWindow_drawRectangleShape(game->window,
+        dialogue->dia_rects[1], NULL);
+        sfRenderWindow_drawText(game->window, dialogue->texte, NULL);
+    }
 }
 
 void display_map(game_t *game, int map, sfRectangleShape *shape)
@@ -35,4 +45,5 @@ void display_map(game_t *game, int map, sfRectangleShape *shape)
     display_sprite(game->window, game->objects[ENNEMI_2]);
     display_sprite(game->window, game->objects[ENNEMI_3]);
     set_inventory(game);
+    display_dialogue(game, &game->dialogue);
 }

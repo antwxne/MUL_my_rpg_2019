@@ -14,6 +14,7 @@
 #include "window.h"
 #include "pause_menu.h"
 #include "fight.h"
+#include "dialogue.h"
 
 void manage_game(game_t *game);
 
@@ -25,6 +26,8 @@ static void display_window(sfRenderWindow *window)
 
 int show_window(game_t *game)
 {
+    if (rectangle(&game->dialogue) == 84)
+        return 84;
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game);
         display_window(game->window);

@@ -10,6 +10,8 @@
 #include "textures.h"
 #include "fight.h"
 
+void manage_dialogue(game_t *game);
+
 void manage_view(game_t *game)
 {
     if (game->view == MAP)
@@ -20,4 +22,6 @@ void manage_view(game_t *game)
         manage_pause_menu(game);
     if (game->view == MENU_S)
         manage_start_menu(game);
+    if (game->view == DIALOGUE)
+        manage_dialogue(game);
 }
