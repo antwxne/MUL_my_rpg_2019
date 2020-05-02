@@ -17,45 +17,42 @@ static void set_pos(float x, float y, object_t *object)
 
 static void equip_weapon(game_t *game, sfVector2i pos)
 {
-    if (is_the_mouse_in_x(pos, 37, 69) == 1
-    && is_the_mouse_in_y(pos, 890, 922) == 1
-    && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)) {
-        if (game->player.weapon == 1) {
-            game->player.weapon = 2;
-            game->player.stat[2] += 20;
-        }
-        else {
-            game->player.weapon = 1;
-            game->player.stat[2] -= 20;
+    static int status = 0;
+
+    if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)
+        status = 1;
+    else if (game->event.type == sfEvtMouseButtonReleased && status == 1) {
+        status = 0;
+        if (is_the_mouse_in_x(pos, 37, 69) == 1
+        && is_the_mouse_in_y(pos, 890, 922) == 1) {
+            if (game->player.weapon == 1) {
+                game->player.weapon = 2;
+                game->player.stat[2] += 20;
+            } else {
+                game->player.weapon = 1;
+                game->player.stat[2] -= 20;
+            }
         }
     }
-    if (game->player.weapon == 2)
-        display_sprite(game->window, game->objects[SPEAR]);
-    else
-        display_sprite(game->window, game->objects[SWORD]);
+    display_sprite(game->window,
+                    game->objects[(game->player.weapon == 2) ? SPEAR : SWORD]);
 }
 
 static void equip_armor(game_t *game, sfVector2i pos)
 {
-    if (is_the_mouse_in_x(pos, 80, 112) == 1
-    && is_the_mouse_in_y(pos, 890, 922) == 1
-    && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)) {
-        if (game->player.armor == 1) {
-            game->player.armor = 2;
-            game->player.stat[0] += 50;
-            game->player.max_health += 50;
-            game->player.stat[1] += 10;
-        } else {
-            game->player.armor = 1;
-            game->player.stat[0] -= 50;
-            game->player.max_health -= 50;
-            game->player.stat[1] -= 10;
+    static int status = 0;
+
+    if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)
+        status = 1;
+    else if (game->event.type == sfEvtMouseButtonReleased && status == 1) {
+        status = 0;
+        if (is_the_mouse_in_x(pos, 80, 112) == 1
+        && is_the_mouse_in_y(pos, 890, 922) == 1) {
+            change_armor(game);
         }
     }
-    if (game->player.armor == 2)
-        display_sprite(game->window, game->objects[ARMOR_1]);
-    else
-        display_sprite(game->window, game->objects[ARMOR_2]);
+    display_sprite(game->window,
+                game->objects[(game->player.armor == 2) ? ARMOR_1 : ARMOR_2]);
 }
 
 static void heal(game_t *game, sfVector2i pos)
