@@ -29,7 +29,6 @@ void my_putnbr(int nbr);
 char *my_strcpy(char *dest, char const *src);
 int *my_strcat_int(int *dest, int const *src, int size_dest, int size_src);
 char *convert_in_bit(char str);
-char **my_str_to_wordarray(char *str);
 int my_putnbr_base(int nbr, char const *base);
 char *my_realloc(char *str, int size);
 char *get_next_line(int fd);
@@ -55,87 +54,5 @@ linked *my_create_list();
 void print_link(linked *head);
 linked *add_list(long long int data, linked *list);
 int count_link(linked *head);
-linked *remove_link(int num, linked *head);
-
-/* my_printf */
-
-typedef struct norm {
-    int nbr;
-    int i;
-    char *fmt;
-    char *flag;
-}bases;
-
-typedef struct {
-    void (*tpf)(char *);
-    char flag;
-}tabpfchar_s;
-
-typedef struct {
-    void (*tpf)(char);
-    char flag;
-}tabpfchar;
-
-typedef struct {
-    void (*tpf)(int);
-    char flag;
-}tabpfint;
-
-typedef struct {
-    void (*tpf)(unsigned int);
-    char flag;
-}tabpfu_int;
-
-typedef struct {
-    void (*tpf)(bases *);
-    char flag;
-}tabpfbases;
-
-void base01(int nbr);
-void basehex_maj(int nbr);
-void basehex(int nbr);
-void baseoct(int nbr);
-void flag_p(int nbr);
-void my_putnbr_unsigned(unsigned int nbr);
-int pointeur(char *str);
-void ascii(char *str);
-void percent_percent(bases *use);
-int my_printf(char *fmt, ...);
-int is_it_a_flag(char f, bases *use, char *fmt);
-int which_flag(char fmt, bases *use);
-void writing(bases *use, va_list ap, int k);
-void writing_sequel(va_list ap, int k);
-
-static const tabpfchar_s tabcs[] = {
-    {my_putstr, 's'},
-    {ascii, 'S'},
-    {NULL, 'n'},
-};
-
-static const tabpfchar tabc[] = {
-    {my_putchar, 'c'},
-    {NULL, 'n'},
-};
-
-static const tabpfint tabi[] = {
-    {my_putnbr, 'd'},
-    {my_putnbr, 'i'},
-    {baseoct, 'o'},
-    {basehex, 'x'},
-    {basehex_maj, 'X'},
-    {base01, 'b'},
-    {flag_p, 'p'},
-    {NULL, 'n'},
-};
-
-static const tabpfu_int tabu[] = {
-    {my_putnbr_unsigned, 'u'},
-    {NULL, 'n'},
-};
-
-static const tabpfbases tabb[] = {
-    {percent_percent, '%'},
-    {NULL, 'n'},
-};
 
 #endif /* !MY_H_ */

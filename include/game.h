@@ -68,6 +68,7 @@ typedef struct player {
     sfClock *clock[2];
     int armor;
     int weapon;
+    int max_health;
     int stat[4];
 } player_t;
 
