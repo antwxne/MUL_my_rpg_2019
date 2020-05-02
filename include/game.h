@@ -45,6 +45,7 @@ enum view_type {
     MENU_P,
     MENU_S,
     DIALOGUE,
+    END_DIED,
 };
 
 typedef struct dialogue {

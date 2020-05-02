@@ -8,7 +8,7 @@
 #include "main.h"
 #include "game.h"
 
-static sfVector2u get_pos_player(int **map)
+sfVector2u get_pos_player(int **map)
 {
     sfVector2u pos = {0, 0};
 

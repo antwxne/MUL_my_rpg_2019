@@ -22,6 +22,8 @@ enum button_type {
     S_START,
     S_HTP,
     S_QUIT,
+    D_QUIT,
+    D_RESTART,
 };
 
 typedef struct button{

@@ -25,4 +25,5 @@ void manage_view(game_t *game)
         manage_start_menu(game);
     if (game->view == DIALOGUE)
         manage_dialogue(game);
+    if (game->view == END_DIED)
 }

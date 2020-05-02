@@ -41,6 +41,7 @@ enum object_type
     ENNEMI_1,
     ENNEMI_2,
     ENNEMI_3,
+    YOU_DIED,
 };
 
 #endif /* !ASSETS_H_ */
