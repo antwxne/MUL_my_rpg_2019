@@ -25,6 +25,7 @@ static void display_window(sfRenderWindow *window)
 
 int show_window(game_t *game)
 {
+    sfMusic_play(game->musics[MENU_MUSIC]);
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game);
         display_window(game->window);

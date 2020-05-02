@@ -27,7 +27,7 @@ static const char *content_map[] = {
 static const char fp_save[] = ".config/save";
 
 static const char *error_msg[] = {
-    "\033[91;1;5;4mERROR\033[0m:Make sure that you have " \ 
+    "\033[91;1;5;4mERROR\033[0m:Make sure that you have " \
     "./.config/maps folder\n",
     "\033[91;1;5;4mERROR\033[0m:Make sure that you have ./.config folder\n",
 };
