@@ -23,10 +23,12 @@ static bool game_start(void)
 
     if (fd == -1 || error == -1)
         return (false);
-    read(fd, &fd, 1);
-    srand(fd);
+    read(fd, &error, sizeof(int));
+    srand(error);
+    close(fd);
     show_window(&game);
     free_map(game.map);
+    free_part(game.fight.part);
     return (true);
 }
 

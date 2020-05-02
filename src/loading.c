@@ -40,7 +40,7 @@ object_t **load_all_object(sfTexture **textures)
     if (objects == NULL)
         return (NULL);
     for (; fp[y] != NULL; y++) {
-        objects[y] = malloc(sizeof(object_t) * 10);
+        objects[y] = malloc(sizeof(object_t) * number_objects);
         if (objects[y] == NULL)
             return (NULL);
         for (unsigned int x = 0; x < number_objects; x++)

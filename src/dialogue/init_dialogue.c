@@ -20,7 +20,7 @@ static int wait_click(game_t *game)
     if (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue)
         status = 1;
     if (game->event.type == sfEvtMouseButtonReleased && status == 1) {
-          if (sfIntRect_contains(&rect[0], posi.x, posi.y) == sfTrue) {
+        if (sfIntRect_contains(&rect[0], posi.x, posi.y) == sfTrue) {
             return 1;
         }
     }
@@ -31,7 +31,7 @@ static int wait_press_e(game_t *game)
 {
     static int a = 0;
     static int status = 0;
-    
+
     if (sfKeyboard_isKeyPressed(sfKeyE) == sfTrue)
         a = 1;
     if ((game->event.type == sfEvtKeyReleased) && (a == 1)) {
@@ -45,7 +45,7 @@ static int wait_press_e(game_t *game)
 static sfVector2f posi_xy(int x, int y)
 {
     sfVector2f position;
-    
+
     position.x = x;
     position.y = y;
     return position;
@@ -65,14 +65,16 @@ void main_dialogue(dialogue_t *dialogue, game_t *game)
     stape += wait_press_e(game);
     i += wait_click(game);
     if (i >= 1) {
-        sfRenderWindow_drawRectangleShape(game->window, dialogue->dia_rects[1], NULL);
+        sfRenderWindow_drawRectangleShape(game->window,
+        dialogue->dia_rects[1], NULL);
         if (dialogue->dia[stape] != NULL) {
         pos_dia(700, 600, dialogue, dialogue->dia[stape]);
-        sfRenderWindow_drawText(game->window, dialogue->texte, NULL);   
+        sfRenderWindow_drawText(game->window, dialogue->texte, NULL);
         }
     }
     else if (i == 0) {
-        sfRenderWindow_drawRectangleShape(game->window, dialogue->dia_rects[0], NULL);
-        sfRenderWindow_drawText(game->window, dialogue->texte, NULL);   
+        sfRenderWindow_drawRectangleShape(game->window,
+        dialogue->dia_rects[0], NULL);
+        sfRenderWindow_drawText(game->window, dialogue->texte, NULL);
     }
 }

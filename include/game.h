@@ -23,12 +23,20 @@ typedef enum dir_move {
     RIGHT,
 } dir_move_t;
 
+enum stat_player {
+    HEALTH,
+    DEF_PLAYER,
+    ATK_PLAYER,
+    LVL_PLAYER
+};
+
 enum view_type {
     MAP,
-    FIGHT,
+    FIGHT_1,
+    FIGHT_2,
+    FIGHT_3,
     MENU_P,
     MENU_S,
-    INVENTORY,
 };
 
 typedef struct particule {
@@ -58,10 +66,10 @@ typedef struct player {
     int dir;
     sfVector2f reach;
     sfClock *clock[2];
-    int stat[3];
-    int max_health;
     int armor;
     int weapon;
+    int max_health;
+    int stat[4];
 } player_t;
 
 typedef struct rectangle {

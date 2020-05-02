@@ -62,6 +62,7 @@ SRC =	src/main.c									\
 		src/fight/status_battle.c					\
 		src/fight/set_sprite.c						\
 		src/fight/main_fight.c						\
+		src/fight/manage_fight.c 					\
 		src/save/load_save.c 						\
 		src/save/reset_file.c 						\
 		src/save/manage_save.c 						\
@@ -73,6 +74,10 @@ SRC =	src/main.c									\
 		src/dialogue/init_dialogue.c				\
 		src/dialogue/init_rectangle.c				\
 		src/inventory.c								\
+		src/particule/rain.c						\
+		src/game/manage_game.c 						\
+		src/game/pnj.c 								\
+		src/game/enemi.c 							\
 
 
 OBJ = $(SRC:.c=.o)
@@ -102,7 +107,11 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY: all debug clean fclean re tests_run
+reset: all
+	@$(RM) .config/maps/* .config/save
+	@./$(NAME) --reset
+
+.PHONY: all debug clean fclean re tests_run reset
 
 tests_run:	LDFLAGS	+= -lcriterion --coverage
 tests_run:

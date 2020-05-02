@@ -31,7 +31,7 @@ void change_map(game_t *game)
     if (game->nb_map == 0 && change_scene_up(game->player.pos_arr, var_range)) {
         load_scene_up(game);
     }
-    if (game->nb_map == 1 && change_scene_down(game->map, game->player.pos_arr,
+    if (game->nb_map > 0 && change_scene_down(game->map, game->player.pos_arr,
         var_range))
         load_scene_down(game);
 }
