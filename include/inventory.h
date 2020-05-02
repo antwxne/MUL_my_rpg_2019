@@ -28,4 +28,19 @@ static inline int is_the_mouse_in_y(sfVector2i pos, int y_min, int y_max)
     return ((pos.y < y_max && pos.y > y_min) ? 1 : 0);
 }
 
+static inline void change_armor(game_t *game)
+{
+    if (game->player.armor == 1) {
+        game->player.armor = 2;
+        game->player.stat[0] += 50;
+        game->player.max_health += 50;
+        game->player.stat[1] += 10;
+    } else {
+        game->player.armor = 1;
+        game->player.stat[0] -= 50;
+        game->player.max_health -= 50;
+        game->player.stat[1] -= 10;
+    }
+}
+
 #endif /* !INVENTORY_H_ */
