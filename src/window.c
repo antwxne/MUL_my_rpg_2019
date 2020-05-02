@@ -26,8 +26,6 @@ static void display_window(sfRenderWindow *window)
 
 int show_window(game_t *game)
 {
-    if (rectangle(&game->dialogue) == 84)
-        return 84;
     while (sfRenderWindow_isOpen(game->window)) {
         manage_event(game);
         display_window(game->window);

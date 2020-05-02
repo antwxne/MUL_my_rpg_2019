@@ -9,6 +9,7 @@
 #include "game.h"
 #include "main.h"
 #include "textures.h"
+#include "dialogue.h"
 
 static const sfColor t_grey = {255, 255, 255, 125};
 
@@ -40,6 +41,10 @@ static bool init_obj_and_player(game_t *game)
     game->rect_arr);
     if (!create_player(&game->player, game->objects[PLAYER][0], game->map))
         return (false);
+    if (initia_fight(&game->fight) == 84)
+        return (false);
+    if (rectangle(&game->dialogue) == 84)
+        return (false);
     return (true);
 }
 
@@ -53,7 +58,6 @@ game_t init_struct(int *ptr_err)
         *ptr_err = -1;
         return (game);
     }
-    initia_fight(&game.fight);
     game.view = MENU_S;
     game.window = sfRenderWindow_create(mode, "My_rpg", sfDefaultStyle, NULL);
     sfRenderWindow_setMouseCursorVisible(game.window, sfFalse);

@@ -39,9 +39,9 @@ static void pnj_1(game_t *game)
     if (game->player.stat[3] == 0)
         game->view = DIALOGUE;
     if (game->player.stat[3] == 2)
-        main_dialogue(&game->dialogue, game, 2);
+        game->view = DIALOGUE;
     if (game->player.stat[3] == 4)
-        main_dialogue(&game->dialogue, game, 2);
+        game->view = DIALOGUE;
     game->player.stat[3] += 1;
 }
 
