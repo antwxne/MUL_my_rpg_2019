@@ -14,10 +14,10 @@ static void has_won(game_t *game, int name, int def, int atk)
 {
     int won = fight(game, name, def, atk);
 
-    if (won) {
+    if (won == 1) {
         sfMusic_stop(game->musics[FIGHT_MUSIC]);
         sfMusic_play(game->musics[GAME_MUSIC]);
-        game->player.stat[3] += 1;
+        game->player.stat[LVL_PLAYER] += 1;
         game->view = MAP;
     }
     if (won == 2) {
@@ -30,9 +30,9 @@ static void has_won(game_t *game, int name, int def, int atk)
 void manage_fight(game_t *game)
 {
     if (game->view == FIGHT_1)
-        has_won(game, EN_1, PIGS_DEF, 90);
+        has_won(game, EN_1, PIGS_DEF, 180);
     if (game->view == FIGHT_2)
-        has_won(game, SHEEP, SHEEP_DEF, 90);
+        has_won(game, SHEEP, SHEEP_DEF, 190);
     if (game->view == FIGHT_3)
-        has_won(game, MERMS, MERMS_DEF, 90);
+        has_won(game, MERMS, MERMS_DEF, 200);
 }

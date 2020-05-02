@@ -27,12 +27,12 @@ button_display_t *init_button(void)
 
     if (!buttons)
         return (NULL);
-    for (unsigned int a = 0; a <= 3;a++, i++) {
+    for (unsigned int a = 0; a < 6;a++, i++) {
         buttons[i] = create_button(pause_menu_buttons[a]);
         if (!failed_button(buttons[i]))
             return (NULL);
     }
-    for (unsigned int a = 0; a <= 2;a++, i++) {
+    for (unsigned int a = 0; a < 3;a++, i++) {
         buttons[i] = create_button(start_menu_buttons[a]);
         if (!failed_button(buttons[i]))
             return (NULL);

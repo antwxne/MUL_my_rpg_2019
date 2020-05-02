@@ -11,8 +11,6 @@
 #include "textures.h"
 #include "fight.h"
 
-void manage_dialogue(game_t *game);
-
 void manage_view(game_t *game)
 {
     if (game->view == MAP)
@@ -25,5 +23,6 @@ void manage_view(game_t *game)
         manage_start_menu(game);
     if (game->view == DIALOGUE)
         manage_dialogue(game);
-    if (game->view == END_DIED)
+    if (game->view == END_DIED || game->view == END_WIN)
+        manage_end_menu(game);
 }

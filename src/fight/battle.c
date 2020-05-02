@@ -80,7 +80,7 @@ int life_time(rectangle_t *rects, int ennemies, game_t *game)
 
     time = sfClock_getElapsedTime(rects->life_clock);
     seconds = time.microseconds / 1000000.0;
-    if (seconds > 5) {
+    if (seconds > 2) {
         rects->etat = true;
         rects->battle_status = 0;
         sfClock_restart(rects->life_clock);

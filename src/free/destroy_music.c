@@ -11,7 +11,7 @@
 
 void destroy_music(game_t *game)
 {
-    for (unsigned int i = 0; i < 4; i++)
+    for (unsigned int i = 0; i < 5; i++)
         sfMusic_destroy(game->musics[i]);
     free(game->musics);
 }

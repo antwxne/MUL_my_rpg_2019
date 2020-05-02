@@ -33,8 +33,13 @@ bool click_on_obj(sfEvent event, sfRenderWindow *window, object_t obj)
 
 void manage_game(game_t *game)
 {
-    if (game->player.stat[3] % 2 == 0)
+    if (game->player.stat[LVL_PLAYER] % 2 == 0)
         use_pnj(game);
-    else
+    if (game->player.stat[LVL_PLAYER] % 2 == 1)
         use_enemy(game);
+    if (game->player.stat[LVL_PLAYER] == 7 && game->view == MAP) {
+        sfMusic_stop(game->musics[GAME_MUSIC]);
+        sfMusic_play(game->musics[WIN_MUSIC]);
+        game->view = END_WIN;
+    }
 }

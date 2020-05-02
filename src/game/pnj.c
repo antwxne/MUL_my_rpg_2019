@@ -36,11 +36,7 @@ static int is_near_pnj(sfVector2u player_pos, int **map)
 
 static void pnj_1(game_t *game)
 {
-    if (game->player.stat[3] == 0)
-        game->view = DIALOGUE;
-    if (game->player.stat[3] == 2)
-        game->view = DIALOGUE;
-    if (game->player.stat[3] == 4)
+    if (game->player.stat[3] % 2 == 0)
         game->view = DIALOGUE;
     game->player.stat[3] += 1;
 }

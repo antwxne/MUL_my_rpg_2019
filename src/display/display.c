@@ -17,4 +17,8 @@ void display(sfRenderWindow *window, object_t **objects,
         display_menu_start(window, buttons, objects[START_MENU][0], game);
     if (game->view == MENU_P)
         display_menu_pause(window, buttons, objects[PAUSE_MENU][0], game);
+    if (game->view == END_WIN || game->view == END_DIED)
+        display_menu_end(game->window, game->buttons,
+        (object_t [2]) {game->objects[YOU_DIED][0],
+        game->objects[YOU_WIN][0]}, game);
 }

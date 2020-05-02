@@ -20,4 +20,6 @@ void manage_dialogue(game_t *game)
     if (game->player.stat[LVL_PLAYER] == 5)
         if (main_dialogue(&game->dialogue, game, 2) == 1)
             game->view = MAP;
+    if (game->player.stat[LVL_PLAYER] == 7)
+        game->view = MAP;
 }

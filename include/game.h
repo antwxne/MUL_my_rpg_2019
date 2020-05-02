@@ -20,6 +20,7 @@ enum music {
     FIGHT_MUSIC,
     DEAD_MUSIC,
     GAME_MUSIC,
+    WIN_MUSIC,
 };
 
 typedef enum dir_move {
@@ -46,6 +47,7 @@ enum view_type {
     MENU_S,
     DIALOGUE,
     END_DIED,
+    END_WIN,
 };
 
 typedef struct dialogue {
@@ -140,6 +142,6 @@ static const unsigned int number_objects = 10;
 static const float time_clock_player = 0.1;
 static const float time_anim_player = 0.1;
 static const unsigned int offset_move_player = 2;
-static const unsigned int nb_button = 7;
+static const unsigned int nb_button = 9;
 
 #endif /* !GAME_H_ */

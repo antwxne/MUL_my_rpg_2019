@@ -21,6 +21,7 @@ SRC =	src/main.c									\
 		src/window.c								\
 		src/loading.c 								\
 		src/manage_view.c 							\
+		src/hud.c									\
 		src/object/create_object.c 					\
 		src/object/set_position_object.c 			\
 		src/object/anim_object.c 					\
@@ -34,6 +35,8 @@ SRC =	src/main.c									\
 		src/menu/init_button.c 						\
 		src/menu/manage_start_menu.c 				\
 		src/menu/manage_menu_pause.c 				\
+		src/menu/manage_end_menu.c  				\
+		src/menu/restart_game.c 					\
 		src/rect/rect_arr.c							\
 		src/rect/rect_shape.c 						\
 		src/rect/free_rect_arr.c 					\
@@ -63,11 +66,13 @@ SRC =	src/main.c									\
 		src/fight/set_sprite.c						\
 		src/fight/main_fight.c						\
 		src/fight/manage_fight.c 					\
+		src/fight/info_fight.c						\
 		src/save/load_save.c 						\
 		src/save/reset_file.c 						\
 		src/save/manage_save.c 						\
 		src/save/save_stat.c  						\
 		src/display/display.c 						\
+		src/display/display_end_menu.c 				\
 		src/display/display_map.c 					\
 		src/display/display_menu_start.c 			\
 		src/display/display_menu_pause.c 			\
@@ -87,8 +92,6 @@ SRC =	src/main.c									\
 		src/free/destroy_music.c 					\
 		src/free/destroy_object.c 					\
 		src/free/destroy_textures.c 				\
-		src/hud.c									\
-		src/fight/info_fight.c						\
 
 OBJ = $(SRC:.c=.o)
 

@@ -79,8 +79,6 @@ bool reset_file(void)
 {
     if (!reset_all_maps() || !reset_stat())
         return (false);
-    else {
-        my_putstr("Reset \033[92;1mOK\033[0m\n");
+    else
         return (true);
-    }
 }

@@ -19,11 +19,11 @@ enum button_type {
     P_MAIN_MENU,
     P_SAVE,
     P_QUIT,
+    D_RESTART,
+    D_QUIT,
     S_START,
     S_HTP,
     S_QUIT,
-    D_QUIT,
-    D_RESTART,
 };
 
 typedef struct button{

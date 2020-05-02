@@ -13,7 +13,8 @@ static const sfColor transparent_grey = {255, 255, 255, 60};
 static void change_action(game_t *game, int action)
 {
     if (action == D_RESTART) {
-        sfMusic_stop(game->musics[MENU_MUSIC]);
+        sfMusic_stop(game->musics[game->view == END_WIN ? \
+        WIN_MUSIC : DEAD_MUSIC]);
         sfMusic_play(game->musics[GAME_MUSIC]);
         if (!restart_game(game))
             sfRenderWindow_close(game->window);
@@ -43,11 +44,11 @@ static void reset_overlay(button_display_t *ptr_button)
     sfRectangleShape_setFillColor(ptr_button->shape, sfTransparent);
 }
 
-void manage_menu_died(game_t *game)
+void manage_end_menu(game_t *game)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(game->window);
 
-    for (unsigned int i = D_QUIT; i <= D_RESTART; i++) {
+    for (unsigned int i = D_RESTART; i <= D_QUIT; i++) {
         if (sfIntRect_contains(&game->buttons[i].rect,
             pos.x, pos.y))
             overlay_button(&game->buttons[i], game, i);

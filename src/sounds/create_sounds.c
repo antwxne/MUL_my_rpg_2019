@@ -14,6 +14,7 @@ static const char *fp_music[] = {
     "music/battle.ogg",
     "music/dead.ogg",
     "music/game.ogg",
+    "music/win.ogg",
     NULL
 };
 
@@ -37,6 +38,7 @@ bool create_music(game_t *game)
         if (!game->musics[i])
             return (false);
         sfMusic_setLoop(game->musics[i], sfTrue);
+        sfMusic_setVolume(game->musics[i], 50);
     }
     return (true);
 }

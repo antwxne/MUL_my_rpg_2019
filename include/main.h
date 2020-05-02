@@ -68,5 +68,8 @@ void manage_fight(game_t *game);
 bool create_music(game_t *game);
 void destroy_all(game_t *game);
 sfVector2u get_pos_player(int **map);
+void manage_end_menu(game_t *game);
+void manage_dialogue(game_t *game);
+bool restart_game(game_t *game);
 
 #endif /* !MAIN_H_ */

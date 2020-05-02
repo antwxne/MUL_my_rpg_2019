@@ -12,5 +12,7 @@ object_t **set_position_background(object_t **objects)
 {
     for (unsigned int i = FIRST_MAP; i <= PAUSE_MENU; i++)
         sfSprite_setPosition(objects[i][0].sprite, (sfVector2f) {0, 0});
+    sfSprite_setPosition(objects[YOU_DIED][0].sprite, (sfVector2f) {0, 0});
+    sfSprite_setPosition(objects[YOU_WIN][0].sprite, (sfVector2f) {0, 0});
     return (objects);
 }
