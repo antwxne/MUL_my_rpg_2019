@@ -41,11 +41,13 @@ static void equip_armor(game_t *game, sfVector2i pos)
         if (game->player.armor == 1) {
             game->player.armor = 2;
             game->player.stat[0] += 50;
+            game->player.max_health += 50;
             game->player.stat[1] += 10;
         }
         else {
             game->player.armor = 1;
             game->player.stat[0] -= 50;
+            game->player.max_health -= 50;
             game->player.stat[1] -= 10;
         }
     }
@@ -53,6 +55,13 @@ static void equip_armor(game_t *game, sfVector2i pos)
         display_sprite(game->window, game->objects[ARMOR_1]);
     else
         display_sprite(game->window, game->objects[ARMOR_2]);
+}
+
+static void heal(game_t *game, sfVector2i pos)
+{
+    if (pos.x < 137 && pos.x > 105 && pos.y < 907 && pos.y > 875
+    && (sfMouse_isButtonPressed(sfMouseLeft) == sfTrue))
+        game->player.stat[0] = game->player.max_health;
 }
 
 void set_inventory(game_t *game)
@@ -68,5 +77,6 @@ void set_inventory(game_t *game)
     set_pos(105.0, 875.0, game->objects[POTION]);
     equip_weapon(game, pos);
     equip_armor(game, pos);
+    heal(game, pos);
     display_sprite(game->window, game->objects[POTION]);
 }
