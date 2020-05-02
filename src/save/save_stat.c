@@ -16,21 +16,23 @@ static const int rights = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 
 static const char fp_save[] = ".config/save";
 
-static void write_stat_in_file(int nb_map, int *stat, int fd)
+static void write_stat_in_file(int nb_map, int *equipment, int *stat, int fd)
 {
     write(fd, &nb_map, sizeof(int));
+    write(fd, &equipment[0], sizeof(int));
+    write(fd, &equipment[1], sizeof(int));
     for (unsigned int i = 0; i < 4; i++)
         write(fd, &stat[i], sizeof(int));
 }
 
-void save_stat(int nb_map, int *stat)
+void save_stat(int nb_map, int *equipment, int *stat)
 {
     int fd = open(fp_save, O_WRONLY);
 
     if (fd == -1)
         fd = open(fp_save, O_WRONLY | O_CREAT, rights);
     if (fd != -1) {
-        write_stat_in_file(nb_map, stat, fd);
+        write_stat_in_file(nb_map, equipment, stat, fd);
         close(fd);
     }
 }

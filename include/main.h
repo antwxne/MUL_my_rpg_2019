@@ -49,7 +49,7 @@ void set_rect_player(player_t *player, int dir);
 void manage_key(game_t *game);
 void save_map(game_t *game);
 void load_stat(game_t *game);
-void save_stat(int nb_map, int *stat);
+void save_stat(int nb_map, int *equipment, int *stat);
 void manage_save(game_t *game);
 button_display_t *init_button(void);
 void manage_start_menu(game_t *game);
