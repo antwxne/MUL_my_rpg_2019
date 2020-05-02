@@ -13,6 +13,7 @@ void free_node_part(part_t **part)
 
     if (temp == NULL)
         return;
+    sfRectangleShape_destroy(temp->shape);
     (*part) = temp->next;
     free(temp);
 }
