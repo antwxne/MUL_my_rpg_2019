@@ -29,24 +29,3 @@ int count_link(linked *head)
     }
     return (cmp);
 }
-
-linked *remove_link(int num, linked *head)
-{
-    linked *current_node = head;
-    linked *prev_node;
-
-    while (current_node != NULL) {
-        if (current_node->data == num) {
-            if (current_node == head) {
-                head = current_node->next;
-                break;
-            } else {
-                prev_node->next = current_node->next;
-                break;
-            }
-        }
-        prev_node = current_node;
-        current_node = current_node->next;
-    }
-    return (head);
-}

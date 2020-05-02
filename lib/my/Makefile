@@ -20,21 +20,9 @@ LDFLAGS =
 SRC = list_c.c	\
 		convert_in_bit.c	\
 		my_params_to_list.c	\
-		my_str_to_wordarray.c	\
 		my_strcat_int.c	\
 		revstrint.c	\
-		printf/ascii.c	\
-		printf/base_hex_maj.c	\
-		printf/base01.c	\
-		printf/basehex.c	\
-		printf/baseoct.c	\
-		printf/flag_p.c	\
-		printf/my_flag.c	\
-		printf/my_printf.c	\
-		printf/my_putnbr_unsigned.c	\
-		printf/percent_percent.c	\
 		func_lib/function.c	\
-		func_lib/get_next_line.c	\
 		func_lib/my_getnbr.c	\
 		func_lib/my_putnbr.c	\
 		func_lib/my_realloc.c	\

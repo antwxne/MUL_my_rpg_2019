@@ -17,18 +17,18 @@ static const int pnj_type[] = {
 static int is_near_pnj(sfVector2u player_pos, int **map)
 {
     for (unsigned int i = 0; pnj_type[i] != -1; i++) {
-        if (player_pos.y > 0)
-            if (map[player_pos.y - 1][player_pos.x] == pnj_type[i] + 1)
-                return (pnj_type[i]);
-        if (map[player_pos.y + 1])
-            if (map[player_pos.y + 1][player_pos.x] == pnj_type[i] + 1)
-                return (pnj_type[i]);
-        if (player_pos.x > 0)
-            if (map[player_pos.y][player_pos.x - 1] == pnj_type[i] + 1)
-                return (pnj_type[i]);
-        if (map[player_pos.y][player_pos.x + 1] != -1)
-            if (map[player_pos.y][player_pos.x + 1] == pnj_type[i] + 1)
-                return (pnj_type[i]);
+        if (player_pos.y > 0 &&
+        (map[player_pos.y - 1][player_pos.x] == pnj_type[i] + 1))
+            return (pnj_type[i]);
+        if (map[player_pos.y + 1] &&
+        (map[player_pos.y + 1][player_pos.x] == pnj_type[i] + 1))
+            return (pnj_type[i]);
+        if (player_pos.x > 0 &&
+        (map[player_pos.y][player_pos.x - 1] == pnj_type[i] + 1))
+            return (pnj_type[i]);
+        if (map[player_pos.y][player_pos.x + 1] != -1 &&
+        (map[player_pos.y][player_pos.x + 1] == pnj_type[i] + 1))
+            return (pnj_type[i]);
     }
     return (0);
 }
