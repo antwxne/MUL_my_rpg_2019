@@ -54,14 +54,23 @@ static int battle_second(game_t *png, rectangle_t *rects)
 
 int fight(game_t *png, int ennemie, int name_ennemies, int ennemies_damage)
 {
+    bool status = true;
+
+    if (status == true) {
+        resize_life_pl(png);
+        status = false;
+    }
     beg_draw(png, &png->fight, ennemie);
     if (battle_init(png, &png->fight, name_ennemies, ennemies_damage) == 1) {
         sfRectangleShape_setSize(png->fight.fight_rects[3],
                                 (sfVector2f) {400, 100});
+        status = true;
         return 1;
     }
-    if (png->fight.my_life == 2)
+    if (png->fight.my_life == 2) {
+        status = true;
         return 2;
+    }
     battle_second(png, &png->fight);
     return 0;
 }
