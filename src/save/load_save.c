@@ -39,7 +39,7 @@ void load_stat(game_t *game)
     game->player.max_health = 400;
     game->player.stat[HEALTH] = 400;
     game->player.stat[DEF_PLAYER] = 70;
-    game->player.stat[ATK_PLAYER] = 98;
+    game->player.stat[ATK_PLAYER] = 145;
     game->player.stat[LVL_PLAYER] = 0;
     if (fd != -1) {
         read_stat(fd, game);

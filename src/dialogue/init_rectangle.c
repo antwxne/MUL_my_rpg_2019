@@ -16,17 +16,17 @@ static const sfVector2f place [] = {
 };
 static const sfVector2f sizes [] = {
     {850, 50},
-    {500, 300},
+    {500, 100},
 };
 
 static const sfColor color_out [] = {
     {20, 20, 20, 100},
-    {199, 207, 0, 100},
+    {250, 250, 0, 255},
 };
 
 static const sfColor color_fil [] = {
     {20, 20, 20, 90},
-    {199, 207, 0, 90},
+    {230, 230, 0, 255},
 };
 
 static const int nbr_rect = 2;
@@ -44,7 +44,7 @@ sfVector2f position_xy(int x, int y)
 
 static void init_text(dialogue_t *dialogue)
 {
-    dialogue->police = sfFont_createFromFile("assets/font_medieval.ttf");
+    dialogue->police = sfFont_createFromFile("assets/quanto.ttf");
     dialogue->texte = sfText_create();
     sfText_setFont(dialogue->texte, dialogue->police);
     sfText_setColor(dialogue->texte, sfRed);
@@ -52,35 +52,36 @@ static void init_text(dialogue_t *dialogue)
 
 static void fill(dialogue_t *dialogue)
 {
-    dialogue->dia[HTP][0] = "Press E pour allez a la slide suivante";
-    dialogue->dia[HTP][1] = "Bienvenue dans le monde fantasique de MAULETTE";
-    dialogue->dia[HTP][2] = "les commandes sont a savoir : ";
-    dialogue->dia[0][3] = "G pour le God mode (combat), et Echap pour le menu";
-    dialogue->dia[0][4] = "Il faut cliquer sur les pnjs pour lancer des quetes";
-    dialogue->dia[HTP][5] = "et aussi faire des combats , ducous Bon jeux";
+    dialogue->dia[HTP][0] = "Welcome, press E to go to the next slide";
+    dialogue->dia[HTP][1] = "Welcome to the fantastic world of Maulette";
+    dialogue->dia[HTP][2] = "The game keys are :";
+    dialogue->dia[0][3] = "G for the God mode (fight), and Esc for the menu";
+    dialogue->dia[0][4] = "you 've click on the pnj to launch quest or fight";
+    dialogue->dia[HTP][5] = "you can equip yourself with stuff, Good Game";
     dialogue->dia[HTP][6] = NULL;
-    dialogue->dia[PNJ_FIRST][0] = "j ai une quete pour toi";
-    dialogue->dia[PNJ_FIRST][1] = "aider moi je vous en prie !!!";
-    dialogue->dia[PNJ_FIRST][2] = "une récompense vous severez !";
-    dialogue->dia[PNJ_FIRST][3] = "vous devez tuez l ennemie patate";
-    dialogue->dia[PNJ_FIRST][4] = "il se trouve en haut du chemin!";
-    dialogue->dia[PNJ_FIRST][5] = "acceptez la quete!";
+    dialogue->dia[PNJ_FIRST][0] = "Hello, I have a quest fort you";
+    dialogue->dia[PNJ_FIRST][1] = "Help me please\nWizards want to kill me";
+    dialogue->dia[PNJ_FIRST][2] = "You will receive my eternal gratitude";
+    dialogue->dia[PNJ_FIRST][3] = "You must to kill the first wizzard";
+    dialogue->dia[PNJ_FIRST][4] = "he is at the top of the path";
+    dialogue->dia[PNJ_FIRST][5] = "Accept quest\nPlease !";
     dialogue->dia[PNJ_FIRST][6] = NULL;
 }
 static void fill2(dialogue_t *dialogue)
 {
-    dialogue->dia[PNJ_SECOND][0] = "encore une quete...";
-    dialogue->dia[PNJ_SECOND][1] = "une autre personne veut ma mort";
-    dialogue->dia[2][2] = "un sorcier puissant qui peut ce transformer";
-    dialogue->dia[2][3] = "comme le précédent, ils sont maléfiques";
-    dialogue->dia[PNJ_SECOND][4] = "ducous accepte encore la quete";
-    dialogue->dia[PNJ_SECOND][5] = NULL;
-    dialogue->dia[3][0] = "derniere fois et apres c est fini";
-    dialogue->dia[3][1] = "la derniere personne a tuer c est : ";
-    dialogue->dia[3][2] = "une personne horrible et mechante";
-    dialogue->dia[3][3] = "le plus féroce des sorciers transformeurs";
-    dialogue->dia[3][4] = "tuez le !!!!";
-    dialogue->dia[3][5] = "le monde vous dira merci!";
+    dialogue->dia[PNJ_SECOND][0] = "Thanks\nBut i have yet another request";
+    dialogue->dia[2][1] = "Another wizard wants my death";
+    dialogue->dia[2][2] = "he belongs to the same group as\nthe other wizard";
+    dialogue->dia[2][3] = "they are as evil as the other wizard";
+    dialogue->dia[2][4] = "it can also turn into a ferocious beast";
+    dialogue->dia[2][5] = "Accept quest \nPlease !";
+    dialogue->dia[2][6] = NULL;
+    dialogue->dia[3][0] = "The last time and after it's over";
+    dialogue->dia[3][1] = "The group leader also wants to kill me";
+    dialogue->dia[3][2] = "He has the same powers as them";
+    dialogue->dia[3][3] = "It's the last person who wants to kill me";
+    dialogue->dia[3][4] = "Kill him\nAnd I won't ask you anything anymore";
+    dialogue->dia[3][5] = "Accept quest\n and the world will say thank you!";
     dialogue->dia[3][6] = NULL;
 }
 
