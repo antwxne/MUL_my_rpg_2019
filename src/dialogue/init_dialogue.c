@@ -45,6 +45,6 @@ int main_dialogue(dialogue_t *dialogue, game_t *game, int types)
         step = 0;
         return 1;
     }
-    pos_dia(700, 600, dialogue, dialogue->dia[types][step]);
+    pos_dia(700, 500, dialogue, dialogue->dia[types][step]);
     return 0;
 }
