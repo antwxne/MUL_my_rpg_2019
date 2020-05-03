@@ -12,11 +12,13 @@
 void state_effect(game_t *game, int status, int ennemies,
                 int ennemies_damage)
 {
-    if (game->fight.consequence == false) {
+    if (game->fight.consequence == false && game->fight.god == true) {
         battle(status, &game->fight);
         damage(game, ennemies, ennemies_damage);
         game->fight.consequence = true;
     }
+    else if (game->fight.consequence == false)
+        game->fight.consequence = true;
 }
 
 void battle_prin(rectangle_t *rects, sfRenderWindow *window, object_t **objects)
