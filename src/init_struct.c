@@ -42,9 +42,7 @@ static bool init_obj_and_player(game_t *game)
     game->rect_arr);
     if (!create_player(&game->player, game->objects[PLAYER][0], game->map))
         return (false);
-    if (initia_fight(&game->fight) == 84)
-        return (false);
-    if (rectangle(&game->dialogue) == 84)
+    if (initia_fight(&game->fight) == 84 || rectangle(&game->dialogue) == 84)
         return (false);
     return (true);
 }
