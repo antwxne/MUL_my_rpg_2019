@@ -59,7 +59,7 @@ static void fill(dialogue_t *dialogue)
     dialogue->dia[0][4] = "you've click on the pnj to launch quest or fight";
     dialogue->dia[HTP][5] = "you can equip yourself with stuff, Good Game";
     dialogue->dia[HTP][6] = NULL;
-    dialogue->dia[PNJ_FIRST][0] = "Hello, I have a quest fort you";
+    dialogue->dia[PNJ_FIRST][0] = "Hello, I have a quest for you";
     dialogue->dia[PNJ_FIRST][1] = "Help me please\nA wizard want to kill me";
     dialogue->dia[PNJ_FIRST][2] = "You will receive my eternal gratitude";
     dialogue->dia[PNJ_FIRST][3] = "Can you kill the first wizard please !";
