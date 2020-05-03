@@ -18,6 +18,15 @@ static bool replace_player(player_t *player, object_t obj, int **map)
     return (player->pos_arr.x == 10000 ? false : true);
 }
 
+static void reset_enemies(rectangle_t *enemies)
+{
+    for (int i = 0; i <= 2; i++)
+        enemies->life_ennemie[i] = 400;
+    sfRectangleShape_setSize(enemies->fight_rects[3],
+        (sfVector2f) {400, 100});
+    enemies->my_life = 0;
+}
+
 bool restart_game(game_t *game)
 {
     if (!reset_file())
@@ -26,6 +35,7 @@ bool restart_game(game_t *game)
     game->map = load_map(game->map, game->nb_map);
     game->objects = set_position_object(game->objects, (int const **) game->map,
     game->rect_arr);
+    reset_enemies(&game->fight);
     if (!replace_player(&game->player, game->objects[PLAYER][0],
         game->map))
         return (false);
