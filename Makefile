@@ -71,6 +71,7 @@ SRC =	src/main.c									\
 		src/save/reset_file.c 						\
 		src/save/manage_save.c 						\
 		src/save/save_stat.c  						\
+		src/save/check_save.c						\
 		src/display/display.c 						\
 		src/display/display_end_menu.c 				\
 		src/display/display_map.c 					\

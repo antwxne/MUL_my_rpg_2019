@@ -71,5 +71,6 @@ sfVector2u get_pos_player(int **map);
 void manage_end_menu(game_t *game);
 void manage_dialogue(game_t *game);
 bool restart_game(game_t *game);
+bool check_save(void);
 
 #endif /* !MAIN_H_ */

@@ -40,7 +40,7 @@ int main(int ac, char **av, char **env)
         return (84);
     if (ac == 2)
         ret = manage_flag(av[1]);
-    if (ac == 1)
+    if (ac == 1 && check_save())
         ret = game_start();
     return (ret == true ? 0 : 84);
 }
