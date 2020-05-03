@@ -56,24 +56,24 @@ static void fill(dialogue_t *dialogue)
     dialogue->dia[HTP][1] = "Welcome to the fantastic world of Maulette";
     dialogue->dia[HTP][2] = "The game keys are :";
     dialogue->dia[0][3] = "G for the God mode (fight), and Esc for the menu";
-    dialogue->dia[0][4] = "you 've click on the pnj to launch quest or fight";
+    dialogue->dia[0][4] = "you've click on the pnj to launch quest or fight";
     dialogue->dia[HTP][5] = "you can equip yourself with stuff, Good Game";
     dialogue->dia[HTP][6] = NULL;
     dialogue->dia[PNJ_FIRST][0] = "Hello, I have a quest fort you";
-    dialogue->dia[PNJ_FIRST][1] = "Help me please\nWizards want to kill me";
+    dialogue->dia[PNJ_FIRST][1] = "Help me please\nA wizard want to kill me";
     dialogue->dia[PNJ_FIRST][2] = "You will receive my eternal gratitude";
-    dialogue->dia[PNJ_FIRST][3] = "You must to kill the first wizzard";
-    dialogue->dia[PNJ_FIRST][4] = "he is at the end of the path";
+    dialogue->dia[PNJ_FIRST][3] = "Can you kill the first wizard please !";
+    dialogue->dia[PNJ_FIRST][4] = "He is at the end of the path";
     dialogue->dia[PNJ_FIRST][5] = "Accept quest\nPlease !";
     dialogue->dia[PNJ_FIRST][6] = NULL;
 }
 static void fill2(dialogue_t *dialogue)
 {
     dialogue->dia[PNJ_SECOND][0] = "Thanks\nBut i have yet another request";
-    dialogue->dia[2][1] = "Another wizard wants my death";
+    dialogue->dia[2][1] = "Another wizard want my death";
     dialogue->dia[2][2] = "he belongs to the same group as\nthe other wizard";
-    dialogue->dia[2][3] = "they are as evil as the other wizard";
-    dialogue->dia[2][4] = "it can also turn into a ferocious beast";
+    dialogue->dia[2][3] = "Care he is stronger thant the other !";
+    dialogue->dia[2][4] = "It can also turn into a ferocious beast";
     dialogue->dia[2][5] = "Accept quest \nPlease !";
     dialogue->dia[2][6] = NULL;
     dialogue->dia[3][0] = "The last time and after it's over";
@@ -81,7 +81,7 @@ static void fill2(dialogue_t *dialogue)
     dialogue->dia[3][2] = "He has the same powers as them";
     dialogue->dia[3][3] = "It's the last person who wants to kill me";
     dialogue->dia[3][4] = "Kill him\nAnd I won't ask you anything anymore";
-    dialogue->dia[3][5] = "Accept quest\n and the world will say thank you!";
+    dialogue->dia[3][5] = "Accept quest\n and I will say thank you!";
     dialogue->dia[3][6] = NULL;
 }
 
