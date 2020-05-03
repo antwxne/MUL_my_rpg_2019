@@ -68,6 +68,7 @@ int fight(game_t *png, int ennemie, int name_ennemies, int ennemies_damage)
         return 1;
     }
     if (png->fight.my_life == 2) {
+        png->fight.my_life = 0;
         status = true;
         return 2;
     }
