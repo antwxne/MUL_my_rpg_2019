@@ -18,7 +18,7 @@ void position_sprite(game_t *png)
     set_position(650, 0, png->objects[EN_1][0].sprite);
     set_position(840, 500, png->objects[DEAFET][0].sprite);
     set_position(810, 500, png->objects[VICTORY][0].sprite);
-    set_position(810, 500, png->objects[EQUALITY][0].sprite);
+    set_position(850, 500, png->objects[EQUALITY][0].sprite);
     set_position(750, 0, png->objects[SHEEP][0].sprite);
     set_position(750, 0, png->objects[MERMS][0].sprite);
 }

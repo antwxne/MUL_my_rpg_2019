@@ -63,7 +63,7 @@ static void fill(dialogue_t *dialogue)
     dialogue->dia[PNJ_FIRST][1] = "Help me please\nWizards want to kill me";
     dialogue->dia[PNJ_FIRST][2] = "You will receive my eternal gratitude";
     dialogue->dia[PNJ_FIRST][3] = "You must to kill the first wizzard";
-    dialogue->dia[PNJ_FIRST][4] = "he is at the top of the path";
+    dialogue->dia[PNJ_FIRST][4] = "he is at the end of the path";
     dialogue->dia[PNJ_FIRST][5] = "Accept quest\nPlease !";
     dialogue->dia[PNJ_FIRST][6] = NULL;
 }
