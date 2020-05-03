@@ -17,13 +17,13 @@ char *my_itoa(int nb)
 
     if (!dest)
         return (NULL);
-    if (nb < 0)
-        bool = 1;
-    while (nb != 0) {
-        dest[i] = (nb%10)+'0';
-        nb /= 10;
-        i += 1;
+    if (nb == 0) {
+        dest[i] = '0';
+        i++;
     }
+    bool = nb < 0 ? 1 : 0;
+    for (; nb != 0; i++, nb /= 10)
+        dest[i] = (nb%10)+'0';
     if (bool == 1) {
         dest[i] = '-';
         i += 1;
