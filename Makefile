@@ -109,8 +109,10 @@ $(NAME):	$(OBJ)
 	make -C lib/my
 	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS) $(LDFLAGS)
 
-debug: CFLAGS += $(DBGFLAGS)
+debug:	CPPFLAGS += -g3
 debug: re
+debug:
+	make debug -C lib/my/
 
 clean:
 	rm -f $(OBJ)
