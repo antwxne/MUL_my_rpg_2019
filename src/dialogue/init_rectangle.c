@@ -31,7 +31,7 @@ static const sfColor color_fil [] = {
 
 static const int nbr_rect = 2;
 
-static const int nbr_text = 5;
+static const int nbr_text = 6;
 
 sfVector2f position_xy(int x, int y)
 {
@@ -83,6 +83,9 @@ static void fill2(dialogue_t *dialogue)
     dialogue->dia[3][4] = "Kill him\nAnd I won't ask you anything anymore";
     dialogue->dia[3][5] = "Accept quest\n and I will say thank you!";
     dialogue->dia[3][6] = NULL;
+    dialogue->dia[4][0] = "Thanks a lot.";
+    dialogue->dia[4][1] = "you've just finish the game";
+    dialogue->dia[4][2] = NULL;
 }
 
 int rectangle(dialogue_t *dialogue)
