@@ -40,7 +40,7 @@ static const char *fp[] = {
     "assets/en2.png",
     "assets/en3.png",
     "assets/you_died.jpg",
-    "assets/you_win.png",
+    "assets/you_win.jpg",
     NULL};
 
 static const sfIntRect textures_rects[] = {
