@@ -127,6 +127,7 @@ typedef struct game{
     cursor_t cursor;
     dialogue_t dialogue;
     sfView *views;
+    sfFont *font_hud;
 } game_t;
 
 typedef struct read {

@@ -22,7 +22,7 @@ void my_swap(char *a, char *b);
 int my_str_isnum(char const *str);
 char *my_revstr(char *str);
 int my_getnbr(char const *str);
-char *my_strcat(char *dest, char const *src);
+char *my_strcat(char *dest, char *src);
 int my_strcmp(char const *s1, char const *s2);
 char *my_strdup(char const *src);
 void my_putnbr(int nbr);

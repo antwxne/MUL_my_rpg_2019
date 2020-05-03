@@ -93,6 +93,8 @@ SRC =	src/main.c									\
 		src/free/destroy_music.c 					\
 		src/free/destroy_object.c 					\
 		src/free/destroy_textures.c 				\
+		src/free/destroy_dia.c 						\
+		src/free/free_fight.c 						\
 
 OBJ = $(SRC:.c=.o)
 
@@ -109,8 +111,10 @@ $(NAME):	$(OBJ)
 	make -C lib/my
 	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS) $(LDFLAGS)
 
-debug: CFLAGS += $(DBGFLAGS)
+debug:	CPPFLAGS += -g3
 debug: re
+debug:
+	make debug -C lib/my/
 
 clean:
 	rm -f $(OBJ)

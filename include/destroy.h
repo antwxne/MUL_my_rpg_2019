@@ -14,5 +14,7 @@ void destroy_music(game_t *game);
 void destroy_objects(game_t *game);
 void destroy_button(game_t *game);
 void destroy_texture(game_t *game);
+void destroy_dia(game_t *game);
+void free_fight(rectangle_t *fight);
 
 #endif /* !DESTROY_H_ */

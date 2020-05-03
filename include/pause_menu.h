@@ -44,7 +44,7 @@ static const button_t end_menu_reset = {(sfVector2f) {825.0, 300.0},
                                 (sfVector2f) {320.0, 70.0},
                                 (sfColor) {255, 255, 255, 255},
                                 (sfIntRect) {825, 300, 300, 70}, 50,
-                                "assets/font_medieval.ttf", "PLay again"};
+                                "assets/font_medieval.ttf", "Play again"};
 
 static const button_t end_menu_quit = {(sfVector2f) {915.0, 775},
                                 (sfVector2f) {120.0, 70.0},
