@@ -54,14 +54,16 @@ int create_hud(game_t *game)
     sfText *health = sfText_create();
     sfText *attack = sfText_create();
     sfText *defense = sfText_create();
+
     game->player.stat_txt[0] = health;
     game->player.stat_txt[1] = attack;
     game->player.stat_txt[2] = defense;
-    sfFont *font = sfFont_createFromFile("assets/old_london.ttf");
-
-    if (!health || !attack || !defense)
+    game->font_hud = sfFont_createFromFile("assets/old_london.ttf");
+    if (!game->font_hud || !defense)
         return (84);
-    set_font_to_all(game->player.stat_txt, font, 3);
+    if (!health || !attack)
+        return (84);
+    set_font_to_all(game->player.stat_txt, game->font_hud, 3);
     set_position_to_all(game->player.stat_txt, 3);
     set_char_size_to_all(game->player.stat_txt, 3);
     return (0);
