@@ -26,6 +26,11 @@ static const char *help[] = {
     NULL
 };
 
+static char *msg_reset[] = {
+    "Reset status : \033[92;1mOK\033[0m\n",
+    "Reset status : \033[91;1mERROR\033[0m\n"
+};
+
 static bool display_help(void)
 {
     for (unsigned int i = 0; help[i] != NULL; i++)
@@ -35,8 +40,15 @@ static bool display_help(void)
 
 bool manage_flag(char *arg)
 {
-    if (my_strcmp(arg, "--reset") == 0)
-        return (reset_file());
+    if (my_strcmp(arg, "--reset") == 0) {
+        if (reset_file()) {
+            my_putstr(msg_reset[0]);
+            return (true);
+        } else {
+            my_putstr(msg_reset[1]);
+            return (false);
+        }
+    }
     if (my_strcmp(arg, "-h") == 0 || my_strcmp(arg, "--help") == 0)
         return (display_help());
     my_putstr("Unknow option. Please run with -h\n");
