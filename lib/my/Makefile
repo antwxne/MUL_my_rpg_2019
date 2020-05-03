@@ -32,10 +32,10 @@ SRC = list_c.c	\
 		func_lib/my_strcpy.c	\
 		func_lib/my_strdup.c	\
 		func_lib/my_strlen.c	\
-		func_lib/my_itoa.c		\
 		my_split.c 				\
 		my_strlenc.c 			\
 		free_char_arr.c 		\
+		my_itoa.c 				\
 
 OBJ = $(SRC:.c=.o)
 
