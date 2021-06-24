@@ -9,7 +9,10 @@
 #define ASSETS_H_
 
 #include <stddef.h>
-
+/**
+ * @brief all objects types
+ * @enum object_type
+ */
 enum object_type
 {
     PLAYER,

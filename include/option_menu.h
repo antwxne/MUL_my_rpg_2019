@@ -14,7 +14,11 @@
 #include <SFML/Audio.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-
+/**
+ * @brief create a button
+ * @param button_to_create
+ * @return new button
+ */
 button_display_t create_button(button_t button_to_create);
 
 static const button_t option_menu_back = {(sfVector2f) {130.0, 390.0},
