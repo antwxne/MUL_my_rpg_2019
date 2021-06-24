@@ -1,6 +1,10 @@
 my_rpg
 .vscode/settings.json
-<<<<<<< HEAD
 .config/maps/map_1
 .config/maps/map_2
 .config/save
+*.o
+/.idea/
+/Documentation/html/
+/Documentation/latex/
+/lib/libmy.a

@@ -9,8 +9,17 @@
 #define HUD_H_
 
 #include "game.h"
-
+/**
+ * @brief apply stat to player
+ * @param stats
+ * @param game
+ */
 void apply_stats(sfText **stats, game_t *game);
+/**
+ * @brief create hud
+ * @param game
+ * @return
+ */
 int create_hud(game_t *game);
 
 #endif /* !HUD_H_ */

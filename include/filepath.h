@@ -9,6 +9,9 @@
 #define FILEPATH_H_
 #include <SFML/Graphics.h>
 
+/**
+ * @brief all assets file path
+ */
 static const char *fp[] = {
     "assets/perso1.png",
     "assets/png_1.png",
@@ -42,7 +45,9 @@ static const char *fp[] = {
     "assets/you_died.jpg",
     "assets/you_win.jpg",
     NULL};
-
+/**
+ * @brief rect of textures
+ */
 static const sfIntRect textures_rects[] = {
     {32, 0, 32, 32},
     {0, 0, 32, 32},

@@ -136,3 +136,20 @@ tests_run:
 		gcc -o unit_tests  $(CPPFLAGS) $(LDFLAGS)
 		./unit_tests
 		gcovr -e tests/
+
+DOC_DIR 	=	./Documentation
+
+.PHONY: doc
+doc:
+	doxygen $(DOC_DIR)/Doxyfile
+
+# Generate PDF documentation
+.PHONY: doc_pdf
+doc-pdf:	doc
+	make -C $(DOC_DIR)/latex/
+	cp $(DOC_DIR)/latex/refman.pdf $(DOC_DIR)
+
+# Launch doxygen in firefox browser
+.PHONY: doc-firefox
+doc-firefox:	doc
+	firefox $(DOC_DIR)/html/index.html
