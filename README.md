@@ -78,6 +78,7 @@ It generate documentation and launch a html preview.
 
 - Théo Campos [![github-link][github-logo]](https://github.com/theocampos)
 - Clément Ruat  [![github-link][github-logo]](https://github.com/fantoruse)
+- Paul Beaudet  [![github-link][github-logo]](https://github.com/Pepiloto)
 - Antoine Desruet [![github-link][github-logo]](https://github.com/antwxne)
 
 <!-- Markdown link & img definition's -->
