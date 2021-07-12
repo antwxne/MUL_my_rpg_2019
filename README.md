@@ -1,4 +1,4 @@
-# RPG
+# RPG ![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) ![csfml](https://img.shields.io/badge/CSFML-8CC445?style=for-the-badge&logo=SFML&logoColor=white)
 
 >This project is one of the freest project of your first year. Create your own RPG.
 Your main challenge for this game will be to create a complete product using everything that you and your
