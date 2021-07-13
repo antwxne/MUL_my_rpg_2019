@@ -12,7 +12,7 @@ CPPFLAGS = -iquote $(IDIR)
 
 DBGFLAGS = -g3 -ggdb
 
-LDFLAGS = -L lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
+LDFLAGS = -L./lib -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 ######### SOURCES #########
 SRC =	src/main.c									\
@@ -130,12 +130,6 @@ reset: all
 	@./$(NAME) --reset
 
 .PHONY: all debug clean fclean re tests_run reset
-
-tests_run:	LDFLAGS	+= -lcriterion --coverage
-tests_run:
-		gcc -o unit_tests  $(CPPFLAGS) $(LDFLAGS)
-		./unit_tests
-		gcovr -e tests/
 
 DOC_DIR 	=	./Documentation
 
