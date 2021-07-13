@@ -6,9 +6,9 @@
 */
 #include "my.h"
 
-void print_link(linked *head)
+void print_link(linked_t *head)
 {
-    linked *current_node = head;
+    linked_t *current_node = head;
 
     while (current_node != NULL) {
         my_putnbr(current_node->data);
@@ -18,10 +18,10 @@ void print_link(linked *head)
     my_putchar('\n');
 }
 
-int count_link(linked *head)
+int count_link(linked_t *head)
 {
     int cmp = 0;
-    linked *current_node = head;
+    linked_t *current_node = head;
 
     while (current_node != NULL) {
         cmp++;

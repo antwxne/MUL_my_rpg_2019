@@ -6,28 +6,28 @@
 */
 #include "my.h"
 
-linked *add_list(long long int data, linked *list)
+linked_t *add_list(long long int data, linked_t *list)
 {
-    linked *first_case;
+    linked_t *first_case;
 
-    first_case = malloc(sizeof(linked));
+    first_case = malloc(sizeof(linked_t));
     first_case -> data = data;
     first_case -> next = list;
     return (first_case);
 }
 
-linked *my_create_list(void)
+linked_t *my_create_list(void)
 {
-    linked *list;
+    linked_t *list;
 
     list = NULL;
     return (list);
 }
 
-linked *my_params_to_list(int ac, char **av)
+linked_t *my_params_to_list(int ac, char **av)
 {
     int cmp = 0;
-    linked *list;
+    linked_t *list;
 
     list = NULL;
     cmp = ac-1;

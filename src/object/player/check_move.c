@@ -5,7 +5,6 @@
 ** check_move
 */
 
-#include <criterion/criterion.h>
 #include "game.h"
 #include "main.h"
 
